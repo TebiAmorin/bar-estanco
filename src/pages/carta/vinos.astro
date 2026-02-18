@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Divider from '../../components/ui/Divider.astro';
+import WineEntry from '../../components/ui/WineEntry.astro';
+---
+
+<BaseLayout
+  title="Carta de Vinos"
+  description="Carta de vinos de Bar Estanco. Más de 70 referencias: Ribera del Duero, Rioja, Albariño, Godello, Mencía, vinos internacionales, espumosos y sin alcohol. Vinoteca en Gondomar."
+>
+
+  <!-- Header -->
+  <section class="section-ink py-10 sm:py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-label border-paper/20 text-paper/50 mb-4">Capítulo I</span>
+      <h1 class="text-paper mt-4 mb-3">Carta de Vinos</h1>
+      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
+        Más de 70 referencias elegidas con criterio. Pregunta en barra, te ayudamos a elegir.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky nav para saltar entre secciones -->
+  <nav class="carta-nav-sticky">
+    <div class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto">
+      <a href="#tintos" class="carta-nav-link">Tintos</a>
+      <span class="text-ink/15 text-xs">&middot;</span>
+      <a href="#blancos" class="carta-nav-link">Blancos</a>
+      <span class="text-ink/15 text-xs">&middot;</span>
+      <a href="#rosados" class="carta-nav-link">Rosados</a>
+      <span class="text-ink/15 text-xs">&middot;</span>
+      <a href="#espumosos" class="carta-nav-link">Espumosos</a>
+      <span class="text-ink/15 text-xs">&middot;</span>
+      <a href="#sin-alcohol" class="carta-nav-link">Sin alcohol</a>
+    </div>
+  </nav>
+
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- ============================== -->
+    <!--           TINTOS               -->
+    <!-- ============================== -->
+    <section id="tintos" class="pt-8 sm:pt-(--spacing-section) pb-6">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Tintos</span>
+        <h2 class="mt-4">Vinos Tintos</h2>
+        <p class="text-ink-faded text-sm mt-2 font-body">36 referencias</p>
+        <Divider />
+      </div>
+
+      <!-- Ribera del Duero -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Ribera del Duero</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Protos 27" bodega="Bodegas Protos" tipo="Roble" precio="29.50" destacado descripcion="Roble potente y elegante. Referencia clásica de Ribera del Duero con paso suave y final largo." />
+          <WineEntry nombre="Protos 9" bodega="Bodegas Protos" tipo="Roble" precio="20" />
+          <WineEntry nombre="Carmelo Rodero 9" bodega="Carmelo Rodero" tipo="Roble" precio="23" />
+          <WineEntry nombre="Prado Rey Crianza" bodega="Real Sitio de Ventosilla" tipo="Crianza" precio="20" />
+          <WineEntry nombre="Capilla" bodega="Bodegas Capilla" precio="24" />
+          <WineEntry nombre="Adaro" bodega="Bodegas Pradorey" precio="30" />
+          <WineEntry nombre="Figuero Viñas Viejas" bodega="Tinto Figuero" precio="35" destacado descripcion="De cepas con más de 80 años. Profundo e intenso con una elegancia que solo da la edad de la viña." />
+          <WineEntry nombre="Bosque de Matasnos" bodega="Bosque de Matasnos" precio="37" />
+          <WineEntry nombre="Jovellar" bodega="Jovellar" />
+          <WineEntry nombre="Punto Geodésico" bodega="Bodegas Recoletas" />
+          <WineEntry nombre="Trus" bodega="Bodegas Trus" />
+          <WineEntry nombre="Legaris Crianza" bodega="Bodegas Legaris" tipo="Crianza" />
+          <WineEntry nombre="Legaris Roble" bodega="Bodegas Legaris" tipo="Roble" />
+          <WineEntry nombre="Viña Solorca Crianza" bodega="Viña Solorca" tipo="Crianza" />
+          <WineEntry nombre="La Capilla Vendimia Seleccionada" bodega="Bodegas Capilla" />
+          <WineEntry nombre="Protos" bodega="Bodegas Protos" />
+          <WineEntry nombre="Cruz de Alba" bodega="Cruz de Alba" />
+          <WineEntry nombre="Cruz de Alba Crianza" bodega="Cruz de Alba" tipo="Crianza" />
+          <WineEntry nombre="Prios" bodega="Bodegas de los Ríos Prieto" />
+        </div>
+      </div>
+
+      <!-- Vino de la Tierra -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">V.T. Castilla y León</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Mauro" bodega="Bodegas Mauro" precio="46" destacado descripcion="Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales." />
+        </div>
+      </div>
+
+      <!-- Ribeira Sacra / Bierzo -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Ribeira Sacra &amp; Bierzo</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Alma de Autor" bodega="Alma de Autor" tipo="Mencía · Ribeira Sacra" />
+          <WineEntry nombre="Cepas Viejas" bodega="Cepas Viejas" tipo="Mencía · Ribeira Sacra" />
+          <WineEntry nombre="Losada" bodega="Bodegas Losada" tipo="Mencía · Bierzo" />
+          <WineEntry nombre="Vía Romana" bodega="Vía Romana" tipo="Mencía · Ribeira Sacra" />
+        </div>
+      </div>
+
+      <!-- Rioja -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Rioja</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Hado" bodega="Ramón Bilbao" precio="22" />
+          <WineEntry nombre="Ramón Bilbao Ed. Limitada Tempranillo" bodega="Ramón Bilbao" precio="24" />
+          <WineEntry nombre="Ramón Bilbao Ed. Limitada Garnacha" bodega="Ramón Bilbao" />
+          <WineEntry nombre="Ramón Bilbao Crianza" bodega="Ramón Bilbao" tipo="Crianza" />
+          <WineEntry nombre="Agnus" bodega="Bodegas Valdelana" />
+          <WineEntry nombre="Proelio" bodega="Bodegas Proelio" />
+          <WineEntry nombre="Pujanza" bodega="Bodegas Pujanza" destacado descripcion="Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda." />
+          <WineEntry nombre="Urbión Cuvée" bodega="Bodegas Urbión" />
+          <WineEntry nombre="Martín Zurbano" bodega="Martín Zurbano" />
+        </div>
+      </div>
+
+      <!-- Internacional -->
+      <div class="mb-4 fade-in">
+        <h3 class="do-header">Internacional</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Lorca Fantasía Malbec" bodega="Bodega Lorca" tipo="Malbec · Argentina" precio="28" />
+          <WineEntry nombre="Las Mulas" bodega="Miguel Torres Chile" tipo="Chile" />
+          <WineEntry nombre="La Vieille Ferme" bodega="Famille Perrin" tipo="Francia" />
+        </div>
+      </div>
+    </section>
+
+
+    <Divider label="&middot; &middot; &middot;" />
+
+
+    <!-- ============================== -->
+    <!--           BLANCOS              -->
+    <!-- ============================== -->
+    <section id="blancos" class="pt-8 sm:pt-(--spacing-section) pb-6">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Blancos</span>
+        <h2 class="mt-4">Vinos Blancos</h2>
+        <p class="text-ink-faded text-sm mt-2 font-body">26 referencias</p>
+        <Divider />
+      </div>
+
+      <!-- Ribeiro -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">D.O. Ribeiro</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Ramón do Casar" bodega="Ramón do Casar" tipo="Treixadura" precio="23" />
+          <WineEntry nombre="Mina Neta Manuela" bodega="Mina Neta" precio="16.50" />
+          <WineEntry nombre="Viña do Campo" bodega="Viña do Campo" precio="17" />
+          <WineEntry nombre="Antorio Montero Autor" bodega="Antorio Montero" precio="23" />
+          <WineEntry nombre="Meu" bodega="Meu" precio="17" />
+        </div>
+      </div>
+
+      <!-- Valdeorras / Godello -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">D.O. Valdeorras</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Alma" bodega="Alma" tipo="Godello" precio="17" />
+          <WineEntry nombre="Tambora" bodega="Tambora" tipo="Godello" precio="19" />
+          <WineEntry nombre="Viñaredo" bodega="Viñaredo" tipo="Godello" precio="18" />
+          <WineEntry nombre="Luna de Berride" bodega="Luna de Berride" tipo="Godello" precio="16.50" />
+          <WineEntry nombre="O Luar do Sil" bodega="Pago de los Capellanes" tipo="Godello" precio="25" destacado descripcion="Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes." />
+        </div>
+      </div>
+
+      <!-- Rías Baixas / Albariño -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">D.O. Rías Baixas</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Eidosela" bodega="Eidosela" tipo="Albariño" precio="18" />
+          <WineEntry nombre="Eidosela Selección" bodega="Eidosela" tipo="Albariño" precio="26" destacado descripcion="La selección especial. Albariño con más cuerpo y complejidad." />
+          <WineEntry nombre="Paco y Lola Prime" bodega="Paco y Lola" tipo="Albariño" precio="25" />
+          <WineEntry nombre="Val Miñor" bodega="Val Miñor" tipo="Albariño" precio="20" destacado descripcion="Nuestro Albariño de casa. Lleva el nombre de la comarca y el carácter de esta tierra." />
+          <WineEntry nombre="Mar de Frades" bodega="Mar de Frades" tipo="Albariño" precio="26" />
+          <WineEntry nombre="Pontellón" bodega="Pontellón" tipo="Albariño" precio="17" />
+          <WineEntry nombre="Altos de Torona" bodega="Altos de Torona" tipo="Albariño" precio="19.50" />
+          <WineEntry nombre="Pentecostés" bodega="Pentecostés" tipo="Albariño" precio="23" />
+        </div>
+      </div>
+
+      <!-- Rueda -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">D.O. Rueda</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Excellens Sauvignon Blanc" bodega="Marqués de Cáceres" tipo="Sauvignon Blanc" />
+          <WineEntry nombre="Jovellar Blanco" bodega="Jovellar" tipo="Verdejo" />
+        </div>
+      </div>
+
+      <!-- Rioja Blanco -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Rioja Blanco</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Nivarius Tempranillo Blanco" bodega="Nivarius" tipo="Tempranillo Blanco" />
+          <WineEntry nombre="875m Chardonnay" bodega="Coto de Hayas" tipo="Chardonnay" />
+        </div>
+      </div>
+
+      <!-- Otros blancos -->
+      <div class="mb-4 fade-in">
+        <h3 class="do-header">Otros blancos</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="El Pillo" bodega="El Pillo" tipo="Toro" />
+          <WineEntry nombre="Vimea" bodega="Vimea" tipo="Cigales" />
+          <WineEntry nombre="Habla del Silencio" bodega="Bodegas Habla" tipo="Extremadura" />
+          <WineEntry nombre="Piedra Joven Eco" bodega="Piedra Joven" tipo="Toro · Ecológico" />
+        </div>
+      </div>
+    </section>
+
+
+    <Divider label="&middot; &middot; &middot;" />
+
+
+    <!-- ============================== -->
+    <!--           ROSADOS              -->
+    <!-- ============================== -->
+    <section id="rosados" class="pt-8 sm:pt-(--spacing-section) pb-6">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Rosados</span>
+        <h2 class="mt-4">Vinos Rosados</h2>
+        <p class="text-ink-faded text-sm mt-2 font-body">3 referencias</p>
+        <Divider />
+      </div>
+
+      <div class="fade-in">
+        <div class="space-y-0">
+          <WineEntry nombre="Logos" bodega="Logos" tipo="Rías Baixas" />
+          <WineEntry nombre="Santa Digna" bodega="Miguel Torres Chile" tipo="Chile" />
+          <WineEntry nombre="Aires de Protos" bodega="Bodegas Protos" tipo="Ribera del Duero" />
+        </div>
+      </div>
+    </section>
+
+
+    <Divider label="&middot; &middot; &middot;" />
+
+
+    <!-- ============================== -->
+    <!--         ESPUMOSOS              -->
+    <!-- ============================== -->
+    <section id="espumosos" class="pt-8 sm:pt-(--spacing-section) pb-6">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Espumosos</span>
+        <h2 class="mt-4">Espumosos y Cavas</h2>
+        <p class="text-ink-faded text-sm mt-2 font-body">7 referencias</p>
+        <Divider />
+      </div>
+
+      <!-- Cavas -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Cavas</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Marqués de Cáceres Cava" bodega="Marqués de Cáceres" tipo="Cava" />
+          <WineEntry nombre="Paco y Lola Espumoso" bodega="Paco y Lola" tipo="Espumoso Albariño · Rías Baixas" destacado descripcion="Espumoso de Albariño. Burbuja gallega con toda la frescura de Rías Baixas." />
+          <WineEntry nombre="Terrer de La Creu" bodega="Terrer de La Creu" tipo="Cava" />
+          <WineEntry nombre="Xenius" bodega="Xenius" tipo="Cava" />
+        </div>
+      </div>
+
+      <!-- Spritz / Sangría -->
+      <div class="mb-4 fade-in">
+        <h3 class="do-header">Spritz y Sangría</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Lolea Spritz Floral" bodega="Lolea" tipo="Spritz" />
+          <WineEntry nombre="Lolea Spritz Citrus" bodega="Lolea" tipo="Spritz Cítrico" />
+          <WineEntry nombre="Lolea N&deg;2 Sangría Blanca" bodega="Lolea" tipo="Sangría Blanca" />
+        </div>
+      </div>
+    </section>
+
+
+    <Divider label="&middot; &middot; &middot;" />
+
+
+    <!-- ============================== -->
+    <!--        SIN ALCOHOL             -->
+    <!-- ============================== -->
+    <section id="sin-alcohol" class="pt-8 sm:pt-(--spacing-section) pb-6">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Sin Alcohol</span>
+        <h2 class="mt-4">Vinos Sin Alcohol</h2>
+        <p class="text-ink-faded text-sm mt-2 font-body">2 referencias</p>
+        <Divider />
+      </div>
+
+      <div class="fade-in">
+        <div class="space-y-0">
+          <WineEntry nombre="Win 0.0 Blanco" bodega="Bodegas Win" tipo="Blanco Sin Alcohol" />
+          <WineEntry nombre="Win 0.0 Tinto" bodega="Bodegas Win" tipo="Tinto Sin Alcohol" />
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- CTA inferior -->
+  <section class="section-wine py-10 sm:py-16 px-4 mt-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <p class="font-hand text-paper/90 text-lg sm:text-xl mb-6" style="transform: rotate(-1deg);">
+        &ldquo;Si no lo ves en la carta, pregunta. Siempre hay algo nuevo.&rdquo;
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/carta" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50">
+          &larr; Volver a la carta
+        </a>
+        <a href="tel:+34986360098" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper">
+          Llámanos &middot; 986 360 098
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

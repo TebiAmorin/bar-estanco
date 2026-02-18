@@ -1,0 +1,4 @@
+id,nombre,bodega,do,tipo,anada,precio_botella,precio_copa,disponible,destacado,descripcion
+R001,Logos,Logos,Rias Baixas,Rosado,,,si,no,Rosado gallego con frescura atlantica. Ideal para aperitivos de tarde.
+R002,Santa Digna,Miguel Torres Chile,Chile,Rosado,,,si,no,Rosado chileno de Cabernet Sauvignon. Afrutado y facil de disfrutar.
+R003,Aires de Protos,Bodegas Protos,Ribera del Duero,Rosado,,,si,no,Rosado de Tempranillo de la Ribera. Fresco y con mas cuerpo del que esperarias.

@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página no encontrada · Bar Estanco</title>
+  <meta name="description" content="La página que buscas no existe. Vuelve al inicio o consulta nuestra carta de vinos." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body class="min-h-screen flex flex-col">
+  <Header />
+
+  <main class="flex-1 flex items-center justify-center px-4 py-16">
+    <div class="max-w-lg text-center">
+
+      <!-- Sello decorativo -->
+      <div class="stamp-1938 stamp-1938-lg mx-auto mb-8 opacity-30">
+        <div>
+          <span class="stamp-1938-text">Error</span>
+          <span class="stamp-1938-year">404</span>
+        </div>
+      </div>
+
+      <!-- Título -->
+      <h1 class="text-3xl sm:text-4xl mb-4">Página no encontrada</h1>
+
+      <!-- Divider -->
+      <div class="divider-editorial mb-6">
+        <span class="divider-editorial-label">&middot; &middot; &middot;</span>
+      </div>
+
+      <!-- Texto -->
+      <p class="text-ink-faded font-body text-sm sm:text-base mb-3 mx-auto">
+        Esto es como pedir un vino que no tenemos en carta.
+        No pasa nada, siempre hay alternativa.
+      </p>
+
+      <p class="handwritten text-lg sm:text-xl mb-8">
+        &ldquo;Pregunta en barra, algo te recomendamos.&rdquo;
+      </p>
+
+      <!-- Botones -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/" class="btn-primary w-full sm:w-auto">
+          Volver al inicio
+        </a>
+        <a href="/carta" class="btn-secondary w-full sm:w-auto">
+          Ver nuestra carta
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</body>
+</html>

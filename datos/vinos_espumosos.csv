@@ -1,0 +1,8 @@
+id,nombre,bodega,do,tipo,anada,precio_botella,precio_copa,disponible,destacado,descripcion
+E001,Marques de Caceres Cava,Marques de Caceres,Cava,Espumoso Cava,,,si,no,Cava clasico. Burbuja fina y sabor limpio para celebrar o para cualquier momento.
+E002,Paco y Lola Espumoso,Paco y Lola,Rias Baixas,Espumoso Albarino,,,si,si,Espumoso de Albarino. Burbuja gallega con toda la frescura de Rias Baixas.
+E003,Terrer de La Creu Cava,Terrer de La Creu,Cava,Espumoso Cava,,,si,no,Cava con caracter mediterraneo. Buen equilibrio y paso agradable.
+E004,Xenius Cava,Xenius,Cava,Espumoso Cava,,,si,no,Cava accesible y versatil. Buena opcion para acompanar tapas y pinchos.
+E005,Lolea Spritz Floral,Lolea,Espana,Spritz Floral,,,si,no,Spritz con toque floral. Refrescante y diferente para quien busca algo ligero.
+E006,Lolea Spritz Citrus,Lolea,Espana,Spritz Citrico,,,si,no,Spritz con notas citricas. Fresco y perfecto para tardes de verano.
+E007,Lolea N2 Sangria Blanca,Lolea,Espana,Sangria Blanca,,,si,no,Sangria blanca con toque de frutas. Ligera y refrescante con un punto dulce equilibrado.

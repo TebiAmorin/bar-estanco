@@ -1,0 +1,9 @@
+id,nombre,categoria,precio,precio_media,disponible,destacado,descripcion
+TA001,Ensaladilla,Tapas,7.50,,si,no,Ensaladilla de la casa. Receta tradicional con producto fresco del dia.
+TA002,Tortilla,Tapas,12,,si,si,Tortilla espanola como manda la tradicion. Jugosa por dentro y dorada por fuera.
+TA003,Ensalada de tomate con ventresca,Tapas,14.50,,si,no,Tomate de temporada con ventresca de bonito. Sencillez que es puro sabor.
+TA004,Tabla de quesos,Tablas,16,8,si,no,Seleccion de quesos gallegos y nacionales. Media racion disponible.
+TA005,Tabla de embutidos,Tablas,18,9,si,no,Embutidos de calidad cortados al momento. Media racion disponible.
+TA006,Lacon a feira,Raciones,12,,si,si,Lacon cocido con pimenton cachena y aceite de oliva. Galicia en un plato.
+TA007,Jamon iberico de cebo,Raciones,18,,si,no,Jamon iberico de cebo cortado a mano. Para disfrutar despacio.
+TA008,Tostas de jamon iberico de cebo con tomate,Raciones,20,,si,no,Tostas con jamon iberico y tomate rallado. Combinacion que nunca falla.

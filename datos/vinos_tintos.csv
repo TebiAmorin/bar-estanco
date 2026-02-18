@@ -1,0 +1,37 @@
+id,nombre,bodega,do,tipo,anada,precio_botella,precio_copa,disponible,destacado,descripcion
+T001,Protos 27,Bodegas Protos,Ribera del Duero,Tinto Roble,,29.50,,si,si,Roble potente y elegante. Referencia clasica de Ribera del Duero con paso suave y final largo.
+T002,Protos 9,Bodegas Protos,Ribera del Duero,Tinto Roble,,20,,si,no,Nueve meses en barrica. Fruta madura con toque de vainilla y especias suaves.
+T003,Carmelo Rodero 9,Carmelo Rodero,Ribera del Duero,Tinto Roble,,23,,si,no,Nueve meses de crianza. Tempranillo puro con caracter frutal y taninos bien integrados.
+T004,Prado Rey Crianza,Real Sitio de Ventosilla,Ribera del Duero,Tinto Crianza,,20,,si,no,Crianza clasica de la Ribera. Equilibrado con notas de fruta negra y un punto de madera noble.
+T005,Capilla,Bodegas Capilla,Ribera del Duero,Tinto,,24,,si,no,Expresion pura de Tempranillo. Vino con cuerpo medio y final persistente.
+T006,Adaro,Bodegas Pradorey,Ribera del Duero,Tinto,,30,,si,no,Seleccion especial de Pradorey. Concentrado y complejo con largo paso por barrica.
+T007,Figuero Vinas Viejas,Tinto Figuero,Ribera del Duero,Tinto,,35,,si,si,De cepas con mas de 80 anos. Profundo e intenso con una elegancia que solo da la edad de la vina.
+T008,Mauro,Bodegas Mauro,Vino de la Tierra de Castilla y Leon,Tinto,,46,,si,si,Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales.
+T009,Bosque de Matasnos,Bosque de Matasnos,Ribera del Duero,Tinto,,37,,si,no,Tempranillo y Merlot en armonia. Vino moderno con raices en la tradicion ribereña.
+T010,Jovellar,Jovellar,Ribera del Duero,Tinto,,,si,no,Ribera del Duero con personalidad propia. Consultar precio en barra.
+T011,Punto Geodesico,Bodegas Recoletas,Ribera del Duero,Tinto,,,si,no,Tempranillo de vinas viejas con crianza cuidada. Consultar precio en barra.
+T012,Trus,Bodegas Trus,Ribera del Duero,Tinto,,,si,no,Ribera moderna y accesible. Fruta limpia con fondo de barrica bien medido.
+T013,Legaris Crianza,Bodegas Legaris,Ribera del Duero,Tinto Crianza,,,si,no,Crianza elegante del grupo Codorniu en Ribera. Fino y con buena estructura.
+T014,Vina Solorca Crianza,Vina Solorca,Ribera del Duero,Tinto Crianza,,,si,no,Crianza tradicional. Vino honesto con caracter castellano.
+T015,La Capilla Vendimia Seleccionada,Bodegas Capilla,Ribera del Duero,Tinto,,,,si,no,Seleccion de las mejores uvas de la bodega. Un paso mas alla que su hermano clasico.
+T016,Protos,Bodegas Protos,Ribera del Duero,Tinto,,,si,no,El Protos de siempre. Tempranillo de referencia de la Ribera del Duero.
+T017,Cruz de Alba,Cruz de Alba,Ribera del Duero,Tinto,,,si,no,Tempranillo joven con paso por barrica. Fresco y frutal con buena estructura.
+T018,Legaris Roble,Bodegas Legaris,Ribera del Duero,Tinto Roble,,,si,no,Roble accesible con fruta en primer plano y madera sutil de fondo.
+T019,Prios,Bodegas de los Rios Prieto,Ribera del Duero,Tinto,,,si,no,Ribera con vocacion frutal. Facil de beber y buen acompanante de tapas.
+T020,Cruz de Alba Crianza,Cruz de Alba,Ribera del Duero,Tinto Crianza,,,si,no,Version crianza con mas profundidad. Elegancia y persistencia en cada copa.
+T021,Alma de Autor,Alma de Autor,Ribeira Sacra,Tinto Mencia,,,si,no,Mencia de la Ribeira Sacra. Fresca y mineral con el caracter unico de las vinas en bancales.
+T022,Cepas Viejas,Cepas Viejas,Ribeira Sacra,Tinto Mencia,,,si,no,Mencia de vinas antiguas. Concentracion y frescura atlantica en cada sorbo.
+T023,Losada,Bodegas Losada,Bierzo,Tinto Mencia,,,si,no,Mencia del Bierzo. Frutal y elegante con mineral de pizarra en el fondo.
+T024,Via Romana,Via Romana,Ribeira Sacra,Tinto Mencia,,,si,no,Clasico de la Ribeira Sacra. Mencia expresiva con notas florales y buen equilibrio.
+T025,Hado,Bodegas Ramon Bilbao,Rioja,Tinto,,22,,si,no,Tempranillo joven de Ramon Bilbao. Fresco y afrutado ideal para el dia a dia.
+T026,Ramon Bilbao Ed. Limitada Tempranillo,Bodegas Ramon Bilbao,Rioja,Tinto,,24,,si,no,Edicion limitada. Tempranillo seleccionado con crianza cuidada y caracter propio.
+T027,Ramon Bilbao Ed. Limitada Garnacha,Bodegas Ramon Bilbao,Rioja,Tinto,,,si,no,Garnacha en estado puro. Fruta roja vibrante con fondo especiado y final sedoso.
+T028,Ramon Bilbao,Bodegas Ramon Bilbao,Rioja,Tinto Crianza,,,si,no,El Ramon Bilbao de toda la vida. Rioja clasico que nunca falla.
+T029,Agnus,Bodegas Valdelana,Rioja,Tinto,,,si,no,Rioja con mezcla de Tempranillo y Graciano. Vino con personalidad diferente.
+T030,Proelio,Bodegas Proelio,Rioja,Tinto,,,si,no,Rioja accesible y frutal. Buena opcion para descubrir la denominacion.
+T031,Pujanza,Bodegas Pujanza,Rioja,Tinto,,,si,si,Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda.
+T032,Urbion Cuvee,Bodegas Urbion,Rioja,Tinto,,,si,no,Cuvee especial. Mezcla de variedades con crianza equilibrada y final limpio.
+T033,Martin Zurbano,Martin Zurbano,Rioja,Tinto,,,si,no,Rioja con enfoque tradicional. Vino honesto para disfrutar sin complicaciones.
+T034,Lorca Fantasia Malbec,Bodega Lorca,Argentina,Tinto Malbec,,28,,si,no,Malbec argentino con intensidad y fruta madura. Potente pero con finura sudamericana.
+T035,Las Mulas,Miguel Torres Chile,Chile,Tinto,,,si,no,Tinto chileno de Miguel Torres. Fruta madura y facil de beber con buena relacion calidad-precio.
+T036,La Vieille Ferme,Famille Perrin,Francia,Tinto,,,si,no,Clasico del sur de Francia. Garnacha y Syrah con ese toque provenzal inconfundible.

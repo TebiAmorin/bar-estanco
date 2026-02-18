@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Divider from '../../components/ui/Divider.astro';
+---
+
+<BaseLayout
+  title="Carta"
+  description="Carta completa de Bar Estanco. Más de 70 vinos, vermuts artesanales, tapas gallegas, patés y conservas gourmet. Vinoteca en Gondomar desde 1938."
+>
+
+  <!-- Header de página -->
+  <section class="section-ink py-10 sm:py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-label border-paper/20 text-paper/50 mb-4">Libro de Bodega</span>
+      <h1 class="text-paper mt-4 mb-4">Nuestra Carta</h1>
+      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
+        Vinos con nombre y apellido, vermuts con carácter y producto gallego de verdad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Índice de secciones -->
+  <section class="py-8 sm:py-(--spacing-section) px-4">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+
+        <!-- Vinos -->
+        <a href="/carta/vinos" class="group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
+          <div class="wine-rule mb-3 sm:mb-4">
+            <span class="wine-rule-text">I</span>
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Vinos</h2>
+          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
+            Más de 70 referencias. Tintos, blancos gallegos, rosados, espumosos y sin alcohol.
+          </p>
+          <Divider />
+          <div class="flex items-center justify-between mt-3 sm:mt-4">
+            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">74 referencias</span>
+            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+              Abrir &rarr;
+            </span>
+          </div>
+        </a>
+
+        <!-- Vermuts -->
+        <a href="/carta/vermuts" class="group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
+          <div class="wine-rule mb-3 sm:mb-4">
+            <span class="wine-rule-text">II</span>
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Vermuts</h2>
+          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
+            Selección cuidada de vermuts: Martini, Padró, Petroni, Zecchini y más.
+          </p>
+          <Divider />
+          <div class="flex items-center justify-between mt-3 sm:mt-4">
+            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">8 referencias</span>
+            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+              Abrir &rarr;
+            </span>
+          </div>
+        </a>
+
+        <!-- Tapas -->
+        <a href="/carta/tapas" class="group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
+          <div class="wine-rule mb-3 sm:mb-4">
+            <span class="wine-rule-text">III</span>
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Tapas y tablas</h2>
+          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
+            Tapas gallegas, tablas de quesos y embutidos, lacón, zorza y raciones.
+          </p>
+          <Divider />
+          <div class="flex items-center justify-between mt-3 sm:mt-4">
+            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">8 referencias</span>
+            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+              Abrir &rarr;
+            </span>
+          </div>
+        </a>
+
+        <!-- Conservas -->
+        <a href="/carta/tapas#conservas" class="group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
+          <div class="wine-rule mb-3 sm:mb-4">
+            <span class="wine-rule-text">IV</span>
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Patés y conservas</h2>
+          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
+            La Curiosa, Conservas Emilia, Paco Lafuente y artesanas de las rías.
+          </p>
+          <Divider />
+          <div class="flex items-center justify-between mt-3 sm:mt-4">
+            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">18 referencias</span>
+            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+              Abrir &rarr;
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Nota del bodeguero -->
+      <div class="text-center mt-8 sm:mt-12 fade-in">
+        <p class="handwritten text-lg sm:text-xl">
+          &ldquo;Preguntar en barra. Siempre hay algo que no está en la carta.&rdquo;
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

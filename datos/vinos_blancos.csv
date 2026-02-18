@@ -1,0 +1,27 @@
+id,nombre,bodega,do,tipo,anada,precio_botella,precio_copa,disponible,destacado,descripcion
+B001,Ramon do Casar,Ramon do Casar,Ribeiro,Blanco Treixadura,,23,,si,no,Treixadura del Ribeiro. Floral y con buena acidez que invita a repetir.
+B002,Mina Neta Manuela,Mina Neta,Ribeiro,Blanco,,16.50,,si,no,Ribeiro fresco y honesto. Vino de diario con alma gallega.
+B003,Vina do Campo,Vina do Campo,Ribeiro,Blanco,,17,,si,no,Clasico del Ribeiro. Ligero y aromatico como manda la tradicion.
+B004,Antorio Montero Autor,Antorio Montero,Ribeiro,Blanco,,23,,si,no,Seleccion de autor. Ribeiro con mas cuerpo y complejidad de lo habitual.
+B005,Meu,Meu,Ribeiro,Blanco,,17,,si,no,Ribeiro joven y directo. Fruta blanca y fondo herbal muy agradable.
+B006,Alma,Alma,Valdeorras,Blanco Godello,,17,,si,no,Godello de Valdeorras. Mineral y frutal con ese caracter atlantico tan gallego.
+B007,Tambora,Tambora,Valdeorras,Blanco Godello,,19,,si,no,Godello con personalidad. Notas de fruta de hueso y fondo mineral elegante.
+B008,Vinaredo,Vinaredo,Valdeorras,Blanco Godello,,18,,si,no,Godello expresivo. Fresco en boca con un final limpio y persistente.
+B009,Luna de Berride,Luna de Berride,Valdeorras,Blanco Godello,,16.50,,si,no,Godello accesible y muy agradable. Ideal para quien se inicia en esta uva.
+B010,O Luar do Sil,Pago de los Capellanes,Valdeorras,Blanco Godello,,25,,si,si,Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes.
+B011,Eidosela,Eidosela,Rias Baixas,Blanco Albarino,,18,,si,no,Albarino clasico de Rias Baixas. Citrico y salino como pide la tradicion.
+B012,Eidosela Seleccion,Eidosela,Rias Baixas,Blanco Albarino,,26,,si,si,La seleccion especial. Albarino con mas cuerpo y complejidad. Un paso por encima.
+B013,Paco y Lola Prime,Paco y Lola,Rias Baixas,Blanco Albarino,,25,,si,no,Albarino premium. Floral y con volumen en boca manteniendo frescura atlantica.
+B014,Val Minor,Val Minor,Rias Baixas,Blanco Albarino,,20,,si,si,Nuestro Albarino de casa. Lleva el nombre de la comarca y el caracter de esta tierra.
+B015,Mar de Frades,Mar de Frades,Rias Baixas,Blanco Albarino,,26,,si,no,Icono del Albarino. Su botella azul es inconfundible y su sabor tambien.
+B016,Pontellon,Pontellon,Rias Baixas,Blanco Albarino,,17,,si,no,Albarino de entrada. Fresco y facil de beber con buen equilibrio precio-calidad.
+B017,Altos de Torona,Altos de Torona,Rias Baixas,Blanco Albarino,,19.50,,si,no,Albarino con caracter propio. Notas citricas y florales con fondo mineral.
+B018,Pentecostes,Pentecostes,Rias Baixas,Blanco Albarino,,23,,si,no,Albarino con crianza sobre lias. Mas volumen y complejidad que un Albarino joven clasico.
+B019,Excellens Sauvignon Blanc,Marques de Caceres,Rueda,Blanco Sauvignon Blanc,,,si,no,Sauvignon Blanc fresco y aromatico. Herbal con notas tropicales sutiles.
+B020,Jovellar Blanco,Jovellar,Rueda,Blanco Verdejo,,,si,no,Verdejo de Rueda. Fresco y con ese amargor caracteristico que lo hace tan gastronomico.
+B021,Nivarius Tempranillo Blanco,Nivarius,Rioja,Blanco Tempranillo Blanco,,,si,no,Tempranillo Blanco es una rareza de Rioja. Original y sorprendente para quien busca algo diferente.
+B022,875m Chardonnay,Coto de Hayas,Rioja,Blanco Chardonnay,2021,,si,no,Chardonnay con crianza. Mantecoso y con volumen pero sin perder frescura.
+B023,El Pillo,El Pillo,Toro,Blanco,,,si,no,Blanco de Toro con caracter. Diferente a lo habitual y con personalidad propia.
+B024,Vimea,Vimea,Cigales,Blanco,,,si,no,Blanco de Cigales. Zona conocida por rosados pero con blancos que sorprenden.
+B025,Habla del Silencio,Bodegas Habla,Extremadura,Blanco,,,si,no,Blanco extremeño con vocacion elegante. Demuestra que Extremadura es mucho mas que tintos.
+B026,Piedra Joven Eco,Piedra Joven,Toro,Blanco Ecologico,,,si,no,Blanco ecologico de Toro. Para quien busca vino con conciencia y sabor.

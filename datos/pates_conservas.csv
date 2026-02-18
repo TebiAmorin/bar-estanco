@@ -1,0 +1,19 @@
+id,nombre,marca,categoria,precio,disponible,destacado,descripcion
+PC001,Pate de Necora,La Curiosa,Pates,12,si,si,Pate de necora con todo el sabor del marisco gallego. Intenso y delicado a la vez.
+PC002,Pate de Pulpo a la Gallega,La Curiosa,Pates,10,si,no,Pulpo a feira en formato pate. El sabor de Galicia para untar.
+PC003,Pate de Bonito con Piquillos,La Curiosa,Pates,10,si,no,Bonito del norte con pimientos del piquillo. Combinacion clasica y sabrosa.
+PC004,Pate de Caballa Picante,La Curiosa,Pates,10,si,no,Caballa con un toque picante. Para quien le gusta el pate con caracter.
+PC005,Pate de Atun Claro con Mostaza y Miel,La Curiosa,Pates,10,si,no,Atun con el contraste dulce de la miel y el punto de la mostaza.
+PC006,Pate de Centollo y Buey de Mar,La Curiosa,Pates,12,si,si,Centollo y buey de mar. El pate mas premium de la seleccion.
+PC007,Pate de Mejillones,La Curiosa,Pates,10,si,no,Mejillones en formato pate. Sabor a mar en cada bocado.
+PC008,Sardinas en Aceite de Oliva Trufado,Conservas Artesanas,Conservas,12,si,no,Sardinas con aceite trufado. Conserva gourmet con un toque de lujo.
+PC009,Atun al Pesto,Conservas Artesanas,Conservas,12,si,no,Atun con pesto. Fusion mediterranea en lata que sorprende.
+PC010,Sardinas con Pimiento de Padron,Conservas Artesanas,Conservas,12,si,no,Sardinas con padron. Dos clasicos gallegos juntos en una conserva.
+PC011,Atun al Curry,Conservas Artesanas,Conservas,12,si,no,Atun con toque de curry. Diferente y con personalidad.
+PC012,Sardinas Ramon Franco,Ramon Franco,Conservas,10,si,no,Sardinas clasicas de conservera gallega. Producto de mar con tradicion.
+PC013,Mejillones Ramon Franco,Ramon Franco,Conservas,10,si,no,Mejillones en escabeche de conservera gallega. Sabor autentico de ria.
+PC014,Pate de Anchoa,Conservas Emilia,Pates,9,si,no,Pate de anchoa artesano. Sabor intenso y marino para untar en pan de verdad.
+PC015,Pate de Cabracho,Conservas Emilia,Pates,9,si,no,Cabracho en pate. Pescado de roca con sabor potente y textura suave.
+PC016,Mejillones Fritos Paco Lafuente,Paco Lafuente,Conservas Premium,10,si,no,Mejillones fritos crujientes. Conserva gallega de referencia.
+PC017,Sardinillas Paco Lafuente,Paco Lafuente,Conservas Premium,12,si,si,Sardinillas en aceite de oliva. Paco Lafuente es garantia de calidad.
+PC018,Zamburinas Paco Lafuente,Paco Lafuente,Conservas Premium,12,si,si,Zamburinas gallegas en conserva premium. Producto estrella de Paco Lafuente.

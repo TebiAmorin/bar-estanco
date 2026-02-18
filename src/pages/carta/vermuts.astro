@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Divider from '../../components/ui/Divider.astro';
+import WineEntry from '../../components/ui/WineEntry.astro';
+---
+
+<BaseLayout
+  title="Vermuts"
+  description="Carta de vermuts de Bar Estanco. Martini, Padró, Petroni, Yzaguirre, Povarelo y más. Vermut artesanal y Petroni de naranja con cava al estilo spritz. Vinoteca en Gondomar."
+>
+
+  <!-- Header -->
+  <section class="section-ink py-10 sm:py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-label border-paper/20 text-paper/50 mb-4">Capítulo II</span>
+      <h1 class="text-paper mt-4 mb-3">Vermuts</h1>
+      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
+        Selección cuidada para el aperitivo. Desde el clásico
+        hasta el artesanal gallego.
+      </p>
+    </div>
+  </section>
+
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <section class="py-8 sm:py-(--spacing-section)">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">La Hora del Vermut</span>
+        <h2 class="mt-4">Nuestra selección</h2>
+        <p class="text-ink-faded text-sm mt-2 font-body">8 referencias</p>
+        <Divider />
+      </div>
+
+      <!-- Vermuts clásicos -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Vermuts</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Martini" bodega="Martini" tipo="Vermut Rojo" />
+          <WineEntry nombre="Padró" bodega="Padró & Co" tipo="Vermut Artesanal" destacado descripcion="Vermut catalán con receta de 1886. Hierbas aromáticas y un amargor equilibrado." />
+          <WineEntry nombre="Yzaguirre" bodega="Yzaguirre" tipo="Vermut Clásico" />
+          <WineEntry nombre="Povarelo" bodega="Povarelo" tipo="Vermut Gallego" destacado descripcion="Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente." />
+          <WineEntry nombre="Petroni" bodega="Petroni" tipo="Vermut Premium" />
+          <WineEntry nombre="Polvorí" bodega="Polvorí" tipo="Vermut Artesanal" />
+          <WineEntry nombre="Bendito" bodega="Bendito" tipo="Vermut" />
+        </div>
+      </div>
+
+      <!-- Spritz -->
+      <div class="mb-8 fade-in">
+        <h3 class="do-header">Spritz de la casa</h3>
+        <div class="space-y-0">
+          <WineEntry nombre="Petroni de Naranja" bodega="Petroni" tipo="Con cava, al estilo spritz" destacado descripcion="Petroni de naranja servido con cava al estilo spritz. El aperitivo de la casa." />
+        </div>
+      </div>
+
+      <!-- Nota manuscrita -->
+      <div class="text-center fade-in mt-6">
+        <p class="handwritten text-lg sm:text-xl">
+          &ldquo;El vermut se toma sin prisa. Es un ritual, no una bebida.&rdquo;
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- CTA -->
+  <section class="section-wine py-10 sm:py-16 px-4 mt-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/carta" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50">
+          &larr; Volver a la carta
+        </a>
+        <a href="/carta/vinos" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50">
+          Ver vinos
+        </a>
+        <a href="/carta/tapas" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper">
+          Ver tapas &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  nombre: string;
+  bodega?: string;
+  tipo?: string;
+  precio?: string;
+  descripcion?: string;
+  destacado?: boolean;
+}
+
+const { nombre, bodega, tipo, precio, descripcion, destacado = false } = Astro.props;
+---
+
+<div class="wine-entry">
+  <div class="flex-1 min-w-0">
+    <span class:list={['wine-entry-name', destacado && '!text-wine']}>
+      {nombre}
+    </span>
+    {(bodega || tipo) && (
+      <span class="wine-entry-detail">
+        {bodega}{bodega && tipo ? ' · ' : ''}{tipo}
+      </span>
+    )}
+  </div>
+  {precio ? (
+    <span class="wine-entry-price">{precio} &euro;</span>
+  ) : (
+    <span class="price-consultar">Consultar</span>
+  )}
+</div>
+{descripcion && destacado && (
+  <p class="text-ink-faded text-xs italic mb-1 pl-0.5 font-body leading-relaxed -mt-1">{descripcion}</p>
+)}

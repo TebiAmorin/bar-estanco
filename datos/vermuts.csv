@@ -1,0 +1,9 @@
+id,nombre,marca,tipo,precio,disponible,destacado,descripcion
+V001,Martini,Martini,Vermut Rojo,,si,no,El clasico italiano que no necesita presentacion. Base de muchos aperitivos.
+V002,Padro,Padro & Co,Vermut Artesanal,,si,si,Vermut catalan con receta de 1886. Hierbas aromaticas y un amargor equilibrado.
+V003,Yzaguirre,Yzaguirre,Vermut Clasico,,si,no,Vermut espanol con mas de 130 anos de historia. Suave y aromatico.
+V004,Povarelo,Povarelo,Vermut Gallego,,si,si,Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente.
+V005,Petroni,Petroni,Vermut Premium,,si,no,Vermut artesano con botanicos seleccionados. Intenso y complejo.
+V006,Polvori,Polvori,Vermut Artesanal,,si,no,Vermut con caracter propio. Botanicos mediterraneos y un punto amargo muy agradable.
+V007,Bendito,Bendito,Vermut,,si,no,Vermut con personalidad. Para quien busca algo diferente en su aperitivo.
+V008,Petroni de Naranja,Petroni,Spritz,,si,no,Petroni de naranja servido con cava al estilo spritz. El aperitivo de la casa con caracter propio.

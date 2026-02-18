@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cedarville+Cursive&display=swap');
+@import "tailwindcss";
+
+/* ============================================
+   BAR ESTANCO — Sistema de Diseño v2.1
+   Fusión Stitch: Gaceta antigua + Libro de Bodega
+   Vinoteca histórica · Gondomar · Desde 1938
+   MOBILE-FIRST · Optimizado para carta en móvil
+   ============================================ */
+
+@theme {
+  /* Paleta */
+  --color-ink: #1a1a1a;
+  --color-ink-faded: #595455;
+  --color-paper: #f4ecd8;
+  --color-paper-dark: #e8dfc5;
+  --color-paper-white: #faf6ee;
+  --color-wine: #5e191e;
+  --color-wine-dark: #3d0e11;
+  --color-wine-light: #8B3A4A;
+  --color-pencil: #4a4a4a;
+
+  /* Tipografía */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-hand: 'Cedarville Cursive', cursive;
+
+  /* Spacing — más compacto en móvil */
+  --spacing-section: 3rem;
+  --spacing-section-sm: 2rem;
+
+  /* Transitions */
+  --transition-base: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+}
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  line-height: 1.7;
+  font-size: 1rem;
+  overflow-x: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.15'/%3E%3C/svg%3E");
+}
+
+/* --- Grain overlay global (sutil, no bloquea taps) --- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* --- Tipografía editorial --- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-ink-faded);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Mobile-first sizes, más legibles */
+h1 { font-size: clamp(1.8rem, 6vw, 3.5rem); }
+h2 { font-size: clamp(1.4rem, 4.5vw, 2.5rem); }
+h3 { font-size: clamp(1.15rem, 3vw, 1.75rem); }
+h4 { font-size: clamp(1rem, 2.5vw, 1.2rem); }
+
+p {
+  color: var(--color-ink);
+  max-width: 65ch;
+}
+
+/* --- Links — touch-friendly --- */
+a {
+  color: var(--color-wine);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-wine-dark);
+}
+
+/* --- Separador editorial (línea doble fina) --- */
+.divider-editorial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.divider-editorial::before,
+.divider-editorial::after {
+  content: '';
+  flex: 1;
+  height: 0;
+  border-top: 2px double var(--color-ink);
+  opacity: 0.12;
+}
+
+.divider-editorial-label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-wine);
+}
+
+/* --- Section label (etiqueta gaceta) --- */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-faded);
+  background-color: var(--color-paper);
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--color-ink);
+  opacity: 0.5;
+}
+
+@media (min-width: 640px) {
+  .section-label {
+    font-size: 0.6rem;
+    padding: 0.25rem 1rem;
+    letter-spacing: 0.25em;
+  }
+}
+
+/* --- Wine-rule separator --- */
+.wine-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.wine-rule::before,
+.wine-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-wine);
+  opacity: 0.4;
+}
+
+.wine-rule-text {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-wine);
+}
+
+/* --- Secciones de fondo --- */
+.section-dark {
+  background-color: var(--color-paper-dark);
+}
+
+.section-ink {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.section-ink h1,
+.section-ink h2,
+.section-ink h3,
+.section-ink h4 {
+  color: var(--color-paper);
+}
+
+.section-ink p {
+  color: var(--color-paper-dark);
+}
+
+.section-wine {
+  background-color: var(--color-wine);
+  color: var(--color-paper);
+}
+
+.section-wine h2,
+.section-wine h3 {
+  color: var(--color-paper);
+}
+
+.section-wine p {
+  color: var(--color-paper-dark);
+}
+
+/* --- Fade-in al scroll --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Botones — MOBILE-FIRST, touch-friendly (min 44px height) --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  min-height: 44px;
+  background-color: var(--color-wine);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 2px solid var(--color-wine);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-wine);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  min-height: 44px;
+  background-color: transparent;
+  color: var(--color-wine);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 2px solid var(--color-wine);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-wine);
+  color: var(--color-paper);
+}
+
+@media (min-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.85rem 2.5rem;
+  }
+}
+
+/* --- Stamp/Sello "Desde 1938" --- */
+.stamp-1938 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 3px double var(--color-wine);
+  color: var(--color-wine);
+  font-family: var(--font-display);
+  text-align: center;
+  line-height: 1.1;
+  opacity: 0.85;
+}
+
+.stamp-1938-text {
+  font-size: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: block;
+  font-weight: 700;
+}
+
+.stamp-1938-year {
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: block;
+}
+
+.stamp-1938-lg {
+  width: 6rem;
+  height: 6rem;
+}
+
+.stamp-1938-lg .stamp-1938-text {
+  font-size: 0.55rem;
+}
+
+.stamp-1938-lg .stamp-1938-year {
+  font-size: 1.6rem;
+}
+
+@media (min-width: 640px) {
+  .stamp-1938 {
+    width: 5rem;
+    height: 5rem;
+  }
+  .stamp-1938-text { font-size: 0.5rem; }
+  .stamp-1938-year { font-size: 1.4rem; }
+  .stamp-1938-lg {
+    width: 7rem;
+    height: 7rem;
+  }
+  .stamp-1938-lg .stamp-1938-text { font-size: 0.6rem; }
+  .stamp-1938-lg .stamp-1938-year { font-size: 1.8rem; }
+}
+
+/* --- Fotos estilo archivo histórico --- */
+.photo-vintage {
+  filter: sepia(0.5) contrast(1.1) brightness(0.9) grayscale(0.15);
+}
+
+.photo-frame {
+  border: 3px double var(--color-ink);
+  padding: 0.35rem;
+  background-color: var(--color-paper-white);
+}
+
+.photo-caption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.7rem;
+  color: var(--color-ink-faded);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* --- Drop-cap (letra capitular) --- */
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 3em;
+  font-weight: 900;
+  float: left;
+  margin-right: 0.4rem;
+  margin-top: 0.1rem;
+  line-height: 0.8;
+  color: var(--color-wine);
+}
+
+@media (min-width: 640px) {
+  .drop-cap::first-letter {
+    font-size: 3.5em;
+    margin-right: 0.5rem;
+  }
+}
+
+/* ============================================
+   CARTA DE VINOS — Libro de Bodega
+   Optimizado para lectura en móvil
+   ============================================ */
+
+/* --- Wine entry (línea de vino) --- */
+.wine-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px dotted rgba(26, 26, 26, 0.2);
+  gap: 0.75rem;
+}
+
+.wine-entry:last-child {
+  border-bottom: none;
+}
+
+.wine-entry-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  display: block;
+  line-height: 1.3;
+}
+
+.wine-entry-detail {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.7rem;
+  color: var(--color-ink-faded);
+  line-height: 1.4;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.wine-entry-price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-wine);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .wine-entry {
+    padding: 0.55rem 0;
+  }
+  .wine-entry-name {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* --- DO sub-header con borde izquierdo vino --- */
+.do-header {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-ink-faded);
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--color-wine);
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: rgba(94, 25, 30, 0.03);
+}
+
+.do-header:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 640px) {
+  .do-header {
+    font-size: 0.85rem;
+    padding-left: 0.75rem;
+    background-color: transparent;
+  }
+}
+
+/* --- Nota manuscrita del bodeguero --- */
+.handwritten {
+  font-family: var(--font-hand);
+  color: var(--color-wine);
+  line-height: 1.5;
+  transform: rotate(-1deg);
+  transform-origin: center center;
+}
+
+/* --- Precio --- */
+.price-consultar {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-ink-faded);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Nav sticky para carta en móvil --- */
+.carta-nav-sticky {
+  position: sticky;
+  top: 56px; /* debajo del header mobile h-14 */
+  z-index: 40;
+  background-color: var(--color-paper);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carta-nav-sticky::-webkit-scrollbar {
+  display: none;
+}
+
+.carta-nav-link {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0.4rem 0.65rem;
+  min-height: 40px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-faded);
+  transition: color 200ms ease;
+}
+
+.carta-nav-link:hover,
+.carta-nav-link:active {
+  color: var(--color-wine);
+}
+
+@media (min-width: 1024px) {
+  .carta-nav-sticky {
+    top: 64px; /* debajo del header desktop lg:h-16 */
+  }
+}
+
+/* Scroll offset para anchors debajo de sticky header + nav */
+:target {
+  scroll-margin-top: 110px;
+}
+
+@media (min-width: 1024px) {
+  :target {
+    scroll-margin-top: 120px;
+  }
+}
+
+/* --- Borde doble editorial --- */
+.border-editorial {
+  border: 2px double rgba(26, 26, 26, 0.2);
+}
+
+/* --- Selection color --- */
+::selection {
+  background-color: var(--color-wine);
+  color: var(--color-paper);
+}
+
+/* --- Scrollbar (desktop) --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-wine-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-wine);
+}
+
+/* --- Responsive spacing --- */
+@media (min-width: 640px) {
+  :root {
+    --spacing-section: 5rem;
+  }
+  .divider-editorial {
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+}

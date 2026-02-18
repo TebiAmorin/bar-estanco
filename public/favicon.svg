@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fondo papel -->
+  <circle cx="32" cy="32" r="32" fill="#f4ecd8"/>
+  <!-- Sello circular doble borde -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#5e191e" stroke-width="2"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#5e191e" stroke-width="1"/>
+  <!-- Texto DESDE -->
+  <text x="32" y="22" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="6" font-weight="700" letter-spacing="2" fill="#5e191e" text-transform="uppercase">DESDE</text>
+  <!-- Texto 1938 -->
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="900" fill="#5e191e">1938</text>
+  <!-- Detalle inferior -->
+  <line x1="22" y1="42" x2="42" y2="42" stroke="#5e191e" stroke-width="0.5" opacity="0.5"/>
+</svg>

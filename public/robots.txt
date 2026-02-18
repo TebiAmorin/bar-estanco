@@ -1,0 +1,11 @@
+# Bar Estanco - Vinoteca en Gondomar desde 1938
+# https://barestanco.es
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://barestanco.es/sitemap-index.xml
+
+# Bloquear carpetas de sistema
+Disallow: /_astro/
