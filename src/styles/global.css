@@ -567,6 +567,59 @@ a:hover {
   background: var(--color-wine);
 }
 
+/* --- Prose Legal (páginas legales) --- */
+.prose-legal {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.prose-legal h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+}
+.prose-legal h2:first-child {
+  margin-top: 0;
+}
+.prose-legal p {
+  margin-bottom: 0.75rem;
+}
+.prose-legal ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+.prose-legal ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+.prose-legal ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-wine);
+  font-weight: 700;
+  font-size: 1.2em;
+}
+.prose-legal a {
+  color: var(--color-wine);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-legal a:hover {
+  color: var(--color-wine-dark);
+}
+.prose-legal strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
 /* --- Responsive spacing --- */
 @media (min-width: 640px) {
   :root {
@@ -575,5 +628,8 @@ a:hover {
   .divider-editorial {
     gap: 1.5rem;
     margin: 2rem 0;
+  }
+  .prose-legal {
+    font-size: 0.95rem;
   }
 }
