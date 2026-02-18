@@ -20,8 +20,9 @@ const {
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://barestanco.es${ogImage}`;
 
 const siteName = 'Bar Estanco';
-const fullTitle = title === 'Inicio'
-  ? 'Bar Estanco · Vinoteca en Gondomar desde 1938'
+const isHome = title.includes('Vinoteca y Tapería');
+const fullTitle = isHome
+  ? 'Bar Estanco · Vinoteca y Tapería en Gondomar desde 1938'
   : `${title} · ${siteName}`;
 
 // Schema.org LocalBusiness
@@ -29,7 +30,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": ["BarOrPub", "WineBar"],
   "name": "Bar Estanco",
-  "description": "Vinoteca histórica en Gondomar desde 1938. Más de 70 referencias de vino, vermuts, tapas gallegas y conservas premium. Tres generaciones de la misma familia.",
+  "description": "Vinoteca y tapería en Gondomar desde 1938. Más de 70 referencias de vino, vermuts, tapas gallegas y conservas premium. Tres generaciones de la misma familia. Bar Estanco.",
   "foundingDate": "1938",
   "url": "https://barestanco.es",
   "telephone": "+34986360098",
@@ -60,7 +61,8 @@ const schemaData = {
     "@type": "Menu",
     "url": "https://barestanco.es/carta"
   },
-  "servesCuisine": ["Tapas gallegas", "Vinos", "Vermuts", "Conservas gourmet"],
+  "servesCuisine": ["Tapas gallegas", "Vinos", "Vermuts", "Conservas gourmet", "Tapería"],
+  "keywords": "bar estanco, vinoteca gondomar, tapería gondomar, vino gondomar, tapas gondomar, bar gondomar, vermut gondomar",
   "priceRange": "€€",
   "image": "https://barestanco.es/images/og-bar-estanco.svg",
   "sameAs": []
