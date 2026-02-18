@@ -10,6 +10,29 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
   description="Bar Estanco, vinoteca y tapería en Gondomar desde 1938. Más de 70 vinos, vermuts artesanales, tapas gallegas y conservas gourmet. El bar más antiguo de Gondomar, tres generaciones."
 >
 
+  <!-- ============ SPLASH SCREEN (solo primera visita) ============ -->
+  <div class="splash-overlay" id="splash" aria-hidden="true">
+    <div class="splash-stamp">
+      <div>
+        <span class="splash-stamp-text">Desde</span>
+        <span class="splash-stamp-year">1938</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Solo mostrar splash en la primera visita de la sesión
+    (function() {
+      const splash = document.getElementById('splash');
+      if (!splash) return;
+      if (sessionStorage.getItem('splash-seen')) {
+        splash.remove();
+      } else {
+        sessionStorage.setItem('splash-seen', '1');
+      }
+    })();
+  </script>
+
   <!-- ============ HERO ============ -->
   <section class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden section-ink">
     <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
@@ -289,8 +312,57 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
   </section>
 
 
-  <!-- ============ CTA FINAL ============ -->
+  <!-- ============ HORARIO ============ -->
   <section class="py-8 sm:py-(--spacing-section) px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Horario</span>
+        <h2 class="mt-4">Cuándo visitarnos</h2>
+        <Divider />
+      </div>
+
+      <div class="fade-in max-w-md mx-auto">
+        <div class="border-2 border-double border-ink/10 p-5 sm:p-8">
+          <table class="w-full text-sm font-body" role="table" aria-label="Horario del bar">
+            <tbody>
+              <tr class="border-b border-ink/8">
+                <td class="py-2.5 font-display font-semibold text-ink text-sm">Lunes</td>
+                <td class="py-2.5 text-right text-ink-faded">18:00 – 23:30</td>
+              </tr>
+              <tr class="border-b border-ink/8">
+                <td class="py-2.5 font-display font-semibold text-ink text-sm">Martes – Viernes</td>
+                <td class="py-2.5 text-right text-ink-faded">
+                  9:30 – 14:30<br/>
+                  18:00 – 23:30
+                </td>
+              </tr>
+              <tr class="border-b border-ink/8">
+                <td class="py-2.5 font-display font-semibold text-ink text-sm">Sábado</td>
+                <td class="py-2.5 text-right text-ink-faded">
+                  9:00 – 15:30<br/>
+                  18:00 – 23:30
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-display font-semibold text-ink text-sm">Domingo</td>
+                <td class="py-2.5 text-right text-ink-faded">10:00 – 15:30</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="mt-4 pt-4 border-t border-ink/8 text-center">
+            <p class="text-[0.7rem] text-ink-faded font-body italic">
+              * Horario orientativo, puede variar según temporada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="mb-3">Pásate cuando quieras</h2>
       <p class="text-ink-faded mb-6 max-w-lg mx-auto font-body text-sm sm:text-base">

@@ -13,7 +13,7 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-ink/8" id="site-header">
+<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-ink/8" id="site-header" transition:persist role="banner">
   <nav class="max-w-6xl mx-auto px-4">
     <div class="flex items-center justify-between h-14 lg:h-16">
 
@@ -126,15 +126,26 @@ function isActive(href: string): boolean {
   const menuIcon = menuBtn?.querySelector('.menu-icon');
   const closeIcon = menuBtn?.querySelector('.close-icon');
 
-  window.addEventListener('scroll', () => {
-    header?.classList.toggle('shadow-sm', window.scrollY > 10);
-  });
+  function initHeader() {
+    const h = document.getElementById('site-header');
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const mIcon = btn?.querySelector('.menu-icon');
+    const cIcon = btn?.querySelector('.close-icon');
 
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = mobileMenu?.classList.contains('hidden');
-    mobileMenu?.classList.toggle('hidden');
-    menuIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
-    menuBtn?.setAttribute('aria-expanded', String(isOpen));
-  });
+    window.addEventListener('scroll', () => {
+      h?.classList.toggle('shadow-sm', window.scrollY > 10);
+    });
+
+    btn?.addEventListener('click', () => {
+      const isOpen = menu?.classList.contains('hidden');
+      menu?.classList.toggle('hidden');
+      mIcon?.classList.toggle('hidden');
+      cIcon?.classList.toggle('hidden');
+      btn?.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
+  initHeader();
+  document.addEventListener('astro:after-swap', initHeader);
 </script>
