@@ -227,66 +227,34 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
   </section>
 
 
-  <!-- ============ PREMIOS Y PRUEBA SOCIAL ============ -->
+  <!-- ============ PRUEBA SOCIAL ============ -->
   <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Testimonios</span>
+        <h2 class="mt-4">Lo que dicen nuestros clientes</h2>
+        <Divider />
+      </div>
 
-        <div class="fade-in">
-          <span class="section-label mb-4">Reconocimientos</span>
-          <h2 class="mt-4 mb-5">Premios</h2>
-          <div class="space-y-4">
-            <div class="flex items-start gap-3 p-4 border-l-3 border-wine bg-paper-white/40">
-              <div>
-                <h4 class="font-display text-sm sm:text-base text-ink font-semibold">Mejor empanada de Gondomar</h4>
-                <p class="text-xs sm:text-sm text-ink-faded mt-1 font-body">
-                  Ganadores en la V Festa da Empanada de Gondomar (2017).
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 border-l-3 border-wine bg-paper-white/40">
-              <div>
-                <h4 class="font-display text-sm sm:text-base text-ink font-semibold">Concurso de tapas local</h4>
-                <p class="text-xs sm:text-sm text-ink-faded mt-1 font-body">
-                  Premio en concurso de tapas de Gondomar.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 border-l-3 border-wine/50 bg-paper-white/40">
-              <div>
-                <h4 class="font-display text-sm sm:text-base text-ink font-semibold">4.6 en Google</h4>
-                <p class="text-xs sm:text-sm text-ink-faded mt-1 font-body">
-                  97 opiniones de clientes reales. Copa a copa.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-in">
-          <span class="section-label mb-4">Testimonios</span>
-          <h2 class="mt-4 mb-5">Lo que dicen</h2>
-          <div class="space-y-4">
-            <ReviewCard
-              author="ro ro"
-              text="En pleno centro de Gondomar, siempre tiene ambiente. Las tapas son buenísimas y la atención de modo familiar y cercano. Tiene una buena selección de vinos, incluso franceses y argentinos. Todo perfecto."
-              rating={5}
-              badge="Local Guide · Google"
-            />
-            <ReviewCard
-              author="Ana Huarte Crujeiras"
-              text="Fantástico!!! Trato, servicio y tapas de primera."
-              rating={5}
-              badge="Google"
-            />
-            <ReviewCard
-              author="Neru Oca"
-              text="Me encantó y el servicio es un 10."
-              rating={5}
-              badge="Local Guide · Google"
-            />
-          </div>
-        </div>
+      <div class="space-y-4 fade-in">
+        <ReviewCard
+          author="ro ro"
+          text="En pleno centro de Gondomar, siempre tiene ambiente. Las tapas son buenísimas y la atención de modo familiar y cercano. Tiene una buena selección de vinos, incluso franceses y argentinos. Todo perfecto."
+          rating={5}
+          badge="Local Guide · Google"
+        />
+        <ReviewCard
+          author="Ana Huarte Crujeiras"
+          text="Fantástico!!! Trato, servicio y tapas de primera."
+          rating={5}
+          badge="Google"
+        />
+        <ReviewCard
+          author="Neru Oca"
+          text="Me encantó y el servicio es un 10."
+          rating={5}
+          badge="Local Guide · Google"
+        />
       </div>
     </div>
   </section>
