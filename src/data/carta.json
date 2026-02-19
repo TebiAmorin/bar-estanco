@@ -1,0 +1,253 @@
+{
+  "vinos": {
+    "tintos": [
+      {
+        "do": "Ribera del Duero",
+        "items": [
+          { "nombre": "Protos 27", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "29.50", "destacado": true, "descripcion": "Roble potente y elegante. Referencia clásica de Ribera del Duero con paso suave y final largo." },
+          { "nombre": "Protos 9", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "20" },
+          { "nombre": "Carmelo Rodero 9", "bodega": "Carmelo Rodero", "tipo": "Roble", "precio": "23" },
+          { "nombre": "Prado Rey Crianza", "bodega": "Real Sitio de Ventosilla", "tipo": "Crianza", "precio": "20" },
+          { "nombre": "Capilla", "bodega": "Bodegas Capilla", "precio": "24" },
+          { "nombre": "Adaro", "bodega": "Bodegas Pradorey", "precio": "30" },
+          { "nombre": "Figuero Viñas Viejas", "bodega": "Tinto Figuero", "precio": "35", "destacado": true, "descripcion": "De cepas con más de 80 años. Profundo e intenso con una elegancia que solo da la edad de la viña." },
+          { "nombre": "Bosque de Matasnos", "bodega": "Bosque de Matasnos", "precio": "37" },
+          { "nombre": "Jovellar", "bodega": "Jovellar" },
+          { "nombre": "Punto Geodésico", "bodega": "Bodegas Recoletas" },
+          { "nombre": "Trus", "bodega": "Bodegas Trus" },
+          { "nombre": "Legaris Crianza", "bodega": "Bodegas Legaris", "tipo": "Crianza" },
+          { "nombre": "Legaris Roble", "bodega": "Bodegas Legaris", "tipo": "Roble" },
+          { "nombre": "Viña Solorca Crianza", "bodega": "Viña Solorca", "tipo": "Crianza" },
+          { "nombre": "La Capilla Vendimia Seleccionada", "bodega": "Bodegas Capilla" },
+          { "nombre": "Protos", "bodega": "Bodegas Protos" },
+          { "nombre": "Cruz de Alba", "bodega": "Cruz de Alba" },
+          { "nombre": "Cruz de Alba Crianza", "bodega": "Cruz de Alba", "tipo": "Crianza" },
+          { "nombre": "Prios", "bodega": "Bodegas de los Ríos Prieto" }
+        ]
+      },
+      {
+        "do": "V.T. Castilla y León",
+        "items": [
+          { "nombre": "Mauro", "bodega": "Bodegas Mauro", "precio": "46", "destacado": true, "descripcion": "Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales." }
+        ]
+      },
+      {
+        "do": "Ribeira Sacra & Bierzo",
+        "items": [
+          { "nombre": "Alma de Autor", "bodega": "Alma de Autor", "tipo": "Mencía · Ribeira Sacra" },
+          { "nombre": "Cepas Viejas", "bodega": "Cepas Viejas", "tipo": "Mencía · Ribeira Sacra" },
+          { "nombre": "Losada", "bodega": "Bodegas Losada", "tipo": "Mencía · Bierzo" },
+          { "nombre": "Vía Romana", "bodega": "Vía Romana", "tipo": "Mencía · Ribeira Sacra" }
+        ]
+      },
+      {
+        "do": "Rioja",
+        "items": [
+          { "nombre": "Hado", "bodega": "Ramón Bilbao", "precio": "22" },
+          { "nombre": "Ramón Bilbao Ed. Limitada Tempranillo", "bodega": "Ramón Bilbao", "precio": "24" },
+          { "nombre": "Ramón Bilbao Ed. Limitada Garnacha", "bodega": "Ramón Bilbao" },
+          { "nombre": "Ramón Bilbao Crianza", "bodega": "Ramón Bilbao", "tipo": "Crianza" },
+          { "nombre": "Agnus", "bodega": "Bodegas Valdelana" },
+          { "nombre": "Proelio", "bodega": "Bodegas Proelio" },
+          { "nombre": "Pujanza", "bodega": "Bodegas Pujanza", "destacado": true, "descripcion": "Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda." },
+          { "nombre": "Urbión Cuvée", "bodega": "Bodegas Urbión" },
+          { "nombre": "Martín Zurbano", "bodega": "Martín Zurbano" }
+        ]
+      },
+      {
+        "do": "Internacional",
+        "items": [
+          { "nombre": "Lorca Fantasía Malbec", "bodega": "Bodega Lorca", "tipo": "Malbec · Argentina", "precio": "28" },
+          { "nombre": "Las Mulas", "bodega": "Miguel Torres Chile", "tipo": "Chile" },
+          { "nombre": "La Vieille Ferme", "bodega": "Famille Perrin", "tipo": "Francia" }
+        ]
+      }
+    ],
+    "blancos": [
+      {
+        "do": "D.O. Ribeiro",
+        "items": [
+          { "nombre": "Ramón do Casar", "bodega": "Ramón do Casar", "tipo": "Treixadura", "precio": "23" },
+          { "nombre": "Mina Neta Manuela", "bodega": "Mina Neta", "precio": "16.50" },
+          { "nombre": "Viña do Campo", "bodega": "Viña do Campo", "precio": "17" },
+          { "nombre": "Antorio Montero Autor", "bodega": "Antorio Montero", "precio": "23" },
+          { "nombre": "Meu", "bodega": "Meu", "precio": "17" }
+        ]
+      },
+      {
+        "do": "D.O. Valdeorras",
+        "items": [
+          { "nombre": "Alma", "bodega": "Alma", "tipo": "Godello", "precio": "17" },
+          { "nombre": "Tambora", "bodega": "Tambora", "tipo": "Godello", "precio": "19" },
+          { "nombre": "Viñaredo", "bodega": "Viñaredo", "tipo": "Godello", "precio": "18" },
+          { "nombre": "Luna de Berride", "bodega": "Luna de Berride", "tipo": "Godello", "precio": "16.50" },
+          { "nombre": "O Luar do Sil", "bodega": "Pago de los Capellanes", "tipo": "Godello", "precio": "25", "destacado": true, "descripcion": "Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes." }
+        ]
+      },
+      {
+        "do": "D.O. Rías Baixas",
+        "items": [
+          { "nombre": "Eidosela", "bodega": "Eidosela", "tipo": "Albariño", "precio": "18" },
+          { "nombre": "Eidosela Selección", "bodega": "Eidosela", "tipo": "Albariño", "precio": "26", "destacado": true, "descripcion": "La selección especial. Albariño con más cuerpo y complejidad." },
+          { "nombre": "Paco y Lola Prime", "bodega": "Paco y Lola", "tipo": "Albariño", "precio": "25" },
+          { "nombre": "Val Miñor", "bodega": "Val Miñor", "tipo": "Albariño", "precio": "20", "destacado": true, "descripcion": "Nuestro Albariño de casa. Lleva el nombre de la comarca y el carácter de esta tierra." },
+          { "nombre": "Mar de Frades", "bodega": "Mar de Frades", "tipo": "Albariño", "precio": "26" },
+          { "nombre": "Pontellón", "bodega": "Pontellón", "tipo": "Albariño", "precio": "17" },
+          { "nombre": "Altos de Torona", "bodega": "Altos de Torona", "tipo": "Albariño", "precio": "19.50" },
+          { "nombre": "Pentecostés", "bodega": "Pentecostés", "tipo": "Albariño", "precio": "23" }
+        ]
+      },
+      {
+        "do": "D.O. Rueda",
+        "items": [
+          { "nombre": "Excellens Sauvignon Blanc", "bodega": "Marqués de Cáceres", "tipo": "Sauvignon Blanc" },
+          { "nombre": "Jovellar Blanco", "bodega": "Jovellar", "tipo": "Verdejo" }
+        ]
+      },
+      {
+        "do": "Rioja Blanco",
+        "items": [
+          { "nombre": "Nivarius Tempranillo Blanco", "bodega": "Nivarius", "tipo": "Tempranillo Blanco" },
+          { "nombre": "875m Chardonnay", "bodega": "Coto de Hayas", "tipo": "Chardonnay" }
+        ]
+      },
+      {
+        "do": "Otros blancos",
+        "items": [
+          { "nombre": "El Pillo", "bodega": "El Pillo", "tipo": "Toro" },
+          { "nombre": "Vimea", "bodega": "Vimea", "tipo": "Cigales" },
+          { "nombre": "Habla del Silencio", "bodega": "Bodegas Habla", "tipo": "Extremadura" },
+          { "nombre": "Piedra Joven Eco", "bodega": "Piedra Joven", "tipo": "Toro · Ecológico" }
+        ]
+      }
+    ],
+    "rosados": [
+      {
+        "do": "Rosados",
+        "items": [
+          { "nombre": "Logos", "bodega": "Logos", "tipo": "Rías Baixas" },
+          { "nombre": "Santa Digna", "bodega": "Miguel Torres Chile", "tipo": "Chile" },
+          { "nombre": "Aires de Protos", "bodega": "Bodegas Protos", "tipo": "Ribera del Duero" }
+        ]
+      }
+    ],
+    "espumosos": [
+      {
+        "do": "Cavas",
+        "items": [
+          { "nombre": "Marqués de Cáceres Cava", "bodega": "Marqués de Cáceres", "tipo": "Cava" },
+          { "nombre": "Paco y Lola Espumoso", "bodega": "Paco y Lola", "tipo": "Espumoso Albariño · Rías Baixas", "destacado": true, "descripcion": "Espumoso de Albariño. Burbuja gallega con toda la frescura de Rías Baixas." },
+          { "nombre": "Terrer de La Creu", "bodega": "Terrer de La Creu", "tipo": "Cava" },
+          { "nombre": "Xenius", "bodega": "Xenius", "tipo": "Cava" }
+        ]
+      },
+      {
+        "do": "Spritz y Sangría",
+        "items": [
+          { "nombre": "Lolea Spritz Floral", "bodega": "Lolea", "tipo": "Spritz" },
+          { "nombre": "Lolea Spritz Citrus", "bodega": "Lolea", "tipo": "Spritz Cítrico" },
+          { "nombre": "Lolea N°2 Sangría Blanca", "bodega": "Lolea", "tipo": "Sangría Blanca" }
+        ]
+      }
+    ],
+    "sinAlcohol": [
+      {
+        "do": "Sin Alcohol",
+        "items": [
+          { "nombre": "Win 0.0 Blanco", "bodega": "Bodegas Win", "tipo": "Blanco Sin Alcohol" },
+          { "nombre": "Win 0.0 Tinto", "bodega": "Bodegas Win", "tipo": "Tinto Sin Alcohol" }
+        ]
+      }
+    ]
+  },
+  "vermuts": [
+    {
+      "do": "Vermuts",
+      "items": [
+        { "nombre": "Martini", "bodega": "Martini", "tipo": "Vermut Rojo" },
+        { "nombre": "Padró", "bodega": "Padró & Co", "tipo": "Vermut Artesanal", "destacado": true, "descripcion": "Vermut catalán con receta de 1886. Hierbas aromáticas y un amargor equilibrado." },
+        { "nombre": "Yzaguirre", "bodega": "Yzaguirre", "tipo": "Vermut Clásico" },
+        { "nombre": "Povarelo", "bodega": "Povarelo", "tipo": "Vermut Gallego", "destacado": true, "descripcion": "Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente." },
+        { "nombre": "Petroni", "bodega": "Petroni", "tipo": "Vermut Premium" },
+        { "nombre": "Polvorí", "bodega": "Polvorí", "tipo": "Vermut Artesanal" },
+        { "nombre": "Bendito", "bodega": "Bendito", "tipo": "Vermut" }
+      ]
+    },
+    {
+      "do": "Spritz de la casa",
+      "items": [
+        { "nombre": "Petroni de Naranja", "bodega": "Petroni", "tipo": "Con cava, al estilo spritz", "destacado": true, "descripcion": "Petroni de naranja servido con cava al estilo spritz. El aperitivo de la casa." }
+      ]
+    }
+  ],
+  "tapas": [
+    {
+      "do": "Tapas",
+      "items": [
+        { "nombre": "Ensaladilla", "tipo": "Receta de la casa", "precio": "7.50" },
+        { "nombre": "Tortilla", "tipo": "Española, jugosa por dentro", "precio": "12", "destacado": true, "descripcion": "Tortilla española como manda la tradición. Jugosa por dentro y dorada por fuera." },
+        { "nombre": "Ensalada de tomate con ventresca", "tipo": "Tomate de temporada", "precio": "14.50" }
+      ]
+    },
+    {
+      "do": "Tablas",
+      "items": [
+        { "nombre": "Tabla de quesos", "tipo": "Gallegos y nacionales", "precio": "16", "precioMedia": "8" },
+        { "nombre": "Tabla de embutidos", "tipo": "Cortados al momento", "precio": "18", "precioMedia": "9" }
+      ]
+    },
+    {
+      "do": "Raciones",
+      "items": [
+        { "nombre": "Lacón á feira", "tipo": "Con pimentón y aceite de oliva", "precio": "12", "destacado": true, "descripcion": "Lacón cocido con pimentón cachena y aceite de oliva. Galicia en un plato." },
+        { "nombre": "Jamón ibérico de cebo", "tipo": "Cortado a mano", "precio": "18" },
+        { "nombre": "Tostas de jamón ibérico con tomate", "tipo": "Ibérico de cebo + tomate rallado", "precio": "20" }
+      ]
+    }
+  ],
+  "conservas": [
+    {
+      "do": "Patés La Curiosa",
+      "items": [
+        { "nombre": "Paté de Nécora", "bodega": "La Curiosa", "precio": "12", "destacado": true, "descripcion": "Paté de nécora con todo el sabor del marisco gallego." },
+        { "nombre": "Paté de Pulpo a la Gallega", "bodega": "La Curiosa", "precio": "10" },
+        { "nombre": "Paté de Bonito con Piquillos", "bodega": "La Curiosa", "precio": "10" },
+        { "nombre": "Paté de Caballa Picante", "bodega": "La Curiosa", "precio": "10" },
+        { "nombre": "Paté de Atún Claro con Mostaza y Miel", "bodega": "La Curiosa", "precio": "10" },
+        { "nombre": "Paté de Centollo y Buey de Mar", "bodega": "La Curiosa", "precio": "12", "destacado": true, "descripcion": "Centollo y buey de mar. El paté más premium de la selección." },
+        { "nombre": "Paté de Mejillones", "bodega": "La Curiosa", "precio": "10" }
+      ]
+    },
+    {
+      "do": "Patés Conservas Emilia",
+      "items": [
+        { "nombre": "Paté de Anchoa", "bodega": "Conservas Emilia", "precio": "9" },
+        { "nombre": "Paté de Cabracho", "bodega": "Conservas Emilia", "precio": "9" }
+      ]
+    },
+    {
+      "do": "Conservas Artesanas",
+      "items": [
+        { "nombre": "Sardinas en Aceite de Oliva Trufado", "tipo": "Con aceite trufado", "precio": "12" },
+        { "nombre": "Atún al Pesto", "tipo": "Fusión mediterránea", "precio": "12" },
+        { "nombre": "Sardinas con Pimiento de Padrón", "tipo": "Dos clásicos gallegos", "precio": "12" },
+        { "nombre": "Atún al Curry", "tipo": "Con toque de curry", "precio": "12" }
+      ]
+    },
+    {
+      "do": "Conservas Ramón Franco",
+      "items": [
+        { "nombre": "Sardinas", "bodega": "Ramón Franco", "precio": "10" },
+        { "nombre": "Mejillones en escabeche", "bodega": "Ramón Franco", "precio": "10" }
+      ]
+    },
+    {
+      "do": "Paco Lafuente · Premium",
+      "items": [
+        { "nombre": "Mejillones Fritos", "bodega": "Paco Lafuente", "precio": "10" },
+        { "nombre": "Sardinillas", "bodega": "Paco Lafuente", "precio": "12", "destacado": true, "descripcion": "Sardinillas en aceite de oliva. Paco Lafuente es garantía de calidad." },
+        { "nombre": "Zamburiñas", "bodega": "Paco Lafuente", "precio": "12", "destacado": true, "descripcion": "Zamburiñas gallegas en conserva premium." }
+      ]
+    }
+  ]
+}

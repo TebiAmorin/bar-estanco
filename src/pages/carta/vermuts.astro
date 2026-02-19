@@ -2,6 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Divider from '../../components/ui/Divider.astro';
 import WineEntry from '../../components/ui/WineEntry.astro';
+import carta from '../../data/carta.json';
+
+const vermuts = carta.vermuts;
+const totalVermuts = vermuts.reduce((sum, g) => sum + g.items.length, 0);
 ---
 
 <BaseLayout
@@ -28,31 +32,27 @@ import WineEntry from '../../components/ui/WineEntry.astro';
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">La Hora del Vermut</span>
         <h2 class="mt-4">Nuestra selección</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">8 referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">{totalVermuts} referencias</p>
         <Divider />
       </div>
 
-      <!-- Vermuts clásicos -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Vermuts</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Martini" bodega="Martini" tipo="Vermut Rojo" />
-          <WineEntry nombre="Padró" bodega="Padró & Co" tipo="Vermut Artesanal" destacado descripcion="Vermut catalán con receta de 1886. Hierbas aromáticas y un amargor equilibrado." />
-          <WineEntry nombre="Yzaguirre" bodega="Yzaguirre" tipo="Vermut Clásico" />
-          <WineEntry nombre="Povarelo" bodega="Povarelo" tipo="Vermut Gallego" destacado descripcion="Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente." />
-          <WineEntry nombre="Petroni" bodega="Petroni" tipo="Vermut Premium" />
-          <WineEntry nombre="Polvorí" bodega="Polvorí" tipo="Vermut Artesanal" />
-          <WineEntry nombre="Bendito" bodega="Bendito" tipo="Vermut" />
+      {vermuts.map((grupo, i) => (
+        <div class:list={['fade-in', i < vermuts.length - 1 ? 'mb-8' : 'mb-8']}>
+          <h3 class="do-header">{grupo.do}</h3>
+          <div class="space-y-0">
+            {grupo.items.map((v) => (
+              <WineEntry
+                nombre={v.nombre}
+                bodega={v.bodega}
+                tipo={v.tipo}
+                precio={v.precio}
+                destacado={v.destacado}
+                descripcion={v.descripcion}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-
-      <!-- Spritz -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Spritz de la casa</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Petroni de Naranja" bodega="Petroni" tipo="Con cava, al estilo spritz" destacado descripcion="Petroni de naranja servido con cava al estilo spritz. El aperitivo de la casa." />
-        </div>
-      </div>
+      ))}
 
       <!-- Nota manuscrita -->
       <div class="text-center fade-in mt-6">

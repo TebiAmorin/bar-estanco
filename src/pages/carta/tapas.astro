@@ -2,6 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Divider from '../../components/ui/Divider.astro';
 import WineEntry from '../../components/ui/WineEntry.astro';
+import carta from '../../data/carta.json';
+
+const tapas = carta.tapas;
+const conservas = carta.conservas;
+const totalTapas = tapas.reduce((sum, g) => sum + g.items.length, 0);
+const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
 ---
 
 <BaseLayout
@@ -39,56 +45,40 @@ import WineEntry from '../../components/ui/WineEntry.astro';
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Tapas</span>
         <h2 class="mt-4">Tapas, Tablas y Raciones</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">8 referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">{totalTapas} referencias</p>
         <Divider />
       </div>
 
-      <!-- Tapas -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Tapas</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Ensaladilla" tipo="Receta de la casa" precio="7.50" />
-          <WineEntry nombre="Tortilla" tipo="Española, jugosa por dentro" precio="12" destacado descripcion="Tortilla española como manda la tradición. Jugosa por dentro y dorada por fuera." />
-          <WineEntry nombre="Ensalada de tomate con ventresca" tipo="Tomate de temporada" precio="14.50" />
-        </div>
-      </div>
-
-      <!-- Tablas -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Tablas</h3>
-        <div class="space-y-0">
-          <div class="wine-entry">
-            <div class="flex-1 min-w-0">
-              <span class="wine-entry-name">Tabla de quesos</span>
-              <span class="wine-entry-detail">Gallegos y nacionales</span>
-            </div>
-            <div class="text-right">
-              <span class="wine-entry-price">16 &euro;</span>
-              <span class="block text-[0.65rem] text-ink-faded">media 8 &euro;</span>
-            </div>
-          </div>
-          <div class="wine-entry">
-            <div class="flex-1 min-w-0">
-              <span class="wine-entry-name">Tabla de embutidos</span>
-              <span class="wine-entry-detail">Cortados al momento</span>
-            </div>
-            <div class="text-right">
-              <span class="wine-entry-price">18 &euro;</span>
-              <span class="block text-[0.65rem] text-ink-faded">media 9 &euro;</span>
-            </div>
+      {tapas.map((grupo, i) => (
+        <div class:list={['fade-in', i < tapas.length - 1 ? 'mb-8' : 'mb-4']}>
+          <h3 class="do-header">{grupo.do}</h3>
+          <div class="space-y-0">
+            {grupo.items.map((v) => (
+              v.precioMedia ? (
+                <div class="wine-entry">
+                  <div class="flex-1 min-w-0">
+                    <span class="wine-entry-name">{v.nombre}</span>
+                    {v.tipo && <span class="wine-entry-detail">{v.tipo}</span>}
+                  </div>
+                  <div class="text-right">
+                    <span class="wine-entry-price">{v.precio} &euro;</span>
+                    <span class="block text-[0.65rem] text-ink-faded">media {v.precioMedia} &euro;</span>
+                  </div>
+                </div>
+              ) : (
+                <WineEntry
+                  nombre={v.nombre}
+                  bodega={v.bodega}
+                  tipo={v.tipo}
+                  precio={v.precio}
+                  destacado={v.destacado}
+                  descripcion={v.descripcion}
+                />
+              )
+            ))}
           </div>
         </div>
-      </div>
-
-      <!-- Raciones -->
-      <div class="mb-4 fade-in">
-        <h3 class="do-header">Raciones</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Lacón á feira" tipo="Con pimentón y aceite de oliva" precio="12" destacado descripcion="Lacón cocido con pimentón cachena y aceite de oliva. Galicia en un plato." />
-          <WineEntry nombre="Jamón ibérico de cebo" tipo="Cortado a mano" precio="18" />
-          <WineEntry nombre="Tostas de jamón ibérico con tomate" tipo="Ibérico de cebo + tomate rallado" precio="20" />
-        </div>
-      </div>
+      ))}
     </section>
 
 
@@ -102,62 +92,27 @@ import WineEntry from '../../components/ui/WineEntry.astro';
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Patés y Conservas</span>
         <h2 class="mt-4">Patés y Conservas</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">18 referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">{totalConservas} referencias</p>
         <Divider />
       </div>
 
-      <!-- Patés La Curiosa -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Patés La Curiosa</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Paté de Nécora" bodega="La Curiosa" precio="12" destacado descripcion="Paté de nécora con todo el sabor del marisco gallego." />
-          <WineEntry nombre="Paté de Pulpo a la Gallega" bodega="La Curiosa" precio="10" />
-          <WineEntry nombre="Paté de Bonito con Piquillos" bodega="La Curiosa" precio="10" />
-          <WineEntry nombre="Paté de Caballa Picante" bodega="La Curiosa" precio="10" />
-          <WineEntry nombre="Paté de Atún Claro con Mostaza y Miel" bodega="La Curiosa" precio="10" />
-          <WineEntry nombre="Paté de Centollo y Buey de Mar" bodega="La Curiosa" precio="12" destacado descripcion="Centollo y buey de mar. El paté más premium de la selección." />
-          <WineEntry nombre="Paté de Mejillones" bodega="La Curiosa" precio="10" />
+      {conservas.map((grupo, i) => (
+        <div class:list={['fade-in', i < conservas.length - 1 ? 'mb-8' : 'mb-4']}>
+          <h3 class="do-header">{grupo.do}</h3>
+          <div class="space-y-0">
+            {grupo.items.map((v) => (
+              <WineEntry
+                nombre={v.nombre}
+                bodega={v.bodega}
+                tipo={v.tipo}
+                precio={v.precio}
+                destacado={v.destacado}
+                descripcion={v.descripcion}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-
-      <!-- Patés Emilia -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Patés Conservas Emilia</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Paté de Anchoa" bodega="Conservas Emilia" precio="9" />
-          <WineEntry nombre="Paté de Cabracho" bodega="Conservas Emilia" precio="9" />
-        </div>
-      </div>
-
-      <!-- Conservas artesanas -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Conservas Artesanas</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Sardinas en Aceite de Oliva Trufado" tipo="Con aceite trufado" precio="12" />
-          <WineEntry nombre="Atún al Pesto" tipo="Fusión mediterránea" precio="12" />
-          <WineEntry nombre="Sardinas con Pimiento de Padrón" tipo="Dos clásicos gallegos" precio="12" />
-          <WineEntry nombre="Atún al Curry" tipo="Con toque de curry" precio="12" />
-        </div>
-      </div>
-
-      <!-- Ramón Franco -->
-      <div class="mb-8 fade-in">
-        <h3 class="do-header">Conservas Ramón Franco</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Sardinas" bodega="Ramón Franco" precio="10" />
-          <WineEntry nombre="Mejillones en escabeche" bodega="Ramón Franco" precio="10" />
-        </div>
-      </div>
-
-      <!-- Paco Lafuente -->
-      <div class="mb-4 fade-in">
-        <h3 class="do-header">Paco Lafuente &middot; Premium</h3>
-        <div class="space-y-0">
-          <WineEntry nombre="Mejillones Fritos" bodega="Paco Lafuente" precio="10" />
-          <WineEntry nombre="Sardinillas" bodega="Paco Lafuente" precio="12" destacado descripcion="Sardinillas en aceite de oliva. Paco Lafuente es garantía de calidad." />
-          <WineEntry nombre="Zamburiñas" bodega="Paco Lafuente" precio="12" destacado descripcion="Zamburiñas gallegas en conserva premium." />
-        </div>
-      </div>
+      ))}
     </section>
 
   </div>
