@@ -4,11 +4,12 @@ interface Props {
   bodega?: string;
   tipo?: string;
   precio?: string;
+  precioCopa?: string;
   descripcion?: string;
   destacado?: boolean;
 }
 
-const { nombre, bodega, tipo, precio, descripcion, destacado = false } = Astro.props;
+const { nombre, bodega, tipo, precio, precioCopa, descripcion, destacado = false } = Astro.props;
 ---
 
 <div class="wine-entry">
@@ -23,7 +24,12 @@ const { nombre, bodega, tipo, precio, descripcion, destacado = false } = Astro.p
     )}
   </div>
   {precio ? (
-    <span class="wine-entry-price">{precio} &euro;</span>
+    <div class="text-right">
+      <span class="wine-entry-price">{precio} &euro;</span>
+      {precioCopa && (
+        <span class="block text-[0.65rem] text-ink-faded">copa {precioCopa} &euro;</span>
+      )}
+    </div>
   ) : (
     <span class="price-consultar">Consultar</span>
   )}

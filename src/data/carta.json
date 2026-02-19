@@ -4,57 +4,57 @@
       {
         "do": "Ribera del Duero",
         "items": [
-          { "nombre": "Protos 27", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "29.50", "destacado": true, "descripcion": "Roble potente y elegante. Referencia clásica de Ribera del Duero con paso suave y final largo.", "precioMedia": null },
-          { "nombre": "Protos 9", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "20", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Carmelo Rodero 9", "bodega": "Carmelo Rodero", "tipo": "Roble", "precio": "23", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Prado Rey Crianza", "bodega": "Real Sitio de Ventosilla", "tipo": "Crianza", "precio": "20", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Capilla", "bodega": "Bodegas Capilla", "tipo": null, "precio": "24", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Adaro", "bodega": "Bodegas Pradorey", "tipo": null, "precio": "30", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Figuero Viñas Viejas", "bodega": "Tinto Figuero", "tipo": null, "precio": "35", "destacado": true, "descripcion": "De cepas con más de 80 años. Profundo e intenso con una elegancia que solo da la edad de la viña.", "precioMedia": null },
-          { "nombre": "Bosque de Matasnos", "bodega": "Bosque de Matasnos", "tipo": null, "precio": "37", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Jovellar", "bodega": "Jovellar", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Punto Geodésico", "bodega": "Bodegas Recoletas", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Trus", "bodega": "Bodegas Trus", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Legaris Crianza", "bodega": "Bodegas Legaris", "tipo": "Crianza", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Legaris Roble", "bodega": "Bodegas Legaris", "tipo": "Roble", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Viña Solorca Crianza", "bodega": "Viña Solorca", "tipo": "Crianza", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "La Capilla Vendimia Seleccionada", "bodega": "Bodegas Capilla", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Protos", "bodega": "Bodegas Protos", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Cruz de Alba", "bodega": "Cruz de Alba", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Cruz de Alba Crianza", "bodega": "Cruz de Alba", "tipo": "Crianza", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Prios", "bodega": "Bodegas de los Ríos Prieto", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Mauro", "bodega": "Bodegas Mauro", "tipo": null, "precio": "46", "destacado": true, "descripcion": "Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales.", "precioMedia": null }
+          { "nombre": "Protos 27", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "29.50", "precioCopa": null, "destacado": true, "descripcion": "Roble potente y elegante. Referencia clásica de Ribera del Duero con paso suave y final largo.", "precioMedia": null },
+          { "nombre": "Protos 9", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "20", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Carmelo Rodero 9", "bodega": "Carmelo Rodero", "tipo": "Roble", "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Prado Rey Crianza", "bodega": "Real Sitio de Ventosilla", "tipo": "Crianza", "precio": "20", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Capilla", "bodega": "Bodegas Capilla", "tipo": null, "precio": "24", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Adaro", "bodega": "Bodegas Pradorey", "tipo": null, "precio": "30", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Figuero Viñas Viejas", "bodega": "Tinto Figuero", "tipo": null, "precio": "35", "precioCopa": null, "destacado": true, "descripcion": "De cepas con más de 80 años. Profundo e intenso con una elegancia que solo da la edad de la viña.", "precioMedia": null },
+          { "nombre": "Bosque de Matasnos", "bodega": "Bosque de Matasnos", "tipo": null, "precio": "37", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Jovellar", "bodega": "Jovellar", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Punto Geodésico", "bodega": "Bodegas Recoletas", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Trus", "bodega": "Bodegas Trus", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Legaris Crianza", "bodega": "Bodegas Legaris", "tipo": "Crianza", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Legaris Roble", "bodega": "Bodegas Legaris", "tipo": "Roble", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Viña Solorca Crianza", "bodega": "Viña Solorca", "tipo": "Crianza", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "La Capilla Vendimia Seleccionada", "bodega": "Bodegas Capilla", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Protos", "bodega": "Bodegas Protos", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Cruz de Alba", "bodega": "Cruz de Alba", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Cruz de Alba Crianza", "bodega": "Cruz de Alba", "tipo": "Crianza", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Prios", "bodega": "Bodegas de los Ríos Prieto", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Mauro", "bodega": "Bodegas Mauro", "tipo": null, "precio": "46", "precioCopa": null, "destacado": true, "descripcion": "Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales.", "precioMedia": null }
         ]
       },
       {
         "do": "Mencías",
         "items": [
-          { "nombre": "Alma de Autor", "bodega": "Alma de Autor", "tipo": "Mencía · Ribeira Sacra", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Cepas Viejas", "bodega": "Cepas Viejas", "tipo": "Mencía · Ribeira Sacra", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Losada", "bodega": "Bodegas Losada", "tipo": "Mencía · Bierzo", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Vía Romana", "bodega": "Vía Romana", "tipo": "Mencía · Ribeira Sacra", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Alma de Autor", "bodega": "Alma de Autor", "tipo": "Mencía · Ribeira Sacra", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Cepas Viejas", "bodega": "Cepas Viejas", "tipo": "Mencía · Ribeira Sacra", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Losada", "bodega": "Bodegas Losada", "tipo": "Mencía · Bierzo", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Vía Romana", "bodega": "Vía Romana", "tipo": "Mencía · Ribeira Sacra", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Rioja",
         "items": [
-          { "nombre": "Hado", "bodega": "Ramón Bilbao", "tipo": null, "precio": "22", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Ramón Bilbao Ed. Limitada Tempranillo", "bodega": "Ramón Bilbao", "tipo": null, "precio": "24", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Ramón Bilbao Ed. Limitada Garnacha", "bodega": "Ramón Bilbao", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Ramón Bilbao Crianza", "bodega": "Ramón Bilbao", "tipo": "Crianza", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Agnus", "bodega": "Bodegas Valdelana", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Proelio", "bodega": "Bodegas Proelio", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Pujanza", "bodega": "Bodegas Pujanza", "tipo": null, "precio": null, "destacado": true, "descripcion": "Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda.", "precioMedia": null },
-          { "nombre": "Urbión Cuvée", "bodega": "Bodegas Urbión", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Martín Zurbano", "bodega": "Martín Zurbano", "tipo": null, "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Hado", "bodega": "Ramón Bilbao", "tipo": null, "precio": "22", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Ramón Bilbao Ed. Limitada Tempranillo", "bodega": "Ramón Bilbao", "tipo": null, "precio": "24", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Ramón Bilbao Ed. Limitada Garnacha", "bodega": "Ramón Bilbao", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Ramón Bilbao Crianza", "bodega": "Ramón Bilbao", "tipo": "Crianza", "precio": "18", "precioCopa": "2.60", "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Agnus", "bodega": "Bodegas Valdelana", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Proelio", "bodega": "Bodegas Proelio", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Pujanza", "bodega": "Bodegas Pujanza", "tipo": null, "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda.", "precioMedia": null },
+          { "nombre": "Urbión Cuvée", "bodega": "Bodegas Urbión", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Martín Zurbano", "bodega": "Martín Zurbano", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Internacional",
         "items": [
-          { "nombre": "Lorca Fantasía Malbec", "bodega": "Bodega Lorca", "tipo": "Malbec · Argentina", "precio": "28", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Las Mulas", "bodega": "Miguel Torres Chile", "tipo": "Chile", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "La Vieille Ferme", "bodega": "Famille Perrin", "tipo": "Francia", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Lorca Fantasía Malbec", "bodega": "Bodega Lorca", "tipo": "Malbec · Argentina", "precio": "28", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Las Mulas", "bodega": "Miguel Torres Chile", "tipo": "Chile", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "La Vieille Ferme", "bodega": "Famille Perrin", "tipo": "Francia", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       }
     ],
@@ -62,57 +62,57 @@
       {
         "do": "Ribeiro",
         "items": [
-          { "nombre": "Ramón do Casar", "bodega": "Ramón do Casar", "tipo": "Treixadura", "precio": "23", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Mina Neta Manuela", "bodega": "Mina Neta", "tipo": null, "precio": "16.50", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Viña do Campo", "bodega": "Viña do Campo", "tipo": null, "precio": "17", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Antorio Montero Autor", "bodega": "Antorio Montero", "tipo": null, "precio": "23", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Meu", "bodega": "Meu", "tipo": null, "precio": "17", "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Ramón do Casar", "bodega": "Ramón do Casar", "tipo": "Treixadura", "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Mina Neta Manuela", "bodega": "Mina Neta", "tipo": null, "precio": "16.50", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Viña do Campo", "bodega": "Viña do Campo", "tipo": null, "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Antorio Montero Autor", "bodega": "Antorio Montero", "tipo": null, "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Meu", "bodega": "Meu", "tipo": null, "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Godellos",
         "items": [
-          { "nombre": "Alma", "bodega": "Alma", "tipo": "Godello", "precio": "17", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Tambora", "bodega": "Tambora", "tipo": "Godello", "precio": "19", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Viñaredo", "bodega": "Viñaredo", "tipo": "Godello", "precio": "18", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Luna de Berride", "bodega": "Luna de Berride", "tipo": "Godello", "precio": "16.50", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "O Luar do Sil", "bodega": "Pago de los Capellanes", "tipo": "Godello", "precio": "25", "destacado": true, "descripcion": "Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes.", "precioMedia": null }
+          { "nombre": "Alma", "bodega": "Alma", "tipo": "Godello", "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Tambora", "bodega": "Tambora", "tipo": "Godello", "precio": "19", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Viñaredo", "bodega": "Viñaredo", "tipo": "Godello", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Luna de Berride", "bodega": "Luna de Berride", "tipo": "Godello", "precio": "16.50", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "O Luar do Sil", "bodega": "Pago de los Capellanes", "tipo": "Godello", "precio": "25", "precioCopa": null, "destacado": true, "descripcion": "Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes.", "precioMedia": null }
         ]
       },
       {
         "do": "Albariños",
         "items": [
-          { "nombre": "Eidosela", "bodega": "Eidosela", "tipo": "Albariño", "precio": "18", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Eidosela Selección", "bodega": "Eidosela", "tipo": "Albariño", "precio": "26", "destacado": true, "descripcion": "La selección especial. Albariño con más cuerpo y complejidad.", "precioMedia": null },
-          { "nombre": "Paco y Lola Prime", "bodega": "Paco y Lola", "tipo": "Albariño", "precio": "25", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Val Miñor", "bodega": "Val Miñor", "tipo": "Albariño", "precio": "20", "destacado": true, "descripcion": "Nuestro Albariño de casa. Lleva el nombre de la comarca y el carácter de esta tierra.", "precioMedia": null },
-          { "nombre": "Mar de Frades", "bodega": "Mar de Frades", "tipo": "Albariño", "precio": "26", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Pontellón", "bodega": "Pontellón", "tipo": "Albariño", "precio": "17", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Altos de Torona", "bodega": "Altos de Torona", "tipo": "Albariño", "precio": "19.50", "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Pentecostés", "bodega": "Pentecostés", "tipo": "Albariño", "precio": "23", "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Eidosela", "bodega": "Eidosela", "tipo": "Albariño", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Eidosela Selección", "bodega": "Eidosela", "tipo": "Albariño", "precio": "26", "precioCopa": null, "destacado": true, "descripcion": "La selección especial. Albariño con más cuerpo y complejidad.", "precioMedia": null },
+          { "nombre": "Paco y Lola Prime", "bodega": "Paco y Lola", "tipo": "Albariño", "precio": "25", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Val Miñor", "bodega": "Val Miñor", "tipo": "Albariño", "precio": "20", "precioCopa": null, "destacado": true, "descripcion": "Nuestro Albariño de casa. Lleva el nombre de la comarca y el carácter de esta tierra.", "precioMedia": null },
+          { "nombre": "Mar de Frades", "bodega": "Mar de Frades", "tipo": "Albariño", "precio": "26", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Pontellón", "bodega": "Pontellón", "tipo": "Albariño", "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Altos de Torona", "bodega": "Altos de Torona", "tipo": "Albariño", "precio": "19.50", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Pentecostés", "bodega": "Pentecostés", "tipo": "Albariño", "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Rueda",
         "items": [
-          { "nombre": "Excellens Sauvignon Blanc", "bodega": "Marqués de Cáceres", "tipo": "Sauvignon Blanc", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Jovellar Blanco", "bodega": "Jovellar", "tipo": "Verdejo", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Excellens Sauvignon Blanc", "bodega": "Marqués de Cáceres", "tipo": "Sauvignon Blanc", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Jovellar Blanco", "bodega": "Jovellar", "tipo": "Verdejo", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Rioja Blanco",
         "items": [
-          { "nombre": "Nivarius Tempranillo Blanco", "bodega": "Nivarius", "tipo": "Tempranillo Blanco", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "875m Chardonnay", "bodega": "Coto de Hayas", "tipo": "Chardonnay", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Nivarius Tempranillo Blanco", "bodega": "Nivarius", "tipo": "Tempranillo Blanco", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "875m Chardonnay", "bodega": "Coto de Hayas", "tipo": "Chardonnay", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Otras D.O.",
         "items": [
-          { "nombre": "El Pillo", "bodega": "El Pillo", "tipo": "Toro", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Vimea", "bodega": "Vimea", "tipo": "Cigales", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Habla del Silencio", "bodega": "Bodegas Habla", "tipo": "Extremadura", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Piedra Joven Eco", "bodega": "Piedra Joven", "tipo": "Toro · Ecológico", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "El Pillo", "bodega": "El Pillo", "tipo": "Toro", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Vimea", "bodega": "Vimea", "tipo": "Cigales", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Habla del Silencio", "bodega": "Bodegas Habla", "tipo": "Extremadura", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Piedra Joven Eco", "bodega": "Piedra Joven", "tipo": "Toro · Ecológico", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       }
     ],
@@ -120,9 +120,9 @@
       {
         "do": "Rosados",
         "items": [
-          { "nombre": "Logos", "bodega": "Logos", "tipo": "Rías Baixas", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Santa Digna", "bodega": "Miguel Torres Chile", "tipo": "Chile", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Aires de Protos", "bodega": "Bodegas Protos", "tipo": "Ribera del Duero", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Logos", "bodega": "Logos", "tipo": "Rías Baixas", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Santa Digna", "bodega": "Miguel Torres Chile", "tipo": "Chile", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Aires de Protos", "bodega": "Bodegas Protos", "tipo": "Ribera del Duero", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       }
     ],
@@ -130,18 +130,18 @@
       {
         "do": "Cavas",
         "items": [
-          { "nombre": "Marqués de Cáceres Cava", "bodega": "Marqués de Cáceres", "tipo": "Cava", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Paco y Lola Espumoso", "bodega": "Paco y Lola", "tipo": "Espumoso Albariño · Rías Baixas", "precio": null, "destacado": true, "descripcion": "Espumoso de Albariño. Burbuja gallega con toda la frescura de Rías Baixas.", "precioMedia": null },
-          { "nombre": "Terrer de La Creu", "bodega": "Terrer de La Creu", "tipo": "Cava", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Xenius", "bodega": "Xenius", "tipo": "Cava", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Marqués de Cáceres Cava", "bodega": "Marqués de Cáceres", "tipo": "Cava", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Paco y Lola Espumoso", "bodega": "Paco y Lola", "tipo": "Espumoso Albariño · Rías Baixas", "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Espumoso de Albariño. Burbuja gallega con toda la frescura de Rías Baixas.", "precioMedia": null },
+          { "nombre": "Terrer de La Creu", "bodega": "Terrer de La Creu", "tipo": "Cava", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Xenius", "bodega": "Xenius", "tipo": "Cava", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       },
       {
         "do": "Spritz y Sangría",
         "items": [
-          { "nombre": "Lolea Spritz Floral", "bodega": "Lolea", "tipo": "Spritz", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Lolea Spritz Citrus", "bodega": "Lolea", "tipo": "Spritz Cítrico", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Lolea N°2 Sangría Blanca", "bodega": "Lolea", "tipo": "Sangría Blanca", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Lolea Spritz Floral", "bodega": "Lolea", "tipo": "Spritz", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Lolea Spritz Citrus", "bodega": "Lolea", "tipo": "Spritz Cítrico", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Lolea N°2 Sangría Blanca", "bodega": "Lolea", "tipo": "Sangría Blanca", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       }
     ],
@@ -149,8 +149,8 @@
       {
         "do": "Sin Alcohol",
         "items": [
-          { "nombre": "Win 0.0 Blanco", "bodega": "Bodegas Win", "tipo": "Blanco Sin Alcohol", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-          { "nombre": "Win 0.0 Tinto", "bodega": "Bodegas Win", "tipo": "Tinto Sin Alcohol", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+          { "nombre": "Win 0.0 Blanco", "bodega": "Bodegas Win", "tipo": "Blanco Sin Alcohol", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+          { "nombre": "Win 0.0 Tinto", "bodega": "Bodegas Win", "tipo": "Tinto Sin Alcohol", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
         ]
       }
     ]
@@ -159,19 +159,19 @@
     {
       "do": "Vermuts",
       "items": [
-        { "nombre": "Martini", "bodega": "Martini", "tipo": "Vermut Rojo", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Padró", "bodega": "Padró & Co", "tipo": "Vermut Artesanal", "precio": null, "destacado": true, "descripcion": "Vermut catalán con receta de 1886. Hierbas aromáticas y un amargor equilibrado.", "precioMedia": null },
-        { "nombre": "Yzaguirre", "bodega": "Yzaguirre", "tipo": "Vermut Clásico", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Povarelo", "bodega": "Povarelo", "tipo": "Vermut Gallego", "precio": null, "destacado": true, "descripcion": "Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente.", "precioMedia": null },
-        { "nombre": "Petroni", "bodega": "Petroni", "tipo": "Vermut Premium", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Polvorí", "bodega": "Polvorí", "tipo": "Vermut Artesanal", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Bendito", "bodega": "Bendito", "tipo": "Vermut", "precio": null, "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Martini", "bodega": "Martini", "tipo": "Vermut Rojo", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Padró", "bodega": "Padró & Co", "tipo": "Vermut Artesanal", "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Vermut catalán con receta de 1886. Hierbas aromáticas y un amargor equilibrado.", "precioMedia": null },
+        { "nombre": "Yzaguirre", "bodega": "Yzaguirre", "tipo": "Vermut Clásico", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Povarelo", "bodega": "Povarelo", "tipo": "Vermut Gallego", "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente.", "precioMedia": null },
+        { "nombre": "Petroni", "bodega": "Petroni", "tipo": "Vermut Premium", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Polvorí", "bodega": "Polvorí", "tipo": "Vermut Artesanal", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Bendito", "bodega": "Bendito", "tipo": "Vermut", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     },
     {
       "do": "Spritz",
       "items": [
-        { "nombre": "Petroni de Naranja", "bodega": "Petroni", "tipo": "Con cava, al estilo spritz", "precio": null, "destacado": true, "descripcion": "Petroni de naranja servido con cava al estilo spritz.", "precioMedia": null }
+        { "nombre": "Petroni de Naranja", "bodega": "Petroni", "tipo": "Con cava, al estilo spritz", "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Petroni de naranja servido con cava al estilo spritz.", "precioMedia": null }
       ]
     }
   ],
@@ -179,24 +179,24 @@
     {
       "do": "Tapas",
       "items": [
-        { "nombre": "Ensaladilla", "bodega": null, "tipo": "Receta de la casa", "precio": "7.50", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Tortilla", "bodega": null, "tipo": "Española, jugosa por dentro", "precio": "12", "destacado": true, "descripcion": "Tortilla española como manda la tradición. Jugosa por dentro y dorada por fuera.", "precioMedia": null },
-        { "nombre": "Ensalada de tomate con ventresca", "bodega": null, "tipo": "Tomate de temporada", "precio": "14.50", "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Ensaladilla", "bodega": null, "tipo": "Receta de la casa", "precio": "7.50", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Tortilla", "bodega": null, "tipo": "Española, jugosa por dentro", "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Tortilla española como manda la tradición. Jugosa por dentro y dorada por fuera.", "precioMedia": null },
+        { "nombre": "Ensalada de tomate con ventresca", "bodega": null, "tipo": "Tomate de temporada", "precio": "14.50", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     },
     {
       "do": "Tablas",
       "items": [
-        { "nombre": "Tabla de quesos", "bodega": null, "tipo": "Gallegos y nacionales", "precio": "16", "destacado": false, "descripcion": null, "precioMedia": "8" },
-        { "nombre": "Tabla de embutidos", "bodega": null, "tipo": "Cortados al momento", "precio": "18", "destacado": false, "descripcion": null, "precioMedia": "9" }
+        { "nombre": "Tabla de quesos", "bodega": null, "tipo": "Gallegos y nacionales", "precio": "16", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": "8" },
+        { "nombre": "Tabla de embutidos", "bodega": null, "tipo": "Cortados al momento", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": "9" }
       ]
     },
     {
       "do": "Raciones",
       "items": [
-        { "nombre": "Lacón á feira", "bodega": null, "tipo": "Con pimentón y aceite de oliva", "precio": "12", "destacado": true, "descripcion": "Lacón cocido con pimentón cachena y aceite de oliva. Galicia en un plato.", "precioMedia": null },
-        { "nombre": "Jamón ibérico de cebo", "bodega": null, "tipo": "Cortado a mano", "precio": "18", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Tostas de jamón ibérico con tomate", "bodega": null, "tipo": "Ibérico de cebo + tomate rallado", "precio": "20", "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Lacón á feira", "bodega": null, "tipo": "Con pimentón y aceite de oliva", "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Lacón cocido con pimentón cachena y aceite de oliva. Galicia en un plato.", "precioMedia": null },
+        { "nombre": "Jamón ibérico de cebo", "bodega": null, "tipo": "Cortado a mano", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Tostas de jamón ibérico con tomate", "bodega": null, "tipo": "Ibérico de cebo + tomate rallado", "precio": "20", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     }
   ],
@@ -204,44 +204,44 @@
     {
       "do": "Patés La Curiosa",
       "items": [
-        { "nombre": "Paté de Nécora", "bodega": "La Curiosa", "tipo": null, "precio": "12", "destacado": true, "descripcion": "Paté de nécora con todo el sabor del marisco gallego.", "precioMedia": null },
-        { "nombre": "Paté de Pulpo a la Gallega", "bodega": "La Curiosa", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Paté de Bonito con Piquillos", "bodega": "La Curiosa", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Paté de Caballa Picante", "bodega": "La Curiosa", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Paté de Atún Claro con Mostaza y Miel", "bodega": "La Curiosa", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Paté de Centollo y Buey de Mar", "bodega": "La Curiosa", "tipo": null, "precio": "12", "destacado": true, "descripcion": "Centollo y buey de mar. El paté más premium de la selección.", "precioMedia": null },
-        { "nombre": "Paté de Mejillones", "bodega": "La Curiosa", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Paté de Nécora", "bodega": "La Curiosa", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Paté de nécora con todo el sabor del marisco gallego.", "precioMedia": null },
+        { "nombre": "Paté de Pulpo a la Gallega", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Paté de Bonito con Piquillos", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Paté de Caballa Picante", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Paté de Atún Claro con Mostaza y Miel", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Paté de Centollo y Buey de Mar", "bodega": "La Curiosa", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Centollo y buey de mar. El paté más premium de la selección.", "precioMedia": null },
+        { "nombre": "Paté de Mejillones", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     },
     {
       "do": "Patés Conservas Emilia",
       "items": [
-        { "nombre": "Paté de Anchoa", "bodega": "Conservas Emilia", "tipo": null, "precio": "9", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Paté de Cabracho", "bodega": "Conservas Emilia", "tipo": null, "precio": "9", "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Paté de Anchoa", "bodega": "Conservas Emilia", "tipo": null, "precio": "9", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Paté de Cabracho", "bodega": "Conservas Emilia", "tipo": null, "precio": "9", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     },
     {
       "do": "Conservas Artesanas",
       "items": [
-        { "nombre": "Sardinas en Aceite de Oliva Trufado", "bodega": null, "tipo": "Con aceite trufado", "precio": "12", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Atún al Pesto", "bodega": null, "tipo": "Fusión mediterránea", "precio": "12", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Sardinas con Pimiento de Padrón", "bodega": null, "tipo": "Dos clásicos gallegos", "precio": "12", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Atún al Curry", "bodega": null, "tipo": "Con toque de curry", "precio": "12", "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Sardinas en Aceite de Oliva Trufado", "bodega": null, "tipo": "Con aceite trufado", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Atún al Pesto", "bodega": null, "tipo": "Fusión mediterránea", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Sardinas con Pimiento de Padrón", "bodega": null, "tipo": "Dos clásicos gallegos", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Atún al Curry", "bodega": null, "tipo": "Con toque de curry", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     },
     {
       "do": "Conservas Ramón Franco",
       "items": [
-        { "nombre": "Sardinas", "bodega": "Ramón Franco", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Mejillones en escabeche", "bodega": "Ramón Franco", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null }
+        { "nombre": "Sardinas", "bodega": "Ramón Franco", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Mejillones en escabeche", "bodega": "Ramón Franco", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null }
       ]
     },
     {
       "do": "Paco Lafuente · Premium",
       "items": [
-        { "nombre": "Mejillones Fritos", "bodega": "Paco Lafuente", "tipo": null, "precio": "10", "destacado": false, "descripcion": null, "precioMedia": null },
-        { "nombre": "Sardinillas", "bodega": "Paco Lafuente", "tipo": null, "precio": "12", "destacado": true, "descripcion": "Sardinillas en aceite de oliva. Paco Lafuente es garantía de calidad.", "precioMedia": null },
-        { "nombre": "Zamburiñas", "bodega": "Paco Lafuente", "tipo": null, "precio": "12", "destacado": true, "descripcion": "Zamburiñas gallegas en conserva premium.", "precioMedia": null }
+        { "nombre": "Mejillones Fritos", "bodega": "Paco Lafuente", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": null },
+        { "nombre": "Sardinillas", "bodega": "Paco Lafuente", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Sardinillas en aceite de oliva. Paco Lafuente es garantía de calidad.", "precioMedia": null },
+        { "nombre": "Zamburiñas", "bodega": "Paco Lafuente", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Zamburiñas gallegas en conserva premium.", "precioMedia": null }
       ]
     }
   ]
