@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Divider from '../components/ui/Divider.astro';
+---
+
+<BaseLayout
+  title="Nuestra Historia — Tres Generaciones desde 1938"
+  description="La historia de Bar Estanco en Gondomar. Tres generaciones de la misma familia sirviendo vino desde 1938 en la plaza de San Bieito. El bar más antiguo de Gondomar."
+>
+
+  <!-- ============ HERO HISTORIA ============ -->
+  <section class="section-ink py-10 sm:py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-label border-paper/20 text-paper/50 mb-4">Crónica Familiar</span>
+      <h1 class="text-paper mt-4 mb-4">Nuestra historia</h1>
+      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
+        Tres generaciones. Una misma barra. Desde 1938.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ INTRO ============ -->
+  <section class="py-8 sm:py-(--spacing-section) px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="fade-in">
+        <p class="drop-cap text-ink leading-[1.9] text-sm sm:text-lg mb-5">
+          Hay bares que abren y cierran. Y hay bares que resisten, que se heredan, que se
+          convierten en parte del paisaje de un pueblo. Bar Estanco es de esos. Abrió sus
+          puertas en 1938 y desde entonces, tres generaciones de la misma familia han
+          mantenido viva la barra más antigua de Gondomar.
+        </p>
+        <p class="text-ink-faded leading-[1.9] text-sm sm:text-lg">
+          Esta es nuestra historia. La de una familia, un pueblo y un bar que sigue abierto
+          porque hay cosas que no deberían perderse.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10 fade-in">
+        <span class="section-label mb-4">Línea del Tiempo</span>
+        <h2 class="mt-4">De generación en generación</h2>
+        <Divider />
+      </div>
+
+      <!-- Timeline vertical -->
+      <div class="relative">
+        <!-- Línea central -->
+        <div class="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-ink/10 sm:-translate-x-px" aria-hidden="true"></div>
+
+        <!-- Epoch 1: Fundación -->
+        <div class="timeline-item fade-in relative pl-12 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-12 mb-12 sm:mb-16">
+          <!-- Dot -->
+          <div class="absolute left-2.5 sm:left-1/2 top-1 w-3 h-3 rounded-full border-2 border-wine bg-paper sm:-translate-x-1.5 z-10"></div>
+          <!-- Content left (date) -->
+          <div class="sm:text-right sm:pr-8">
+            <span class="font-display text-wine font-bold text-2xl sm:text-3xl">1938</span>
+            <p class="font-display text-sm font-semibold text-ink mt-1">La fundación</p>
+          </div>
+          <!-- Content right (story) -->
+          <div class="sm:pl-8 mt-3 sm:mt-0">
+            <div class="border-l-3 border-wine/30 pl-4">
+              <p class="text-sm sm:text-base text-ink-faded leading-relaxed">
+                Se abre el bar en la plaza de San Bieito de Gondomar. La primera generación
+                comienza a servir vino a pie de barra en un local que también funcionaba
+                como estanco &mdash; de ahí el nombre que perdura hasta hoy.
+              </p>
+              <!-- Placeholder foto -->
+              <div class="mt-4 border-2 border-dashed border-ink/10 bg-paper-white/50 p-6 text-center">
+                <p class="text-xs text-ink-faded/50 font-display italic">
+                  Foto de época &middot; Próximamente
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Epoch 2: Segunda generación -->
+        <div class="timeline-item fade-in relative pl-12 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-12 mb-12 sm:mb-16">
+          <div class="absolute left-2.5 sm:left-1/2 top-1 w-3 h-3 rounded-full border-2 border-wine bg-paper sm:-translate-x-1.5 z-10"></div>
+          <div class="sm:text-right sm:pr-8">
+            <span class="font-display text-wine font-bold text-2xl sm:text-3xl">Años 70</span>
+            <p class="font-display text-sm font-semibold text-ink mt-1">Segunda generación</p>
+          </div>
+          <div class="sm:pl-8 mt-3 sm:mt-0">
+            <div class="border-l-3 border-wine/30 pl-4">
+              <p class="text-sm sm:text-base text-ink-faded leading-relaxed">
+                La segunda generación toma el relevo. El bar se consolida como punto de encuentro
+                del pueblo. Se amplía la oferta de vinos y se mantiene el espíritu de siempre:
+                trato cercano y buen producto.
+              </p>
+              <div class="mt-4 border-2 border-dashed border-ink/10 bg-paper-white/50 p-6 text-center">
+                <p class="text-xs text-ink-faded/50 font-display italic">
+                  Foto familiar &middot; Próximamente
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Epoch 3: Tercera generación -->
+        <div class="timeline-item fade-in relative pl-12 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-12 mb-12 sm:mb-16">
+          <div class="absolute left-2.5 sm:left-1/2 top-1 w-3 h-3 rounded-full border-2 border-wine bg-paper sm:-translate-x-1.5 z-10"></div>
+          <div class="sm:text-right sm:pr-8">
+            <span class="font-display text-wine font-bold text-2xl sm:text-3xl">Hoy</span>
+            <p class="font-display text-sm font-semibold text-ink mt-1">Tercera generación</p>
+          </div>
+          <div class="sm:pl-8 mt-3 sm:mt-0">
+            <div class="border-l-3 border-wine/30 pl-4">
+              <p class="text-sm sm:text-base text-ink-faded leading-relaxed">
+                La tercera generación mantiene la esencia y renueva la carta. Más de 70 referencias
+                de vino, vermuts con carácter, conservas gourmet y el pincho del día que ya
+                es tradición. El bar más antiguo de Gondomar sigue abriendo cada día.
+              </p>
+              <div class="mt-4 border-2 border-dashed border-ink/10 bg-paper-white/50 p-6 text-center">
+                <p class="text-xs text-ink-faded/50 font-display italic">
+                  Foto del bar actual &middot; Próximamente
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Epoch 4: Premios -->
+        <div class="timeline-item fade-in relative pl-12 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-12">
+          <div class="absolute left-2.5 sm:left-1/2 top-1 w-3 h-3 rounded-full border-2 border-wine bg-paper sm:-translate-x-1.5 z-10"></div>
+          <div class="sm:text-right sm:pr-8">
+            <span class="font-display text-wine font-bold text-2xl sm:text-3xl">2017</span>
+            <p class="font-display text-sm font-semibold text-ink mt-1">Reconocimiento</p>
+          </div>
+          <div class="sm:pl-8 mt-3 sm:mt-0">
+            <div class="border-l-3 border-wine/30 pl-4">
+              <p class="text-sm sm:text-base text-ink-faded leading-relaxed">
+                La empanada de Bar Estanco gana la V Festa da Empanada de Gondomar.
+                Un premio que confirma lo que los vecinos ya sabían: aquí se cocina
+                con el mismo cariño de siempre.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FRASE CENTRAL ============ -->
+  <section class="py-10 sm:py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <p class="handwritten text-xl sm:text-2xl md:text-3xl leading-relaxed">
+        &ldquo;Tres generaciones detrás de la barra.
+        <br class="hidden sm:block"/>
+        La misma vocación de siempre.&rdquo;
+      </p>
+      <div class="divider-editorial max-w-xs mx-auto my-6">
+        <span class="divider-editorial-label">&middot;</span>
+      </div>
+      <p class="text-ink-faded text-sm font-body">
+        Familia fundadora de Bar Estanco, Gondomar
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ GALERÍA PLACEHOLDER ============ -->
+  <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-8 fade-in">
+        <span class="section-label mb-4">Archivo</span>
+        <h2 class="mt-4">Galería</h2>
+        <p class="mt-3 text-ink-faded text-sm font-body">
+          Recuerdos de casi un siglo de historia.
+        </p>
+        <Divider />
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 fade-in">
+        {[1,2,3,4,5,6].map(() => (
+          <div class="aspect-[4/3] border-2 border-dashed border-ink/10 bg-paper-white/50 flex items-center justify-center">
+            <p class="text-xs text-ink-faded/40 font-display italic text-center px-2">
+              Foto &middot; Próximamente
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CTA ============ -->
+  <section class="section-wine py-10 sm:py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-paper text-2xl sm:text-3xl mb-4">Ven a conocernos</h2>
+      <p class="text-paper-dark/80 max-w-lg mx-auto leading-relaxed font-body text-sm sm:text-base mb-6">
+        La mejor forma de conocer nuestra historia es vivirla.
+        Pásate por la plaza de San Bieito y te la contamos con una copa en la mano.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/contacto" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper w-full sm:w-auto">
+          Cómo llegar
+        </a>
+        <a href="/carta" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50 w-full sm:w-auto">
+          Ver la carta
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

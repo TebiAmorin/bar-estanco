@@ -4,6 +4,7 @@ const currentPath = Astro.url.pathname;
 const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/carta', label: 'Carta' },
+  { href: '/historia', label: 'Historia' },
   { href: '/contacto', label: 'Contacto' },
 ];
 
@@ -120,12 +121,6 @@ function isActive(href: string): boolean {
 </header>
 
 <script>
-  const header = document.getElementById('site-header');
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = menuBtn?.querySelector('.menu-icon');
-  const closeIcon = menuBtn?.querySelector('.close-icon');
-
   function initHeader() {
     const h = document.getElementById('site-header');
     const btn = document.getElementById('mobile-menu-btn');

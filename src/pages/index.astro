@@ -43,7 +43,7 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
       </div>
 
       <div class="fade-in mb-5">
-        <div class="stamp-1938 stamp-1938-lg mx-auto border-paper/30 text-paper/80">
+        <div class="stamp-1938 stamp-1938-lg stamp-hover mx-auto border-paper/30 text-paper/80">
           <div>
             <span class="stamp-1938-text">Desde</span>
             <span class="stamp-1938-year">1938</span>
@@ -78,8 +78,8 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
       </div>
     </div>
 
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-5 h-5 text-paper/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+      <svg class="w-5 h-5 text-paper/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
     </div>
@@ -125,7 +125,7 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
         <Divider />
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12 stagger-fade">
         <div class="fade-in text-center px-2 sm:px-4">
           <div class="wine-rule mb-4">
             <span class="wine-rule-text">I</span>
@@ -177,9 +177,9 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
         <Divider />
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 stagger-fade">
 
-        <a href="/carta/vinos" class="fade-in group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
+        <a href="/carta/vinos" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
           <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Vinos</h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
@@ -190,7 +190,7 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
           </span>
         </a>
 
-        <a href="/carta/vermuts" class="fade-in group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
+        <a href="/carta/vermuts" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
           <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Vermuts</h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
@@ -201,7 +201,7 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
           </span>
         </a>
 
-        <a href="/carta/tapas" class="fade-in group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
+        <a href="/carta/tapas" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
           <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Tapas</h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
@@ -212,7 +212,7 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
           </span>
         </a>
 
-        <a href="/carta/tapas#conservas" class="fade-in group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
+        <a href="/carta/tapas#conservas" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
           <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Conservas</h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>

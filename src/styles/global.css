@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cedarville+Cursive&display=swap');
+/* Las fuentes de Google se cargan desde BaseLayout.astro <head> para evitar render-blocking */
 @import "tailwindcss";
 
 /* ============================================
@@ -207,18 +207,21 @@ body {
 }
 
 /* --- Grain overlay global (sutil, no bloquea taps) --- */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.02;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+/* Desactivado en móvil para mejor rendimiento, solo desktop */
+@media (min-width: 768px) {
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
 }
 
 /* --- Tipografía editorial --- */
@@ -695,6 +698,128 @@ a:hover {
 /* --- Borde doble editorial --- */
 .border-editorial {
   border: 2px double rgba(26, 26, 26, 0.2);
+}
+
+/* ============================================
+   MICROINTERACCIONES
+   ============================================ */
+
+/* --- Carta cards: efecto "papel levantado" al hover --- */
+.card-lift {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.08),
+              0 2px 8px rgba(94, 25, 30, 0.06);
+}
+
+.card-lift:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.06);
+}
+
+/* --- Wine entry: highlight al hover --- */
+.wine-entry {
+  transition: background-color 200ms ease, padding-left 200ms ease;
+}
+
+.wine-entry:hover {
+  background-color: rgba(94, 25, 30, 0.03);
+  padding-left: 0.35rem;
+}
+
+/* --- Botones: efecto press suave --- */
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* --- Stamp hover rotate --- */
+.stamp-hover {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stamp-hover:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* --- Stagger fade-in (elementos hijos se animan secuencialmente) --- */
+.stagger-fade > .fade-in:nth-child(1) { transition-delay: 0ms; }
+.stagger-fade > .fade-in:nth-child(2) { transition-delay: 80ms; }
+.stagger-fade > .fade-in:nth-child(3) { transition-delay: 160ms; }
+.stagger-fade > .fade-in:nth-child(4) { transition-delay: 240ms; }
+.stagger-fade > .fade-in:nth-child(5) { transition-delay: 320ms; }
+.stagger-fade > .fade-in:nth-child(6) { transition-delay: 400ms; }
+
+/* --- Link underline animado --- */
+.link-animated {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-wine);
+  transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-animated:hover::after {
+  width: 100%;
+}
+
+/* --- Timeline dot pulse --- */
+.timeline-item .rounded-full {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.timeline-item:hover .rounded-full {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 4px rgba(94, 25, 30, 0.15);
+}
+
+/* --- Respeta reduced motion para microinteracciones --- */
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .card-lift:hover,
+  .card-lift:active {
+    transform: none;
+    box-shadow: none;
+    transition: none;
+  }
+  .wine-entry,
+  .wine-entry:hover {
+    transition: none;
+    padding-left: 0;
+  }
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: none;
+  }
+  .stamp-hover,
+  .stamp-hover:hover {
+    transform: none;
+    transition: none;
+  }
+  .stagger-fade > .fade-in {
+    transition-delay: 0ms !important;
+  }
+  .link-animated::after {
+    transition: none;
+  }
+  .timeline-item .rounded-full,
+  .timeline-item:hover .rounded-full {
+    transform: none;
+    box-shadow: none;
+    transition: none;
+  }
 }
 
 /* --- Selection color --- */
