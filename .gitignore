@@ -27,3 +27,6 @@ pnpm-debug.log*
 .claude/
 
 .vercel
+
+# editor local
+editor-carta.html

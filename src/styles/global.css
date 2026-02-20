@@ -358,6 +358,41 @@ a:hover {
   color: var(--color-paper-dark);
 }
 
+.section-footer {
+  background-color: var(--color-wine-dark);
+  color: var(--color-paper);
+}
+
+.section-footer h1,
+.section-footer h2,
+.section-footer h3,
+.section-footer h4 {
+  color: var(--color-paper);
+}
+
+.section-footer p {
+  color: var(--color-paper-dark);
+}
+
+.section-footer a {
+  color: inherit;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+  content: '';
+  flex: 1;
+  height: 0;
+  border-top: 1px solid rgba(244, 236, 216, 0.12);
+}
+
 .section-wine {
   background-color: var(--color-wine);
   color: var(--color-paper);
