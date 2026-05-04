@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import Header from '../components/sections/Header.astro';
 import Footer from '../components/sections/Footer.astro';
@@ -31,13 +31,13 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": ["BarOrPub", "WineBar"],
   "name": "Bar Estanco",
-  "description": "Vinoteca y tapería en Gondomar desde 1938. Más de 70 referencias de vino, vermuts, tapas gallegas y conservas premium. Tres generaciones de la misma familia. Bar Estanco.",
+  "description": "Café bar, vinoteca y tapería en Gondomar desde 1938. Más de 70 referencias de vino, vermuts, tapas gallegas y conservas premium. Cuatro generaciones de la misma familia. Bar Estanco.",
   "foundingDate": "1938",
   "url": "https://barestanco.es",
   "telephone": "+34986360098",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Pr. San Bieito, 1",
+    "streetAddress": "Rúa San Bieito, 1",
     "addressLocality": "Gondomar",
     "addressRegion": "Pontevedra",
     "postalCode": "36380",
@@ -52,8 +52,8 @@ const schemaData = {
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Monday",
-      "opens": "18:00",
-      "closes": "23:30"
+      "opens": "16:30",
+      "closes": "23:00"
     },
     {
       "@type": "OpeningHoursSpecification",
@@ -64,26 +64,26 @@ const schemaData = {
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "18:00",
-      "closes": "23:30"
+      "opens": "16:30",
+      "closes": "23:00"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Saturday",
       "opens": "09:00",
-      "closes": "15:30"
+      "closes": "15:00"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Saturday",
-      "opens": "18:00",
-      "closes": "23:30"
+      "opens": "17:00",
+      "closes": "23:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
+      "dayOfWeek": ["Sunday", "PublicHolidays"],
       "opens": "10:00",
-      "closes": "15:30"
+      "closes": "15:00"
     }
   ],
   "aggregateRating": {
@@ -96,8 +96,8 @@ const schemaData = {
     "@type": "Menu",
     "url": "https://barestanco.es/carta"
   },
-  "servesCuisine": ["Tapas gallegas", "Vinos", "Vermuts", "Conservas gourmet", "Tapería"],
-  "keywords": "bar estanco, vinoteca gondomar, tapería gondomar, vino gondomar, tapas gondomar, bar gondomar, vermut gondomar",
+  "servesCuisine": ["Tapas gallegas", "Vinos", "Vermuts", "Conservas gourmet", "Tapería", "Desayunos"],
+  "keywords": "bar estanco, vinoteca gondomar, café bar gondomar, tapería gondomar, vino gondomar, tapas gondomar, bar gondomar, vermut gondomar, desayunos gondomar",
   "priceRange": "€€",
   "image": "https://barestanco.es/images/og-bar-estanco.png",
   "sameAs": ["https://www.instagram.com/estancogondomar/"]
@@ -156,7 +156,11 @@ const schemaData = {
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cedarville+Cursive&display=swap" /></noscript>
 
   <!-- View Transitions -->
-  <ViewTransitions />
+  <ClientRouter />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <!-- Schema.org -->
   <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
@@ -194,6 +198,66 @@ const schemaData = {
     // Ejecutar al cargar y tras cada View Transition
     initFadeIn();
     document.addEventListener('astro:after-swap', initFadeIn);
+
+    // Smart Header Dinámico y Global (Compatible con View Transitions)
+    let lastScrollY = window.scrollY;
+    let isHeaderHidden = false;
+
+    function initSmartHeader() {
+      if (typeof gsap === 'undefined') return;
+      
+      // Resetear estado al entrar en una nueva página
+      const html = document.documentElement;
+      const initialNavs = document.querySelectorAll('header, .carta-subnav');
+      if (initialNavs.length > 0) {
+        gsap.set(initialNavs, { y: 0, force3D: true });
+      }
+      isHeaderHidden = false;
+      html.classList.remove('header-hidden');
+      lastScrollY = window.scrollY;
+
+      // Si ya hay un listener, no añadimos otro, pero el resto de la función sí se ejecuta para el reset
+      if (window.smartHeaderActive) return;
+      window.smartHeaderActive = true;
+
+      window.addEventListener('scroll', () => {
+        // Seleccionamos el header y el nav de categorías que son los que ahora son fijos
+        const navs = document.querySelectorAll('header, .carta-nav-sticky');
+        if (navs.length === 0) return;
+
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollY;
+        
+        if (Math.abs(delta) < 5) return; // Sensibilidad alta
+
+        if (currentScrollY < 100) {
+          // Zona superior: Siempre visible
+          if (isHeaderHidden) {
+            gsap.to(navs, { y: 0, duration: 0.3, ease: 'power2.out', overwrite: true });
+            isHeaderHidden = false;
+            document.documentElement.classList.remove('header-hidden');
+          }
+        } else if (delta > 0 && currentScrollY > 200) {
+          // Bajando: Ocultar
+          if (!isHeaderHidden) {
+            gsap.to(navs, { y: -160, duration: 0.4, ease: 'power2.inOut', overwrite: true });
+            isHeaderHidden = true;
+            document.documentElement.classList.add('header-hidden');
+          }
+        } else if (delta < -15) {
+          // Subiendo: Mostrar
+          if (isHeaderHidden) {
+            gsap.to(navs, { y: 0, duration: 0.3, ease: 'power2.out', overwrite: true });
+            isHeaderHidden = false;
+            document.documentElement.classList.remove('header-hidden');
+          }
+        }
+        
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    }
+    initSmartHeader();
+    document.addEventListener('astro:after-swap', initSmartHeader);
   </script>
 </body>
 </html>

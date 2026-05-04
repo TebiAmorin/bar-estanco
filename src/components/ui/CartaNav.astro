@@ -1,0 +1,36 @@
+---
+interface Props {
+  current: 'vinos' | 'vermuts' | 'tapas' | 'desayunos';
+}
+
+const { current } = Astro.props;
+
+const links = [
+  { href: '/carta/vinos', label: 'Vinos', id: 'vinos' },
+  { href: '/carta/vermuts', label: 'Vermuts', id: 'vermuts' },
+  { href: '/carta/tapas', label: 'Raciones', id: 'tapas' },
+  { href: '/carta/desayunos', label: 'Desayunos', id: 'desayunos' },
+];
+---
+
+<nav class="carta-subnav" aria-label="Secciones de la carta">
+  <div class="max-w-4xl mx-auto px-4 flex items-center justify-center gap-1">
+    <a href="/carta" class="carta-subnav-back" aria-label="Volver a la carta">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class:list={[
+          'carta-subnav-link',
+          current === link.id && 'carta-subnav-active'
+        ]}
+        aria-current={current === link.id ? 'page' : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+  </div>
+</nav>

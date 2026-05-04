@@ -4,60 +4,390 @@
       {
         "do": "Ribera del Duero",
         "items": [
-          { "nombre": "Protos 27", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "29.50", "precioCopa": null, "destacado": true, "descripcion": "Roble potente y elegante. Referencia clásica de Ribera del Duero con paso suave y final largo."},
-          { "nombre": "Protos 9", "bodega": "Bodegas Protos", "tipo": "Roble", "precio": "20", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Carmelo Rodero 9", "bodega": "Carmelo Rodero", "tipo": "Roble", "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Prado Rey Crianza", "bodega": "Real Sitio de Ventosilla", "tipo": "Crianza", "precio": "20", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Capilla", "bodega": "Bodegas Capilla", "tipo": null, "precio": "24", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Adaro", "bodega": "Bodegas Pradorey", "tipo": null, "precio": "30", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Figuero Viñas Viejas", "bodega": "Tinto Figuero", "tipo": null, "precio": "35", "precioCopa": null, "destacado": true, "descripcion": "De cepas con más de 80 años. Profundo e intenso con una elegancia que solo da la edad de la viña."},
-          { "nombre": "Bosque de Matasnos", "bodega": "Bosque de Matasnos", "tipo": null, "precio": "37", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Jovellar", "bodega": "Jovellar", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Punto Geodésico", "bodega": "Bodegas Recoletas", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Trus", "bodega": "Bodegas Trus", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Legaris Crianza", "bodega": "Bodegas Legaris", "tipo": "Crianza", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Legaris Roble", "bodega": "Bodegas Legaris", "tipo": "Roble", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Viña Solorca Crianza", "bodega": "Viña Solorca", "tipo": "Crianza", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "La Capilla Vendimia Seleccionada", "bodega": "Bodegas Capilla", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Protos", "bodega": "Bodegas Protos", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Cruz de Alba", "bodega": "Cruz de Alba", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Cruz de Alba Crianza", "bodega": "Cruz de Alba", "tipo": "Crianza", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Prios", "bodega": "Bodegas de los Ríos Prieto", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Mauro", "bodega": "Bodegas Mauro", "tipo": null, "precio": "46", "precioCopa": null, "destacado": true, "descripcion": "Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales."}
+          {
+            "nombre": "Protos 27",
+            "bodega": "Bodegas Protos",
+            "tipo": "Roble",
+            "precio": "29.50",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "Roble potente y elegante. Referencia clásica de Ribera del Duero con paso suave y final largo."
+          },
+          {
+            "nombre": "Protos 9",
+            "bodega": "Bodegas Protos",
+            "tipo": "Roble",
+            "precio": "21",
+            "precioCopa": "3.30",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Carmelo Rodero 9",
+            "bodega": "Carmelo Rodero",
+            "tipo": "Roble",
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Prado Rey Crianza",
+            "bodega": "Real Sitio de Ventosilla",
+            "tipo": "Crianza",
+            "precio": "21",
+            "precioCopa": "3.30",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Capilla",
+            "bodega": "Bodegas Capilla",
+            "tipo": null,
+            "precio": "25",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Adaro",
+            "bodega": "Bodegas Pradorey",
+            "tipo": null,
+            "precio": "31",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Figuero Viñas Viejas",
+            "bodega": "Tinto Figuero",
+            "tipo": null,
+            "precio": "38",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "De cepas con más de 80 años. Profundo e intenso con una elegancia que solo da la edad de la viña."
+          },
+          {
+            "nombre": "Mauro",
+            "bodega": "Bodegas Mauro",
+            "tipo": null,
+            "precio": "48",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "Referencia absoluta. Tudela de Duero en estado puro. Potencia y finura a partes iguales."
+          },
+          {
+            "nombre": "Bosque Matasnos",
+            "bodega": "Bosque Matasnos",
+            "tipo": null,
+            "precio": "39",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Jovellar",
+            "bodega": "Jovellar",
+            "tipo": null,
+            "precio": "36",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Punto Geodésico",
+            "bodega": "Bodegas Recoletas",
+            "tipo": null,
+            "precio": "36",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Trus",
+            "bodega": "Bodegas Trus",
+            "tipo": null,
+            "precio": "17",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Legaris Crianza",
+            "bodega": "Bodegas Legaris",
+            "tipo": "Crianza",
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Viña Solorca Crianza",
+            "bodega": "Viña Solorca",
+            "tipo": "Crianza",
+            "precio": "18.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "La Capilla Vendimia Seleccionada",
+            "bodega": "Bodegas Capilla",
+            "tipo": null,
+            "precio": "40",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Protos",
+            "bodega": "Bodegas Protos",
+            "tipo": null,
+            "precio": "19",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Cruz de Alba",
+            "bodega": "Cruz de Alba",
+            "tipo": null,
+            "precio": "18",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Legaris Roble",
+            "bodega": "Bodegas Legaris",
+            "tipo": "Roble",
+            "precio": "17.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Prios",
+            "bodega": "Bodegas de los Ríos Prieto",
+            "tipo": null,
+            "precio": "19",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Cruz de Alba Crianza",
+            "bodega": "Cruz de Alba",
+            "tipo": "Crianza",
+            "precio": "28",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       },
       {
         "do": "Mencías",
         "items": [
-          { "nombre": "Alma de Autor", "bodega": "Alma de Autor", "tipo": "Mencía · Ribeira Sacra", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Cepas Viejas", "bodega": "Cepas Viejas", "tipo": "Mencía · Ribeira Sacra", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Losada", "bodega": "Bodegas Losada", "tipo": "Mencía · Bierzo", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Vía Romana", "bodega": "Vía Romana", "tipo": "Mencía · Ribeira Sacra", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Alma de Autor",
+            "bodega": "Alma de Autor",
+            "tipo": "Mencía · Ribeira Sacra",
+            "precio": "21",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Cepas Viejas",
+            "bodega": "Cepas Viejas",
+            "tipo": "Mencía · Ribeira Sacra",
+            "precio": "34",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": null
+          },
+          {
+            "nombre": "Losada",
+            "bodega": "Bodegas Losada",
+            "tipo": "Mencía · Bierzo",
+            "precio": "22",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Vía Romana",
+            "bodega": "Vía Romana",
+            "tipo": "Mencía · Ribeira Sacra",
+            "precio": "17.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       },
       {
         "do": "Rioja",
         "items": [
-          { "nombre": "Hado", "bodega": "Ramón Bilbao", "tipo": null, "precio": "22", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Ramón Bilbao Ed. Limitada Tempranillo", "bodega": "Ramón Bilbao", "tipo": null, "precio": "24", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Ramón Bilbao Ed. Limitada Garnacha", "bodega": "Ramón Bilbao", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Ramón Bilbao Crianza", "bodega": "Ramón Bilbao", "tipo": "Crianza", "precio": "18", "precioCopa": "2.60", "destacado": false, "descripcion": null},
-          { "nombre": "Agnus", "bodega": "Bodegas Valdelana", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Proelio", "bodega": "Bodegas Proelio", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Pujanza", "bodega": "Bodegas Pujanza", "tipo": null, "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda."},
-          { "nombre": "Urbión Cuvée", "bodega": "Bodegas Urbión", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Martín Zurbano", "bodega": "Martín Zurbano", "tipo": null, "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Hado",
+            "bodega": "Bodegas Pujanza",
+            "tipo": null,
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Ramón Bilbao Ed. Limitada Tempranillo",
+            "bodega": "Ramón Bilbao",
+            "tipo": null,
+            "precio": "26",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Ramón Bilbao Ed. Limitada Garnacha",
+            "bodega": "Ramón Bilbao",
+            "tipo": null,
+            "precio": "25",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Ramón Bilbao",
+            "bodega": "Ramón Bilbao",
+            "tipo": null,
+            "precio": "17",
+            "precioCopa": "2.70",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Agnus",
+            "bodega": "Bodegas Valdelana",
+            "tipo": null,
+            "precio": "16.50",
+            "precioCopa": "2.70",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Proelio",
+            "bodega": "Bodegas Proelio",
+            "tipo": null,
+            "precio": "17.50",
+            "precioCopa": "2.80",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Pujanza",
+            "bodega": "Bodegas Pujanza",
+            "tipo": null,
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "Garnacha de parcela de Rioja Alavesa. Vino serio con gran capacidad de guarda."
+          },
+          {
+            "nombre": "Urbión Cuvée",
+            "bodega": "Bodegas Urbión",
+            "tipo": null,
+            "precio": "20",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Martín Zurbano",
+            "bodega": "Martín Zurbano",
+            "tipo": null,
+            "precio": "16.50",
+            "precioCopa": "2.60",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Excellens Cuvée",
+            "bodega": "Marqués de Cáceres",
+            "tipo": null,
+            "precio": "18",
+            "precioCopa": "3.00",
+            "destacado": false,
+            "descripcion": "Su volumen, su maravillosa fruta y el buen trabajo de procesos artesanales."
+          }
         ]
       },
       {
-        "do": "Internacionales y Otras DO",
+        "do": "Internacionales y Otras D.O.",
         "items": [
-          { "nombre": "Lorca Fantasía Malbec", "bodega": "Bodega Lorca", "tipo": "Malbec · Argentina", "precio": "28", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Las Mulas", "bodega": "Miguel Torres Chile", "tipo": "Chile", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "La Vieille Ferme", "bodega": "Famille Perrin", "tipo": "Francia", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "El Pillo", "bodega": "El Pillo", "tipo": "Toro", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Piedra Joven Eco", "bodega": "Piedra Joven", "tipo": "Toro · Ecológico", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Vimea", "bodega": "Vimea", "tipo": "Cigales", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Lorca Fantasía Malbec",
+            "bodega": "Bodega Lorca",
+            "tipo": "Malbec · Argentina",
+            "precio": "18",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Las Mulas",
+            "bodega": "Miguel Torres Chile",
+            "tipo": "Francia",
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "La Vieille Ferme",
+            "bodega": "Famille Perrin",
+            "tipo": "Francia",
+            "precio": "21",
+            "precioCopa": "3.30",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "El Pillo",
+            "bodega": "El Pillo",
+            "tipo": "Toro",
+            "precio": "21",
+            "precioCopa": "3.20",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Vimea",
+            "bodega": "Vimea",
+            "tipo": "Cigales",
+            "precio": "16.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Habla del Silencio",
+            "bodega": "Bodegas Habla",
+            "tipo": "Extremadura",
+            "precio": "21",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Piedra Joven Eco",
+            "bodega": "Piedra Joven",
+            "tipo": "Toro · Ecológico",
+            "precio": "16.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       }
     ],
@@ -65,54 +395,224 @@
       {
         "do": "Ribeiro",
         "items": [
-          { "nombre": "Ramón do Casar", "bodega": "Ramón do Casar", "tipo": "Treixadura", "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Mina Neta Manuela", "bodega": "Mina Neta", "tipo": null, "precio": "16.50", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Viña do Campo", "bodega": "Viña do Campo", "tipo": null, "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Antorio Montero Autor", "bodega": "Antorio Montero", "tipo": null, "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Meu", "bodega": "Meu", "tipo": null, "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Ramón do Casar",
+            "bodega": "Ramón do Casar",
+            "tipo": "Treixadura",
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "A Neta Manuela",
+            "bodega": "A Neta",
+            "tipo": null,
+            "precio": "16.50",
+            "precioCopa": "2.80",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Viña do Campo",
+            "bodega": "Viña do Campo",
+            "tipo": null,
+            "precio": "17",
+            "precioCopa": "2.80",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Antorio Montero Autor",
+            "bodega": "Antorio Montero",
+            "tipo": null,
+            "precio": "22",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Meu",
+            "bodega": "Meu",
+            "tipo": null,
+            "precio": "17",
+            "precioCopa": "2.80",
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       },
       {
         "do": "Godellos",
         "items": [
-          { "nombre": "Alma", "bodega": "Alma", "tipo": "Godello", "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Tambora", "bodega": "Tambora", "tipo": "Godello", "precio": "19", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Viñaredo", "bodega": "Viñaredo", "tipo": "Godello", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Luna de Berride", "bodega": "Luna de Berride", "tipo": "Godello", "precio": "16.50", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "O Luar do Sil", "bodega": "Pago de los Capellanes", "tipo": "Godello", "precio": "25", "precioCopa": null, "destacado": true, "descripcion": "Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes."}
+          {
+            "nombre": "Alma",
+            "bodega": "Alma",
+            "tipo": "Godello",
+            "precio": "17",
+            "precioCopa": "2.80",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Tamborá",
+            "bodega": "Tamborá",
+            "tipo": "Godello",
+            "precio": "19",
+            "precioCopa": "3.00",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Viñaredo",
+            "bodega": "Viñaredo",
+            "tipo": "Godello",
+            "precio": "18",
+            "precioCopa": "2.90",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Luna de Berride",
+            "bodega": "Luna de Berride",
+            "tipo": "Godello",
+            "precio": "16.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "O Luar do Sil",
+            "bodega": "Pago de los Capellanes",
+            "tipo": "Godello",
+            "precio": "25",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "Referencia del Godello. Complejidad mineral y frutal que lo convierte en un blanco de los grandes."
+          }
         ]
       },
       {
         "do": "Albariños",
         "items": [
-          { "nombre": "Eidosela", "bodega": "Eidosela", "tipo": "Albariño", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Eidosela Selección", "bodega": "Eidosela", "tipo": "Albariño", "precio": "26", "precioCopa": null, "destacado": true, "descripcion": "La selección especial. Albariño con más cuerpo y complejidad."},
-          { "nombre": "Paco y Lola Prime", "bodega": "Paco y Lola", "tipo": "Albariño", "precio": "25", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Val Miñor", "bodega": "Val Miñor", "tipo": "Albariño", "precio": "20", "precioCopa": null, "destacado": true, "descripcion": "Nuestro Albariño de casa. Lleva el nombre de la comarca y el carácter de esta tierra."},
-          { "nombre": "Mar de Frades", "bodega": "Mar de Frades", "tipo": "Albariño", "precio": "26", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Pontellón", "bodega": "Pontellón", "tipo": "Albariño", "precio": "17", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Altos de Torona", "bodega": "Altos de Torona", "tipo": "Albariño", "precio": "19.50", "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Pentecostés", "bodega": "Pentecostés", "tipo": "Albariño", "precio": "23", "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Eidosela",
+            "bodega": "Eidosela",
+            "tipo": "Albariño",
+            "precio": "18",
+            "precioCopa": "2.90",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Eidosela Selección Lías",
+            "bodega": "Eidosela",
+            "tipo": "Albariño",
+            "precio": "26",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "La selección especial sobre lías. Albariño con más cuerpo y complejidad."
+          },
+          {
+            "nombre": "Paco y Lola Prime",
+            "bodega": "Paco y Lola",
+            "tipo": "Albariño",
+            "precio": "25",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Val Miñor",
+            "bodega": "Val Miñor",
+            "tipo": "Albariño",
+            "precio": "20",
+            "precioCopa": "3.30",
+            "destacado": null,
+            "descripcion": "Nuestro Albariño de casa. Lleva el nombre de la comarca y el carácter de esta tierra."
+          },
+          {
+            "nombre": "Mar de Frades",
+            "bodega": "Mar de Frades",
+            "tipo": "Albariño",
+            "precio": "26",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Pontellón",
+            "bodega": "Pontellón",
+            "tipo": "Albariño",
+            "precio": "17",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Altos de Torona",
+            "bodega": "Altos de Torona",
+            "tipo": "Albariño",
+            "precio": "19.50",
+            "precioCopa": "3.30",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Pentecostés",
+            "bodega": "Pentecostés",
+            "tipo": "Albariño",
+            "precio": "23",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       },
       {
         "do": "Rueda",
         "items": [
-          { "nombre": "Excellens Sauvignon Blanc", "bodega": "Marqués de Cáceres", "tipo": "Sauvignon Blanc", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Jovellar Blanco", "bodega": "Jovellar", "tipo": "Verdejo", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Excellens Sauvignon Blanc",
+            "bodega": "Marqués de Cáceres",
+            "tipo": "Sauvignon Blanc",
+            "precio": "18",
+            "precioCopa": "3.00",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Jovellar Blanco",
+            "bodega": "Jovellar",
+            "tipo": "Verdejo",
+            "precio": "24",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       },
       {
         "do": "Rioja Blanco",
         "items": [
-          { "nombre": "Nivarius Tempranillo Blanco", "bodega": "Nivarius", "tipo": "Tempranillo Blanco", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "875m Chardonnay", "bodega": "Coto de Hayas", "tipo": "Chardonnay", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
-        ]
-      },
-      {
-        "do": "Otras D.O.",
-        "items": [
-          { "nombre": "Habla del Silencio", "bodega": "Bodegas Habla", "tipo": "Extremadura", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Nivarius Tempranillo Blanco",
+            "bodega": "Nivarius",
+            "tipo": "Tempranillo Blanco",
+            "precio": "18",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "875m Chardonnay 2021",
+            "bodega": "Coto de Hayas",
+            "tipo": "Chardonnay",
+            "precio": "18",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       }
     ],
@@ -120,9 +620,33 @@
       {
         "do": "Rosados",
         "items": [
-          { "nombre": "Logos", "bodega": "Logos", "tipo": "Rías Baixas", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Santa Digna", "bodega": "Miguel Torres Chile", "tipo": "Chile", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Aires de Protos", "bodega": "Bodegas Protos", "tipo": "Ribera del Duero", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Logos",
+            "bodega": "Logos",
+            "tipo": "Rías Baixas",
+            "precio": "17",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Santa Digna",
+            "bodega": "Miguel Torres Chile",
+            "tipo": "Chile",
+            "precio": "18",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Aires de Protos",
+            "bodega": "Bodegas Protos",
+            "tipo": "Ribera del Duero",
+            "precio": "19.50",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": null
+          }
         ]
       }
     ],
@@ -130,18 +654,74 @@
       {
         "do": "Cavas",
         "items": [
-          { "nombre": "Marqués de Cáceres Cava", "bodega": "Marqués de Cáceres", "tipo": "Cava", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Paco y Lola Espumoso", "bodega": "Paco y Lola", "tipo": "Espumoso Albariño · Rías Baixas", "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Espumoso de Albariño. Burbuja gallega con toda la frescura de Rías Baixas."},
-          { "nombre": "Terrer de La Creu", "bodega": "Terrer de La Creu", "tipo": "Cava", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Xenius", "bodega": "Xenius", "tipo": "Cava", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Marqués de Cáceres Cava",
+            "bodega": "Marqués de Cáceres",
+            "tipo": null,
+            "precio": "21.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Paco y Lola Espumoso",
+            "bodega": "Paco y Lola",
+            "tipo": null,
+            "precio": "22",
+            "precioCopa": null,
+            "destacado": null,
+            "descripcion": "Espumoso de Albariño. Burbuja gallega con toda la frescura de Rías Baixas."
+          },
+          {
+            "nombre": "Terrer de La Creu",
+            "bodega": "Terrer de La Creu",
+            "tipo": null,
+            "precio": "17.50",
+            "precioCopa": null,
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Xenius",
+            "bodega": "Xenius",
+            "tipo": null,
+            "precio": "17.50",
+            "precioCopa": "3.50",
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       },
       {
         "do": "Spritz y Sangría",
         "items": [
-          { "nombre": "Lolea Spritz Floral", "bodega": "Lolea", "tipo": "Spritz", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Lolea Spritz Citrus", "bodega": "Lolea", "tipo": "Spritz Cítrico", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Lolea N°2 Sangría Blanca", "bodega": "Lolea", "tipo": "Sangría Blanca", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Lolea Spritz Floral",
+            "bodega": "Lolea",
+            "tipo": null,
+            "precio": "18",
+            "precioCopa": "3.50",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Lolea Spritz Citrus",
+            "bodega": "Lolea",
+            "tipo": null,
+            "precio": "18",
+            "precioCopa": "3.50",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Lolea N°2 Sangría Blanca",
+            "bodega": "Lolea",
+            "tipo": "Sangría Blanca",
+            "precio": "18",
+            "precioCopa": "3.50",
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       }
     ],
@@ -149,8 +729,24 @@
       {
         "do": "Sin Alcohol",
         "items": [
-          { "nombre": "Win 0.0 Blanco", "bodega": "Bodegas Win", "tipo": "Blanco Sin Alcohol", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null},
-          { "nombre": "Win 0.0 Tinto", "bodega": "Bodegas Win", "tipo": "Tinto Sin Alcohol", "precio": null, "precioCopa": null, "destacado": false, "descripcion": null}
+          {
+            "nombre": "Win 0.0 Blanco",
+            "bodega": "Bodegas Win",
+            "tipo": "Blanco Sin Alcohol",
+            "precio": "16",
+            "precioCopa": "3.00",
+            "destacado": false,
+            "descripcion": null
+          },
+          {
+            "nombre": "Win 0.0 Tinto",
+            "bodega": "Bodegas Win",
+            "tipo": "Tinto Sin Alcohol",
+            "precio": "16",
+            "precioCopa": "3.00",
+            "destacado": false,
+            "descripcion": null
+          }
         ]
       }
     ]
@@ -159,89 +755,646 @@
     {
       "do": "Vermuts",
       "items": [
-        { "nombre": "Martini", "bodega": "Martini", "tipo": "Vermut Rojo", "precio": 3, "destacado": false, "descripcion": null},
-        { "nombre": "Padró", "bodega": "Padró & Co", "tipo": "Vermut Artesanal", "precio": 3, "destacado": true, "descripcion": "Vermut catalán con receta de 1886. Hierbas aromáticas y un amargor equilibrado."},
-        { "nombre": "Yzaguirre", "bodega": "Yzaguirre", "tipo": "Vermut Clásico", "precio": 3, "destacado": false, "descripcion": null},
-        { "nombre": "Povarelo", "bodega": "Povarelo", "tipo": "Vermut Gallego", "precio": 3, "destacado": true, "descripcion": "Vermut gallego hecho con vinos de la tierra. Lo nuestro siempre sabe diferente."},
-        { "nombre": "Petroni", "bodega": "Petroni", "tipo": "Vermut Premium", "precio": 3, "destacado": false, "descripcion": null},
-        { "nombre": "Polvorí", "bodega": "Polvorí", "tipo": "Vermut Artesanal", "precio": 3, "destacado": false, "descripcion": null},
-        { "nombre": "Bendito", "bodega": "Bendito", "tipo": "Vermut", "precio": 2.6,"destacado": false, "descripcion": null}
+        {
+          "nombre": "Martini",
+          "bodega": "Martini",
+          "tipo": null,
+          "precio": 3,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Padró",
+          "bodega": "Padró & Co",
+          "tipo": null,
+          "precio": 3,
+          "destacado": null,
+          "descripcion": null
+        },
+        {
+          "nombre": "Becker",
+          "bodega": "Becker",
+          "tipo": null,
+          "precio": 3.5,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Yzaguirre",
+          "bodega": "Yzaguirre",
+          "tipo": null,
+          "precio": 3,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Povarelo",
+          "bodega": "Povarelo",
+          "tipo": null,
+          "precio": 3.1,
+          "destacado": null,
+          "descripcion": null
+        },
+        {
+          "nombre": "Petroni",
+          "bodega": "Petroni",
+          "tipo": null,
+          "precio": 3.2,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Polvorí",
+          "bodega": "Polvorí",
+          "tipo": null,
+          "precio": 3,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Bendito",
+          "bodega": "Bendito",
+          "tipo": null,
+          "precio": 2.6,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     },
     {
       "do": "Spritz",
       "items": [
-        { "nombre": "Petroni de Naranja", "bodega": "Petroni", "tipo": "Con cava, al estilo spritz", "precio": null, "precioCopa": null, "destacado": true, "descripcion": "Petroni de naranja servido con cava al estilo spritz."}
+        {
+          "nombre": "Petroni Spritz Naranja",
+          "bodega": "Petroni",
+          "tipo": null,
+          "precio": 4.95,
+          "destacado": false,
+          "descripcion": "Spritz de Naranja al estilo italiano"
+        }
       ]
     }
   ],
   "tapas": [
     {
-      "do": "Tapas",
+      "do": "Raciones",
       "items": [
-        { "nombre": "Ensaladilla", "bodega": null, "tipo": "Receta de la casa", "precio": "7.50", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Tortilla", "bodega": null, "tipo": "Española, jugosa por dentro", "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Tortilla española como manda la tradición. Jugosa por dentro y dorada por fuera."},
-        { "nombre": "Ensalada de tomate con ventresca", "bodega": null, "tipo": "Tomate de temporada", "precio": "14.50", "precioCopa": null, "destacado": false, "descripcion": null}
+        {
+          "nombre": "Ensaladilla",
+          "bodega": null,
+          "tipo": "Receta de la casa",
+          "precio": "7.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Tortilla",
+          "bodega": null,
+          "tipo": "Española, jugosa por dentro",
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": null,
+          "descripcion": "Tortilla española como manda la tradición. Jugosa por dentro y dorada por fuera."
+        },
+        {
+          "nombre": "Ensalada de tomate con ventresca",
+          "bodega": null,
+          "tipo": "Tomate de temporada",
+          "precio": "14.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Lacón á feira",
+          "bodega": null,
+          "tipo": "Con pimentón y aceite de oliva",
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": null,
+          "descripcion": "Lacón cocido con pimentón cachena y aceite de oliva. Galicia en un plato."
+        },
+        {
+          "nombre": "Callos",
+          "bodega": null,
+          "tipo": "Fin de semana",
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null,
+          "precioMedia": "7.50"
+        },
+        {
+          "nombre": "Empanada casera",
+          "bodega": null,
+          "tipo": "Receta de la casa",
+          "precio": "7.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Lacón con grelos",
+          "bodega": null,
+          "tipo": "Fines de semana",
+          "precio": "17",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Mejillones al vapor",
+          "bodega": null,
+          "tipo": null,
+          "precio": "9",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Croquetas",
+          "bodega": null,
+          "tipo": null,
+          "precio": "8.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     },
     {
       "do": "Tablas",
       "items": [
-        { "nombre": "Tabla de quesos", "bodega": null, "tipo": "Gallegos y nacionales", "precio": "16", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": "8" },
-        { "nombre": "Tabla de embutidos", "bodega": null, "tipo": "Cortados al momento", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null, "precioMedia": "9" }
-      ]
-    },
-    {
-      "do": "Raciones",
-      "items": [
-        { "nombre": "Lacón á feira", "bodega": null, "tipo": "Con pimentón y aceite de oliva", "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Lacón cocido con pimentón cachena y aceite de oliva. Galicia en un plato."},
-        { "nombre": "Jamón ibérico de cebo", "bodega": null, "tipo": "Cortado a mano", "precio": "18", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Tostas de jamón ibérico con tomate", "bodega": null, "tipo": "Ibérico de cebo + tomate rallado", "precio": "20", "precioCopa": null, "destacado": false, "descripcion": null}
+        {
+          "nombre": "Tabla de quesos",
+          "bodega": null,
+          "tipo": "Gallegos y nacionales",
+          "precio": "16",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null,
+          "precioMedia": "8"
+        },
+        {
+          "nombre": "Tabla de embutidos",
+          "bodega": null,
+          "tipo": "Cortados al momento",
+          "precio": "18",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null,
+          "precioMedia": "9"
+        },
+        {
+          "nombre": "Jamón ibérico de cebo",
+          "bodega": null,
+          "tipo": "Cortado a mano",
+          "precio": "18",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Jamón ibérico de cebo con pantumaca",
+          "bodega": null,
+          "tipo": null,
+          "precio": "20",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     }
   ],
   "conservas": [
     {
-      "do": "Patés La Curiosa",
+      "do": "Patés — La Curiosa",
       "items": [
-        { "nombre": "Paté de Nécora", "bodega": "La Curiosa", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Paté de nécora con todo el sabor del marisco gallego."},
-        { "nombre": "Paté de Pulpo a la Gallega", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Paté de Bonito con Piquillos", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Paté de Caballa Picante", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Paté de Atún Claro con Mostaza y Miel", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Paté de Centollo y Buey de Mar", "bodega": "La Curiosa", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Centollo y buey de mar. El paté más premium de la selección."},
-        { "nombre": "Paté de Mejillones", "bodega": "La Curiosa", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null}
+        {
+          "nombre": "Paté de Nécora",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": null,
+          "descripcion": "Paté de nécora con todo el sabor del marisco gallego."
+        },
+        {
+          "nombre": "Paté de Pulpo a la Gallega",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Paté de Bonito con Piquillos",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Paté de Caballa Picante",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Paté de Atún Claro con Mostaza y Miel",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Paté de Centollo y Buey de Mar",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": null,
+          "descripcion": "Centollo y buey de mar. El paté más premium de la selección."
+        },
+        {
+          "nombre": "Paté de Mejillones",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     },
     {
-      "do": "Patés Conservas Emilia",
+      "do": "Conservas — La Curiosa",
       "items": [
-        { "nombre": "Paté de Anchoa", "bodega": "Conservas Emilia", "tipo": null, "precio": "9", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Paté de Cabracho", "bodega": "Conservas Emilia", "tipo": null, "precio": "9", "precioCopa": null, "destacado": false, "descripcion": null}
+        {
+          "nombre": "Sardinas en Aceite de Oliva Trufado",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Atún al Pesto",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Sardinas con Pimiento de Padrón",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Atún al Curry",
+          "bodega": "La Curiosa",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     },
     {
-      "do": "Conservas Artesanas",
+      "do": "Conservas — Ramón Franco",
       "items": [
-        { "nombre": "Sardinas en Aceite de Oliva Trufado", "bodega": null, "tipo": "Con aceite trufado", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Atún al Pesto", "bodega": null, "tipo": "Fusión mediterránea", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Sardinas con Pimiento de Padrón", "bodega": null, "tipo": "Dos clásicos gallegos", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Atún al Curry", "bodega": null, "tipo": "Con toque de curry", "precio": "12", "precioCopa": null, "destacado": false, "descripcion": null}
+        {
+          "nombre": "Sardinas",
+          "bodega": "Ramón Franco",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Mejillones",
+          "bodega": "Ramón Franco",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     },
     {
-      "do": "Conservas Ramón Franco",
+      "do": "Patés — Conservas Emilia",
       "items": [
-        { "nombre": "Sardinas", "bodega": "Ramón Franco", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Mejillones en escabeche", "bodega": "Ramón Franco", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null}
+        {
+          "nombre": "Paté de Anchoa",
+          "bodega": "Conservas Emilia",
+          "tipo": null,
+          "precio": "9",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Paté de Cabracho",
+          "bodega": "Conservas Emilia",
+          "tipo": null,
+          "precio": "9",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     },
     {
       "do": "Paco Lafuente · Premium",
       "items": [
-        { "nombre": "Mejillones Fritos", "bodega": "Paco Lafuente", "tipo": null, "precio": "10", "precioCopa": null, "destacado": false, "descripcion": null},
-        { "nombre": "Sardinillas", "bodega": "Paco Lafuente", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Sardinillas en aceite de oliva. Paco Lafuente es garantía de calidad."},
-        { "nombre": "Zamburiñas", "bodega": "Paco Lafuente", "tipo": null, "precio": "12", "precioCopa": null, "destacado": true, "descripcion": "Zamburiñas gallegas en conserva premium."}
+        {
+          "nombre": "Mejillones Fritos",
+          "bodega": "Paco Lafuente",
+          "tipo": null,
+          "precio": "10",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Sardinillas",
+          "bodega": "Paco Lafuente",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": null,
+          "descripcion": "Sardinillas en aceite de oliva. Paco Lafuente es garantía de calidad."
+        },
+        {
+          "nombre": "Zamburiñas",
+          "bodega": "Paco Lafuente",
+          "tipo": null,
+          "precio": "12",
+          "precioCopa": null,
+          "destacado": null,
+          "descripcion": "Zamburiñas gallegas en conserva premium."
+        }
+      ]
+    }
+  ],
+  "desayunos": [
+    {
+      "do": "Cafés",
+      "items": [
+        {
+          "nombre": "Café solo / cortado",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.20",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Café con leche",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.40",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Café bombón",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.60",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Café vienés",
+          "bodega": null,
+          "tipo": "Café con nata",
+          "precio": "2.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Colacao",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.60",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Descafeinado",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.40",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
+      ]
+    },
+    {
+      "do": "Infusiones y Tés",
+      "items": [
+        {
+          "nombre": "Té rojo",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té verde",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té arándanos",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té rooibos",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té clásico",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Manzanilla",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Mentapoleo",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Tila",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.75",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té verde arándanos y naranja",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.95",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té manzana y frambuesa",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.95",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Té frambuesa rooibos",
+          "bodega": null,
+          "tipo": null,
+          "precio": "1.95",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
+      ]
+    },
+    {
+      "do": "Tostadas, Dulces y Salados",
+      "items": [
+        {
+          "nombre": "Tostada con tomate",
+          "bodega": null,
+          "tipo": null,
+          "precio": "2.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Tostada con mantequilla y mermelada",
+          "bodega": null,
+          "tipo": null,
+          "precio": "2.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Tostada con jamón",
+          "bodega": null,
+          "tipo": null,
+          "precio": "3.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Churros (3 uds.)",
+          "bodega": null,
+          "tipo": null,
+          "precio": "3.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Croissant plancha",
+          "bodega": null,
+          "tipo": null,
+          "precio": "2.00",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Croissant mixto",
+          "bodega": null,
+          "tipo": "con jamon y queso",
+          "precio": "3.00",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Sandwich mixto",
+          "bodega": null,
+          "tipo": null,
+          "precio": "3.00",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        },
+        {
+          "nombre": "Tarta del día",
+          "bodega": null,
+          "tipo": "Consultar en barra",
+          "precio": "3.50",
+          "precioCopa": null,
+          "destacado": false,
+          "descripcion": null
+        }
       ]
     }
   ]

@@ -300,7 +300,65 @@ a:hover {
   background-color: var(--color-paper);
   padding: 0.2rem 0.75rem;
   border: 1px solid var(--color-ink);
-  opacity: 0.5;
+  opacity: 0.6;
+}
+
+.section-label-alt {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-wine);
+  border-bottom: 2px solid var(--color-wine);
+  padding-bottom: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Editorial Vertical Text --- */
+.editorial-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(26, 26, 26, 0.3);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.editorial-vertical-left { left: -2rem; transform-origin: center left; }
+.editorial-vertical-right { right: -2rem; transform-origin: center right; }
+
+.section-ink .editorial-vertical {
+  color: rgba(244, 236, 216, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .editorial-vertical { display: none; }
+}
+
+/* --- Asymmetric Grid --- */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .asymmetric-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+  }
+  .asymmetric-grid.reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
 }
 
 @media (min-width: 640px) {
@@ -563,6 +621,7 @@ a:hover {
   margin-top: 0.1rem;
   line-height: 0.8;
   color: var(--color-wine);
+  text-shadow: 1px 1px 0px var(--color-paper-dark);
 }
 
 @media (min-width: 640px) {
@@ -677,16 +736,73 @@ a:hover {
   flex-shrink: 0;
 }
 
-/* --- Nav sticky para carta en móvil --- */
+/* --- Header Fijo y Smart --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  will-change: transform;
+}
+
+/* Compensación para el contenido */
+main {
+  padding-top: 56px;
+}
+
+/* --- Sub-nav entre secciones de carta (Vinos / Vermuts / Tapas) --- */
+/* Ahora es estático: solo aparece al principio de la carta */
+.carta-subnav {
+  background-color: var(--color-ink);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.carta-subnav-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(244, 236, 216, 0.4);
+  min-width: 44px;
+  min-height: 44px;
+  margin-right: 0.25rem;
+}
+
+.carta-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(244, 236, 216, 0.45);
+  transition: color 0.2s ease;
+}
+
+.carta-subnav-active {
+  color: var(--color-paper);
+  border-bottom: 2px solid var(--color-paper);
+}
+
+/* --- Nav FIXED y SMART para categorías internas (Tintos, Blancos...) --- */
 .carta-nav-sticky {
-  position: sticky;
-  top: 56px; /* debajo del header mobile h-14 */
-  z-index: 40;
+  position: fixed;
+  top: 56px; /* Justo debajo del header */
+  left: 0;
+  width: 100%;
+  z-index: 90;
   background-color: var(--color-paper);
   border-bottom: 1px solid rgba(26, 26, 26, 0.08);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  will-change: transform;
 }
 
 .carta-nav-sticky::-webkit-scrollbar {
@@ -716,6 +832,56 @@ a:hover {
 @media (min-width: 1024px) {
   .carta-nav-sticky {
     top: 64px; /* debajo del header desktop lg:h-16 */
+  }
+}
+
+/* --- Nav inferior compacto para carta --- */
+.carta-bottom-nav {
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  padding: 0.85rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.carta-bottom-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-faded);
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 200ms ease, background 200ms ease;
+}
+
+.carta-bottom-link:hover {
+  color: var(--color-wine);
+  background: color-mix(in srgb, var(--color-wine) 6%, transparent);
+}
+
+.carta-bottom-current {
+  color: var(--color-wine);
+  background: color-mix(in srgb, var(--color-wine) 8%, transparent);
+}
+
+.carta-bottom-sep {
+  color: color-mix(in srgb, var(--color-ink) 15%, transparent);
+  font-size: 0.55rem;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .carta-bottom-link {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
   }
 }
 
@@ -857,6 +1023,197 @@ a:hover {
   }
 }
 
+/* --- Photo stamp (galería de historia) --- */
+.photo-stamp {
+  position: relative;
+  border: 3px solid var(--color-ink);
+  padding: 0.5rem;
+  background-color: var(--color-paper-white);
+  box-shadow: 2px 3px 8px rgba(26, 26, 26, 0.12);
+  transform: rotate(-1.5deg);
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.photo-stamp:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.photo-stamp:nth-child(3n) {
+  transform: rotate(-2.5deg);
+}
+
+.photo-stamp:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 4px 6px 16px rgba(26, 26, 26, 0.18);
+  z-index: 10;
+}
+
+.photo-stamp img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.5) contrast(1.1) brightness(0.9) grayscale(0.15);
+}
+
+.photo-stamp-caption {
+  font-family: var(--font-hand);
+  font-size: 0.8rem;
+  color: var(--color-ink-faded);
+  text-align: center;
+  margin-top: 0.4rem;
+  transform: rotate(-1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-stamp,
+  .photo-stamp:nth-child(even),
+  .photo-stamp:nth-child(3n),
+  .photo-stamp:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Sello postal vintage (historia) --- */
+.postal-stamp {
+  position: relative;
+  display: inline-block;
+  background: var(--color-paper-white);
+  padding: 0.85rem;
+  
+  /* Bordes perforados tradicionales tipo sello postal */
+  --stamp-r: 4px; /* Radio de la media luna */
+  --stamp-s: 14px; /* Espacio entre agujeros */
+  
+  /* Máscara combinada: un rectángulo sólido en el centro que tapa los agujeros interiores, 
+     y un patrón de agujeros repetido que solo queda expuesto en el margen */
+  -webkit-mask:
+    linear-gradient(#000, #000) center/calc(100% - var(--stamp-r)*2) calc(100% - var(--stamp-r)*2) no-repeat,
+    radial-gradient(circle at var(--stamp-r) var(--stamp-r), transparent calc(var(--stamp-r) - 0.5px), #000 var(--stamp-r)) calc(var(--stamp-r) * -1) calc(var(--stamp-r) * -1) / var(--stamp-s) var(--stamp-s) repeat;
+  mask:
+    linear-gradient(#000, #000) center/calc(100% - var(--stamp-r)*2) calc(100% - var(--stamp-r)*2) no-repeat,
+    radial-gradient(circle at var(--stamp-r) var(--stamp-r), transparent calc(var(--stamp-r) - 0.5px), #000 var(--stamp-r)) calc(var(--stamp-r) * -1) calc(var(--stamp-r) * -1) / var(--stamp-s) var(--stamp-s) repeat;
+
+  /* Sombra proyectada que respeta el contorno troquelado */
+  filter: drop-shadow(2px 3px 6px rgba(26, 26, 26, 0.25));
+  
+  transform: rotate(-2deg);
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), filter 400ms ease;
+}
+
+.postal-stamp:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.postal-stamp-inner {
+  border: 2px solid var(--color-wine);
+  padding: 0.5rem;
+  position: relative;
+}
+
+.postal-stamp-inner::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid color-mix(in srgb, var(--color-wine) 30%, transparent);
+  pointer-events: none;
+}
+
+.postal-stamp img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  filter: sepia(0.6) contrast(1.05) brightness(0.88) grayscale(0.2);
+}
+
+.postal-stamp-label {
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-wine);
+  text-align: center;
+  margin-top: 0.35rem;
+  font-weight: 700;
+}
+
+.postal-stamp-year {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--color-wine);
+  text-align: center;
+  display: block;
+  line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .postal-stamp {
+    padding: 1.1rem;
+  }
+  .postal-stamp-inner {
+    padding: 0.65rem;
+  }
+  .postal-stamp-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+  }
+  .postal-stamp-year {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .postal-stamp,
+  .postal-stamp:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Copa badge (vinos) — Destacado y elegante --- */
+.copa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-wine);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 1;
+  background-color: color-mix(in srgb, var(--color-wine) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-wine) 30%, transparent);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 0 1px 2px rgba(94, 25, 30, 0.05);
+  transition: all 0.3s ease;
+}
+
+.copa-badge:hover {
+  background-color: color-mix(in srgb, var(--color-wine) 15%, transparent);
+  border-color: var(--color-wine);
+  transform: translateY(-1px);
+}
+
+.copa-badge svg {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .copa-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+  }
+  .copa-badge svg {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
+
 /* --- Selection color --- */
 ::selection {
   background-color: var(--color-wine);
@@ -946,4 +1303,39 @@ a:hover {
   .prose-legal {
     font-size: 0.95rem;
   }
+}
+
+/* --- Global Fixes for Mobile Layout --- */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Evitar que elementos absolutos se escapen */
+main {
+  overflow-x: hidden;
+}
+
+/* --- Estilos Editorial Historia --- */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 1;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-left: 3px;
+  color: var(--color-wine);
+  font-weight: 700;
+}
+
+.photo-vintage {
+  filter: sepia(0.3) contrast(1.1) brightness(0.95);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-frame:hover .photo-vintage {
+  filter: sepia(0) contrast(1) brightness(1);
 }

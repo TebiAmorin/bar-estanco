@@ -1,0 +1,37 @@
+---
+interface Props {
+  current: 'vinos' | 'vermuts' | 'tapas' | 'desayunos';
+}
+const { current } = Astro.props;
+
+const links = [
+  { href: '/carta', label: 'Carta', id: null },
+  { href: '/carta/vinos', label: 'Vinos', id: 'vinos' },
+  { href: '/carta/vermuts', label: 'Vermuts', id: 'vermuts' },
+  { href: '/carta/tapas', label: 'Raciones', id: 'tapas' },
+  { href: '/carta/desayunos', label: 'Desayunos', id: 'desayunos' },
+];
+---
+
+<nav class="carta-bottom-nav fade-in" aria-label="Más secciones de la carta">
+  <div class="max-w-4xl mx-auto px-4 flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="carta-bottom-link" type="button" aria-label="Volver arriba">
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
+      </svg>
+      Arriba
+    </button>
+    {links.map((link) => (
+      <>
+        <span class="carta-bottom-sep" aria-hidden="true">&middot;</span>
+        <a
+          href={link.href}
+          class:list={['carta-bottom-link', current === link.id && 'carta-bottom-current']}
+          aria-current={current === link.id ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      </>
+    ))}
+  </div>
+</nav>

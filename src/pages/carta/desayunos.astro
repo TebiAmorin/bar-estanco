@@ -8,42 +8,46 @@ import CartaFooterNav from '../../components/ui/CartaFooterNav.astro';
 import { getCarta } from '../../lib/kv';
 
 const carta = await getCarta();
-const vermuts = carta.vermuts;
-const totalVermuts = vermuts.reduce((sum, g) => sum + g.items.length, 0);
+const desayunos = carta.desayunos;
+const totalDesayunos = desayunos.reduce((sum, g) => sum + g.items.length, 0);
 ---
 
 <BaseLayout
-  title="Vermuts en Gondomar — Carta de Vermuts"
-  description="Carta de vermuts de Bar Estanco en Gondomar. Martini, Padró, Petroni, Yzaguirre, Povarelo y más. Vermut artesanal y spritz de naranja con cava. Vinoteca y tapería en Gondomar."
+  title="Desayunos en Gondomar — Cafés, Tostadas e Infusiones"
+  description="Carta de desayunos de Bar Estanco en Gondomar. Cafés, tés e infusiones, tostadas, croissants, churros y dulces. Café bar y vinoteca en Gondomar desde 1938."
 >
 
   <!-- Header -->
   <section class="section-ink py-10 sm:py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="section-label border-paper/20 text-paper/50 mb-4">Capítulo II</span>
-      <h1 class="text-paper mt-4 mb-3">Vermuts</h1>
+      <span class="section-label border-paper/20 text-paper/50 mb-4">Capítulo V</span>
+      <h1 class="text-paper mt-4 mb-3">Desayunos</h1>
       <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
-        Selección cuidada para el aperitivo. Desde el clásico
-        hasta el artesanal gallego.
+        Cafés, tés, tostadas y dulces para empezar bien el día.
+      </p>
+      <p class="text-paper/50 text-xs font-body mt-3 italic">
+        Solo disponibles hasta las 12:30 del mediodía.
       </p>
     </div>
   </section>
 
   <!-- Nav entre cartas -->
-  <CartaNav current="vermuts" />
+  <CartaNav current="desayunos" />
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <section class="py-8 sm:py-(--spacing-section)">
       <div class="text-center mb-8 fade-in">
-        <span class="section-label mb-4">La Hora del Vermut</span>
-        <h2 class="mt-4">Nuestra selección</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalVermuts} referencias</p>
+        <span class="section-label mb-4">Buenos Días</span>
+        <h2 class="mt-4">Nuestra carta de desayunos</h2>
+        <p class="text-wine text-sm mt-3 font-display font-semibold uppercase tracking-wider">
+          Hasta las 12:30
+        </p>
         <Divider />
       </div>
 
-      {vermuts.map((grupo, i) => (
-        <div class:list={['fade-in', i < vermuts.length - 1 ? 'mb-8' : 'mb-8']}>
+      {desayunos.map((grupo, i) => (
+        <div class:list={['fade-in', i < desayunos.length - 1 ? 'mb-8' : 'mb-8']}>
           <h3 class="do-header">{grupo.do}</h3>
           <div class="space-y-0">
             {grupo.items.map((v) => (
@@ -64,7 +68,7 @@ const totalVermuts = vermuts.reduce((sum, g) => sum + g.items.length, 0);
       <!-- Nota manuscrita -->
       <div class="text-center fade-in mt-6">
         <p class="handwritten text-xl sm:text-2xl">
-          &ldquo;El vermut se toma sin prisa. Es un ritual, no una bebida.&rdquo;
+          &ldquo;El desayuno se toma sin prisa. Aquí no hay reloj.&rdquo;
         </p>
       </div>
     </section>
@@ -72,6 +76,6 @@ const totalVermuts = vermuts.reduce((sum, g) => sum + g.items.length, 0);
   </div>
 
 
-  <CartaFooterNav current="vermuts" />
+  <CartaFooterNav current="desayunos" />
 
 </BaseLayout>

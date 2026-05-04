@@ -24,11 +24,18 @@ const { nombre, bodega, tipo, precio, precioCopa, descripcion, destacado = false
     )}
   </div>
   {precio ? (
-    <div class="text-right">
-      <span class="wine-entry-price">{precio} &euro;</span>
+    <div class="flex items-center gap-2">
       {precioCopa && (
-        <span class="block text-[0.65rem] text-ink-faded">copa {precioCopa} &euro;</span>
+        <span class="copa-badge" title="Disponible por copa">
+          <svg class="w-3.5 h-3.5 text-wine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M8 2h8l-1 9H9L8 2z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 11v6" stroke-linecap="round"/>
+            <path d="M8 21h8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-[0.65rem] font-bold text-wine tracking-tighter">{precioCopa}&nbsp;&euro;</span>
+        </span>
       )}
+      <span class="wine-entry-price">{precio}&nbsp;&euro;</span>
     </div>
   ) : (
     <span class="price-consultar">Consultar</span>

@@ -14,7 +14,7 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-ink/8" id="site-header" transition:persist role="banner">
+<header class="fixed top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-ink/8" id="site-header" transition:persist role="banner">
   <nav class="max-w-6xl mx-auto px-4">
     <div class="flex items-center justify-between h-14 lg:h-16">
 
@@ -31,7 +31,7 @@ function isActive(href: string): boolean {
             Bar Estanco
           </span>
           <span class="hidden sm:block text-[0.55rem] text-ink-faded tracking-[0.15em] uppercase">
-            Vinoteca · Gondomar
+            Café Bar · Gondomar
           </span>
         </div>
       </a>
@@ -128,16 +128,44 @@ function isActive(href: string): boolean {
     const mIcon = btn?.querySelector('.menu-icon');
     const cIcon = btn?.querySelector('.close-icon');
 
+    // Prevenir listeners duplicados (transition:persist mantiene el header)
+    if (h?.dataset.initialized) {
+      // Solo cerrar el menú al navegar
+      closeMenu();
+      return;
+    }
+    h?.setAttribute('data-initialized', 'true');
+
+    function closeMenu() {
+      menu?.classList.add('hidden');
+      mIcon?.classList.remove('hidden');
+      cIcon?.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu() {
+      const isHidden = menu?.classList.contains('hidden');
+      if (isHidden) {
+        menu?.classList.remove('hidden');
+        mIcon?.classList.add('hidden');
+        cIcon?.classList.remove('hidden');
+        btn?.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMenu();
+      }
+    }
+
     window.addEventListener('scroll', () => {
       h?.classList.toggle('shadow-sm', window.scrollY > 10);
     });
 
-    btn?.addEventListener('click', () => {
-      const isOpen = menu?.classList.contains('hidden');
-      menu?.classList.toggle('hidden');
-      mIcon?.classList.toggle('hidden');
-      cIcon?.classList.toggle('hidden');
-      btn?.setAttribute('aria-expanded', String(isOpen));
+    btn?.addEventListener('click', toggleMenu);
+
+    // Cerrar menú al pulsar un enlace
+    menu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
     });
   }
 

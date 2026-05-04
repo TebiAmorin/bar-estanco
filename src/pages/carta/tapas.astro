@@ -1,9 +1,13 @@
 ---
+export const prerender = false;
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Divider from '../../components/ui/Divider.astro';
 import WineEntry from '../../components/ui/WineEntry.astro';
-import carta from '../../data/carta.json';
+import CartaNav from '../../components/ui/CartaNav.astro';
+import CartaFooterNav from '../../components/ui/CartaFooterNav.astro';
+import { getCarta } from '../../lib/kv';
 
+const carta = await getCarta();
 const tapas = carta.tapas;
 const conservas = carta.conservas;
 const totalTapas = tapas.reduce((sum, g) => sum + g.items.length, 0);
@@ -11,25 +15,28 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
 ---
 
 <BaseLayout
-  title="Tapas en Gondomar — Tapería Bar Estanco"
-  description="Tapería en Gondomar: tapas gallegas, tablas de quesos y embutidos, patés de La Curiosa, conservas artesanas de Paco Lafuente y más. Bar Estanco, vinoteca y tapería desde 1938."
+  title="Raciones en Gondomar — Tapería Bar Estanco"
+  description="Raciones y tapas en Gondomar: callos, empanada, lacón con grelos, tablas de quesos y embutidos, patés de La Curiosa, conservas artesanas y más. Bar Estanco, vinoteca y tapería desde 1938."
 >
 
   <!-- Header -->
   <section class="section-ink py-10 sm:py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <span class="section-label border-paper/20 text-paper/50 mb-4">Capítulos III y IV</span>
-      <h1 class="text-paper mt-4 mb-3">Tapas, Patés y Conservas</h1>
+      <h1 class="text-paper mt-4 mb-3">Raciones, Patés y Conservas</h1>
       <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
-        Producto gallego de verdad. Todo para acompañar un buen vino.
+        Producto gallego de calidad. Todo para acompañar un buen vino.
       </p>
     </div>
   </section>
 
+  <!-- Nav entre cartas -->
+  <CartaNav current="tapas" />
+
   <!-- Sticky nav -->
   <nav class="carta-nav-sticky">
     <div class="max-w-4xl mx-auto px-4 flex items-center gap-2 py-2">
-      <a href="#tapas" class="carta-nav-link">Tapas</a>
+      <a href="#tapas" class="carta-nav-link">Raciones</a>
       <span class="text-ink/15 text-xs">&middot;</span>
       <a href="#conservas" class="carta-nav-link">Patés y conservas</a>
     </div>
@@ -43,8 +50,8 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
     <!-- ============================== -->
     <section id="tapas" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
-        <span class="section-label mb-4">Tapas</span>
-        <h2 class="mt-4">Tapas, Tablas y Raciones</h2>
+        <span class="section-label mb-4">Raciones</span>
+        <h2 class="mt-4">Raciones y Tablas</h2>
         <p class="text-ink-faded text-sm mt-2 font-body">{totalTapas} referencias</p>
         <Divider />
       </div>
@@ -116,24 +123,15 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
       ))}
     </section>
 
-  </div>
-
-
-  <!-- CTA -->
-  <section class="section-wine py-10 sm:py-16 px-4 mt-6">
-    <div class="max-w-3xl mx-auto text-center fade-in">
-      <p class="font-hand text-paper/90 text-lg sm:text-xl mb-6" style="transform: rotate(-1deg);">
+    <!-- Nota manuscrita -->
+    <div class="text-center fade-in mt-6 mb-2">
+      <p class="handwritten text-xl sm:text-2xl">
         &ldquo;El pincho del día va incluido con cada consumición.&rdquo;
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/carta" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50">
-          &larr; Volver a la carta
-        </a>
-        <a href="/carta/vinos" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper">
-          Ver vinos
-        </a>
-      </div>
     </div>
-  </section>
+
+  </div>
+
+  <CartaFooterNav current="tapas" />
 
 </BaseLayout>

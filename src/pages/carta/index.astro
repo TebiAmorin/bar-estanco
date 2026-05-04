@@ -1,112 +1,282 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Divider from '../../components/ui/Divider.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Divider from "../../components/ui/Divider.astro";
 ---
 
 <BaseLayout
-  title="Carta de Vinos, Tapas y Vermuts en Gondomar"
-  description="Carta completa de Bar Estanco en Gondomar. Más de 70 vinos, vermuts artesanales, tapas gallegas, patés y conservas gourmet. Vinoteca y tapería desde 1938."
+  title="Carta de Vinos, Raciones y Vermuts en Gondomar"
+  description="Carta completa de Bar Estanco en Gondomar. Más de 70 vinos, vermuts artesanales, tapas gallegas, patés, conservas gourmet y desayunos. Vinoteca y tapería desde 1938."
 >
-
-  <!-- Header de página -->
-  <section class="section-ink py-10 sm:py-20 px-4">
+  <!-- Header Editorial -->
+  <section class="section-ink py-12 sm:py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="section-label border-paper/20 text-paper/50 mb-4">Libro de Bodega</span>
-      <h1 class="text-paper mt-4 mb-4">Nuestra Carta</h1>
-      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
-        Vinos con nombre y apellido, vermuts con carácter y producto gallego de verdad.
+      <span
+        class="section-label border-paper/20 text-paper/50 mb-4 uppercase tracking-[0.2em]"
+        >Selección de la Casa</span
+      >
+      <h1 class="text-paper text-4xl sm:text-6xl font-bold mt-4 mb-4">
+        Libro de Bodega
+      </h1>
+      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-base">
+        Vinos con historia, vermuts de autor y producto gallego seleccionado.
       </p>
     </div>
   </section>
 
-  <!-- Índice de secciones -->
-  <section class="py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-4xl mx-auto">
+  <section class="py-12 sm:py-24 px-4 bg-paper relative overflow-hidden">
+    <!-- Grano de papel sutil para dar cuerpo -->
+    <div
+      class="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-multiply"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\"
+      0
+      0
+      200
+      200\"
+      xmlns="\"
+      http:
+      www.w3.org
+      2000
+      svg\"%3E%3Cfilter"
+      id="\"
+      n\"%3E%3CfeTurbulence"
+      type="\"
+      fractalNoise\""
+      baseFrequency="\"
+      0.65\""
+      numOctaves="\"
+      3\""
+      stitchTiles="\"
+      stitch\"
+      %3E%3C
+      filter%3E%3Crect"
+      width="\"
+      100%25\""
+      height="\"
+      100%25\""
+      filter="\"
+      url(%23n)\""
+      opacity="\"
+      1\"
+      %3E%3C
+      svg%3E');""
+    >
+    </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 stagger-fade">
-
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
         <!-- Vinos -->
-        <a href="/carta/vinos" class="card-lift group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
-          <div class="wine-rule mb-3 sm:mb-4">
-            <span class="wine-rule-text">I</span>
+        <a
+          href="/carta/vinos"
+          class="card-lift group p-8 sm:p-12 border-2 border-double border-ink/20 hover:border-wine/50 transition-all duration-500 fade-in active:bg-wine/5 bg-paper-white/60 shadow-xl relative overflow-hidden"
+        >
+          <div class="absolute top-0 right-0 p-4">
+            <span
+              class="font-display text-wine font-bold text-xs tracking-widest opacity-30"
+              >01</span
+            >
           </div>
-          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Vinos</h2>
-          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
-            Más de 70 referencias. Tintos, blancos gallegos, rosados, espumosos y sin alcohol.
+          <h2
+            class="font-display text-3xl sm:text-4xl text-ink group-hover:text-wine transition-colors mb-4"
+          >
+            Vinoteca
+          </h2>
+          <p class="text-lg text-ink-faded font-body leading-relaxed mb-8">
+            Nuestra bodega personal: desde los blancos frescos de la zona hasta
+            tintos con carácter internacional.
           </p>
-          <Divider />
-          <div class="flex items-center justify-between mt-3 sm:mt-4">
-            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">74 referencias</span>
-            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
-              Abrir &rarr;
+          <div
+            class="flex items-center justify-between pt-6 border-t border-wine/10"
+          >
+            <div class="flex flex-col">
+              <span
+                class="text-[0.65rem] font-display text-ink/40 uppercase tracking-[0.2em] mb-1"
+                >Existencias</span
+              >
+              <span
+                class="text-sm font-display font-bold text-wine tracking-widest uppercase"
+                >75 Referencias</span
+              >
+            </div>
+            <span
+              class="text-[0.7rem] font-display font-bold text-ink tracking-[0.12em] uppercase group-hover:translate-x-2 transition-transform duration-300"
+            >
+              Abrir Libro &rarr;
             </span>
           </div>
         </a>
 
         <!-- Vermuts -->
-        <a href="/carta/vermuts" class="card-lift group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
-          <div class="wine-rule mb-3 sm:mb-4">
-            <span class="wine-rule-text">II</span>
+        <a
+          href="/carta/vermuts"
+          class="card-lift group p-8 sm:p-12 border-2 border-double border-ink/20 hover:border-wine/50 transition-all duration-500 fade-in active:bg-wine/5 bg-paper-white/60 shadow-xl relative overflow-hidden"
+        >
+          <div class="absolute top-0 right-0 p-4">
+            <span
+              class="font-display text-wine font-bold text-xs tracking-widest opacity-30"
+              >02</span
+            >
           </div>
-          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Vermuts</h2>
-          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
-            Selección cuidada de vermuts: Petroni, Padró, Yzaguirre y más.
+          <h2
+            class="font-display text-3xl sm:text-4xl text-ink group-hover:text-wine transition-colors mb-4"
+          >
+            Vermutería
+          </h2>
+          <p class="text-lg text-ink-faded font-body leading-relaxed mb-8">
+            El ritual del Estanco: vermuts gallegos y nacionales seleccionados
+            para el aperitivo perfecto.
           </p>
-          <Divider />
-          <div class="flex items-center justify-between mt-3 sm:mt-4">
-            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">8 referencias</span>
-            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
-              Abrir &rarr;
+          <div
+            class="flex items-center justify-between pt-6 border-t border-wine/10"
+          >
+            <div class="flex flex-col">
+              <span
+                class="text-[0.65rem] font-display text-ink/40 uppercase tracking-[0.2em] mb-1"
+                >Existencias</span
+              >
+              <span
+                class="text-sm font-display font-bold text-wine tracking-widest uppercase"
+                >9 Referencias</span
+              >
+            </div>
+            <span
+              class="text-[0.7rem] font-display font-bold text-ink tracking-[0.12em] uppercase group-hover:translate-x-2 transition-transform duration-300"
+            >
+              Abrir Libro &rarr;
             </span>
           </div>
         </a>
 
-        <!-- Tapas -->
-        <a href="/carta/tapas" class="card-lift group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
-          <div class="wine-rule mb-3 sm:mb-4">
-            <span class="wine-rule-text">III</span>
+        <!-- Raciones -->
+        <a
+          href="/carta/tapas"
+          class="card-lift group p-8 sm:p-12 border-2 border-double border-ink/20 hover:border-wine/50 transition-all duration-500 fade-in active:bg-wine/5 bg-paper-white/60 shadow-xl relative overflow-hidden"
+        >
+          <div class="absolute top-0 right-0 p-4">
+            <span
+              class="font-display text-wine font-bold text-xs tracking-widest opacity-30"
+              >03</span
+            >
           </div>
-          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Tapas y tablas</h2>
-          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
-            Tapas gallegas, tablas de quesos y embutidos, lacón y mas.
+          <h2
+            class="font-display text-3xl sm:text-4xl text-ink group-hover:text-wine transition-colors mb-4"
+          >
+            Tablas y Raciones
+          </h2>
+          <p class="text-lg text-ink-faded font-body leading-relaxed mb-8">
+            Producto local honesto: empanada, lacón, quesos gallegos y raciones
+            de toda la vida.
           </p>
-          <Divider />
-          <div class="flex items-center justify-between mt-3 sm:mt-4">
-            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">8 referencias</span>
-            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
-              Abrir &rarr;
+          <div
+            class="flex items-center justify-between pt-6 border-t border-wine/10"
+          >
+            <div class="flex flex-col">
+              <span
+                class="text-[0.65rem] font-display text-ink/40 uppercase tracking-[0.2em] mb-1"
+                >Existencias</span
+              >
+              <span
+                class="text-sm font-display font-bold text-wine tracking-widest uppercase"
+                >13 Referencias</span
+              >
+            </div>
+            <span
+              class="text-[0.7rem] font-display font-bold text-ink tracking-[0.12em] uppercase group-hover:translate-x-2 transition-transform duration-300"
+            >
+              Abrir Libro &rarr;
             </span>
           </div>
         </a>
 
         <!-- Conservas -->
-        <a href="/carta/tapas#conservas" class="card-lift group p-5 sm:p-8 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 fade-in active:bg-wine/5">
-          <div class="wine-rule mb-3 sm:mb-4">
-            <span class="wine-rule-text">IV</span>
+        <a
+          href="/carta/tapas#conservas"
+          class="card-lift group p-8 sm:p-12 border-2 border-double border-ink/20 hover:border-wine/50 transition-all duration-500 fade-in active:bg-wine/5 bg-paper-white/60 shadow-xl relative overflow-hidden"
+        >
+          <div class="absolute top-0 right-0 p-4">
+            <span
+              class="font-display text-wine font-bold text-xs tracking-widest opacity-30"
+              >04</span
+            >
           </div>
-          <h2 class="font-display text-xl sm:text-2xl text-ink group-hover:text-wine transition-colors mb-2 sm:mb-3">Patés y conservas</h2>
-          <p class="text-sm text-ink-faded font-body leading-relaxed mb-2">
-            La Curiosa, Conservas Emilia, Paco Lafuente y mas.
+          <h2
+            class="font-display text-3xl sm:text-4xl text-ink group-hover:text-wine transition-colors mb-4"
+          >
+            Conservas y Patés
+          </h2>
+          <p class="text-lg text-ink-faded font-body leading-relaxed mb-8">
+            Selección gourmet de conservas de las Rías y patés artesanos de alta
+            calidad.
           </p>
-          <Divider />
-          <div class="flex items-center justify-between mt-3 sm:mt-4">
-            <span class="text-[0.65rem] font-display text-ink-faded uppercase tracking-[0.15em]">18 referencias</span>
-            <span class="text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
-              Abrir &rarr;
+          <div
+            class="flex items-center justify-between pt-6 border-t border-wine/10"
+          >
+            <div class="flex flex-col">
+              <span
+                class="text-[0.65rem] font-display text-ink/40 uppercase tracking-[0.2em] mb-1"
+                >Existencias</span
+              >
+              <span
+                class="text-sm font-display font-bold text-wine tracking-widest uppercase"
+                >18 Referencias</span
+              >
+            </div>
+            <span
+              class="text-[0.7rem] font-display font-bold text-ink tracking-[0.12em] uppercase group-hover:translate-x-2 transition-transform duration-300"
+            >
+              Abrir Libro &rarr;
             </span>
           </div>
         </a>
 
+        <!-- Desayunos -->
+        <a
+          href="/carta/desayunos"
+          class="card-lift group p-8 sm:p-12 border-2 border-double border-ink/20 hover:border-wine/50 transition-all duration-500 fade-in active:bg-wine/5 bg-paper-white/60 shadow-xl relative overflow-hidden md:col-span-2 md:max-w-xl md:mx-auto w-full"
+        >
+          <div class="absolute top-0 right-0 p-4">
+            <span
+              class="font-display text-wine font-bold text-xs tracking-widest opacity-30"
+              >05</span
+            >
+          </div>
+          <h2
+            class="font-display text-3xl sm:text-4xl text-ink group-hover:text-wine transition-colors mb-4"
+          >
+            Desayunos
+          </h2>
+          <p class="text-lg text-ink-faded font-body leading-relaxed mb-8">
+            Café de especialidad y repostería artesana para empezar el día en la
+            plaza.
+          </p>
+          <div
+            class="flex items-center justify-between pt-6 border-t border-wine/10"
+          >
+            <div class="flex flex-col">
+              <span
+                class="text-[0.65rem] font-display text-ink/40 uppercase tracking-[0.2em] mb-1"
+                >Existencias</span
+              >
+              <span
+                class="text-sm font-display font-bold text-wine tracking-widest uppercase"
+                >27 Referencias</span
+              >
+            </div>
+            <span
+              class="text-[0.7rem] font-display font-bold text-ink tracking-[0.12em] uppercase group-hover:translate-x-2 transition-transform duration-300"
+            >
+              Abrir Libro &rarr;
+            </span>
+          </div>
+        </a>
       </div>
 
       <!-- Nota del bodeguero -->
-      <div class="text-center mt-8 sm:mt-12 fade-in">
-        <p class="handwritten text-lg sm:text-xl">
-          &ldquo;Preguntar en barra. Siempre hay algo que no está en la carta.&rdquo;
+      <div class="text-center mt-16 sm:mt-24 fade-in">
+        <p class="handwritten text-2xl sm:text-3xl text-wine opacity-80">
+          &ldquo;Preguntar en barra.<br class="sm:hidden" /> Siempre hay algo que
+          no está en la carta.&rdquo;
         </p>
       </div>
-
     </div>
   </section>
-
 </BaseLayout>

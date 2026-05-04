@@ -1,15 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Badge1938 from '../components/ui/Badge1938.astro';
-import Divider from '../components/ui/Divider.astro';
-import ReviewCard from '../components/ui/ReviewCard.astro';
+export const prerender = false;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Badge1938 from "../components/ui/Badge1938.astro";
+import Divider from "../components/ui/Divider.astro";
+import ReviewCard from "../components/ui/ReviewCard.astro";
+import { Image } from "astro:assets";
+import { getHorarios } from "../lib/kv";
+
+const horarios = await getHorarios();
 ---
 
 <BaseLayout
   title="Vinoteca y Tapería en Gondomar desde 1938"
   description="Bar Estanco, vinoteca y tapería en Gondomar desde 1938. Más de 70 vinos, vermuts artesanales, tapas gallegas y conservas gourmet. El bar más antiguo de Gondomar, tres generaciones."
 >
-
   <!-- ============ SPLASH SCREEN (solo primera visita) ============ -->
   <div class="splash-overlay" id="splash" aria-hidden="true">
     <div class="splash-stamp">
@@ -21,204 +25,310 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
   </div>
 
   <script>
-    // Solo mostrar splash en la primera visita de la sesión
-    (function() {
-      const splash = document.getElementById('splash');
+    (function () {
+      const splash = document.getElementById("splash");
       if (!splash) return;
-      if (sessionStorage.getItem('splash-seen')) {
+      if (sessionStorage.getItem("splash-seen")) {
         splash.remove();
       } else {
-        sessionStorage.setItem('splash-seen', '1');
+        sessionStorage.setItem("splash-seen", "1");
       }
     })();
   </script>
 
-  <!-- ============ HERO ============ -->
-  <section class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden section-ink">
-    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
+  <!-- ============ HERO CLEAN & PREMIUM ============ -->
+  <section
+    class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden section-ink"
+  >
+    <Image
+      id="hero-img"
+      src="/images/historicas/Estanco-1900.jpg"
+      alt="Bar Estanco a principios de siglo"
+      width={1920}
+      height={1080}
+      class="absolute inset-0 w-full h-full object-cover photo-vintage opacity-40"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-ink/40"></div>
 
-    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
-      <div class="fade-in mb-6">
-        <span class="section-label border-paper/20 text-paper/50">Est. 1938</span>
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <!-- Sello minimalista superior -->
+      <div class="fade-in mb-4 opacity-80">
+        <span
+          class="text-paper/60 font-display text-xs tracking-[0.4em] uppercase"
+          >Gondomar · Est. 1938</span
+        >
       </div>
 
-      <div class="fade-in mb-5">
-        <div class="stamp-1938 stamp-1938-lg stamp-hover mx-auto border-paper/30 text-paper/80">
-          <div>
-            <span class="stamp-1938-text">Desde</span>
-            <span class="stamp-1938-year">1938</span>
-          </div>
-        </div>
-      </div>
-
-      <h1 class="fade-in text-paper font-display font-bold mb-3 leading-[1.05]">
+      <h1
+        class="fade-in text-paper font-display font-bold mb-6 leading-[0.9] tracking-tighter text-6xl sm:text-8xl md:text-9xl drop-shadow-2xl"
+      >
         Bar Estanco
       </h1>
 
-      <p class="fade-in font-display text-wine-light text-lg sm:text-xl md:text-2xl font-light italic mb-2">
-        Vinoteca y tapería en Gondomar
+      <p
+        class="fade-in font-display text-paper-dark/90 text-lg sm:text-2xl md:text-3xl font-light italic mb-12"
+      >
+        Vinoteca y tapería de toda la vida
       </p>
 
-      <div class="divider-editorial my-5 max-w-xs mx-auto">
-        <span class="divider-editorial-label text-paper/30">&middot;</span>
-      </div>
-
-      <p class="fade-in text-paper-dark/80 text-sm sm:text-lg max-w-lg mx-auto mb-8 leading-relaxed font-body">
-        Un bar de toda la vida donde se sirve buen vino
-        y se trata a la gente como en casa.
-      </p>
-
-      <div class="fade-in flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/carta" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper w-full sm:w-auto">
+      <div
+        class="fade-in flex flex-col sm:flex-row items-center justify-center gap-6"
+      >
+        <a
+          href="/carta"
+          class="btn-primary border-paper bg-paper text-ink hover:bg-transparent hover:text-paper px-12 py-4 text-base shadow-2xl"
+        >
           Ver nuestra carta
         </a>
-        <a href="/contacto" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50 w-full sm:w-auto">
-          Cómo llegar
+        <a
+          href="/contacto"
+          class="btn-secondary border-paper text-paper hover:bg-paper hover:text-ink px-8 py-4 text-base"
+        >
+          Ubicación
         </a>
       </div>
     </div>
 
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
-      <svg class="w-5 h-5 text-paper/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </div>
-  </section>
-
-
-  <!-- ============ CRÓNICA ============ -->
-  <section class="py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-8 fade-in">
-        <span class="section-label">Crónica Local</span>
-      </div>
-
-      <div class="fade-in">
-        <p class="drop-cap text-ink leading-[1.9] text-sm sm:text-lg mb-5">
-          En la plaza de San Bieito, en el centro de Gondomar, hay un bar que lleva abierto
-          desde la guerra. Tres generaciones de la misma familia han servido vino
-          detrás de la misma barra. No es un bar de moda. Es un bar de verdad, de los que
-          ya casi no quedan.
-        </p>
-        <p class="text-ink-faded leading-[1.9] text-sm sm:text-lg mb-6">
-          Más de 70 referencias de vino. Albariños, Godellos, Riberas, Riojas y una selección
-          que va de Chile a Francia. Vermuts con carácter. Conservas de las buenas. Y un pincho
-          de la casa cada día, porque aquí se viene a disfrutar.
-        </p>
-      </div>
-
-      <div class="fade-in text-center">
-        <p class="handwritten text-xl sm:text-2xl">
-          &ldquo;Cada cliente tiene nombre, no número de mesa&rdquo;
-        </p>
+    <div
+      class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30"
+      aria-hidden="true"
+    >
+      <div class="w-[1px] h-16 bg-gradient-to-b from-paper to-transparent">
       </div>
     </div>
   </section>
 
+  <!-- ============ FRASE MÍTICA ============ -->
+  <section class="py-12 bg-paper relative z-20">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <p
+        class="handwritten text-2xl sm:text-4xl text-wine opacity-90 leading-tight"
+      >
+        &ldquo;Sin renunciar al pasado,<br class="sm:hidden" /> pero mirando al futuro&rdquo;
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CRÓNICA LOCAL ============ -->
+  <section class="py-16 sm:py-24 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="asymmetric-grid">
+        <div class="fade-in">
+          <span class="section-label-alt">Crónica Local</span>
+          <h2 class="mb-8 leading-tight">
+            Un bar de verdad,<br />donde el tiempo se para.
+          </h2>
+
+          <div id="cronica-section">
+            <p
+              class="drop-cap text-ink leading-[1.8] text-base sm:text-xl mb-6 cronica-p"
+            >
+              En la plaza de San Bieito, en el centro de Gondomar, hay un bar
+              que lleva abierto desde la guerra. Tres generaciones de la misma
+              familia han servido vino detrás de la misma barra. No es un bar de
+              moda. Es un bar de verdad, de los que ya casi no quedan.
+            </p>
+            <p
+              class="text-ink-faded leading-[1.8] text-base sm:text-xl mb-8 cronica-p"
+            >
+              Más de 70 referencias de vino. Albariños, Godellos, Riberas,
+              Riojas y una selección que va de Chile a Francia. Vermuts con
+              carácter. Conservas de las buenas. Y un pincho de la casa cada
+              día, porque aquí se viene a disfrutar.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4 mt-8">
+            <div class="h-[1px] flex-1 bg-ink/10"></div>
+            <p class="handwritten text-2xl text-ink">
+              &ldquo;Desde 1938&rdquo;
+            </p>
+          </div>
+        </div>
+
+        <div class="fade-in relative mt-12 md:mt-0">
+          <div class="photo-frame rotate-2 shadow-xl">
+            <Image
+              src="/images/atmosphere/ritual.png"
+              alt="El ritual del vino en el Estanco"
+              width={600}
+              height={800}
+              class="w-full h-auto photo-vintage"
+            />
+          </div>
+          <div
+            class="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-wine/20 rounded-full flex items-center justify-center bg-paper p-4 rotate-12 hidden sm:flex"
+          >
+            <span
+              class="text-[0.6rem] font-display font-bold text-wine text-center leading-tight uppercase tracking-tighter"
+              >Producto<br />Gallego<br />Original</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ TRES PILARES ============ -->
-  <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
+  <section class="section-dark py-16 sm:py-24 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-10 fade-in">
-        <span class="section-label mb-4">Tres Razones</span>
-        <h2 class="mt-4">Tu vinoteca y tapería en Gondomar</h2>
+      <div class="text-center mb-16 fade-in">
+        <span class="section-label mb-4">La Esencia</span>
+        <h2 class="mt-4">Tres razones para volver</h2>
         <Divider />
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12 stagger-fade">
-        <div class="fade-in text-center px-2 sm:px-4">
-          <div class="wine-rule mb-4">
-            <span class="wine-rule-text">I</span>
-          </div>
-          <h3 class="font-display text-lg sm:text-xl mb-2">Vinoteca</h3>
-          <p class="text-sm text-ink-faded leading-relaxed mx-auto">
-            Más de 70 referencias de vino. Albariños, Godellos, Riberas, Riojas
-            y una selección internacional. Cada botella elegida con criterio.
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 stagger-fade">
+        <div class="fade-in text-left border-l border-ink/5 pl-6">
+          <span
+            class="text-wine font-display font-bold text-4xl opacity-20 block mb-2"
+            >01</span
+          >
+          <h3 class="font-display text-xl mb-4">La Bodega</h3>
+          <p class="text-base text-ink-faded leading-relaxed">
+            Más de 70 referencias seleccionadas. No buscamos marcas, buscamos
+            historias dentro de cada botella.
           </p>
         </div>
 
-        <div class="fade-in text-center px-2 sm:px-4">
-          <div class="wine-rule mb-4">
-            <span class="wine-rule-text">II</span>
-          </div>
-          <h3 class="font-display text-lg sm:text-xl mb-2">Tradición</h3>
-          <p class="text-sm text-ink-faded leading-relaxed mx-auto">
-            Desde 1938. Tres generaciones de la misma familia.
-            El bar más antiguo de Gondomar sigue abriendo cada día
-            con la misma vocación de siempre.
+        <div class="fade-in text-left border-l border-ink/5 pl-6">
+          <span
+            class="text-wine font-display font-bold text-4xl opacity-20 block mb-2"
+            >02</span
+          >
+          <h3 class="font-display text-xl mb-4">La Memoria</h3>
+          <p class="text-base text-ink-faded leading-relaxed">
+            Desde 1938. El bar más antiguo de Gondomar es custodio de miles de
+            conversaciones y encuentros.
           </p>
         </div>
 
-        <div class="fade-in text-center px-2 sm:px-4">
-          <div class="wine-rule mb-4">
-            <span class="wine-rule-text">III</span>
-          </div>
-          <h3 class="font-display text-lg sm:text-xl mb-2">Trato</h3>
-          <p class="text-sm text-ink-faded leading-relaxed mx-auto">
-            Aquí la gente se siente en casa. Conversación pausada,
-            consejo honesto y cercanía real. Cada cliente tiene nombre,
-            no número de mesa.
+        <div class="fade-in text-left border-l border-ink/5 pl-6">
+          <span
+            class="text-wine font-display font-bold text-4xl opacity-20 block mb-2"
+            >03</span
+          >
+          <h3 class="font-display text-xl mb-4">El Trato</h3>
+          <p class="text-base text-ink-faded leading-relaxed">
+            Cercanía real. Aquí no eres un cliente, eres un vecino. Servicio
+            pausado y consejo honesto.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- ============ CARTA DESTACADA ============ -->
-  <section class="py-8 sm:py-(--spacing-section) px-4">
+  <section class="py-16 sm:py-24 px-4 bg-paper-white">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-10 fade-in">
-        <span class="section-label mb-4">Libro de Bodega</span>
-        <h2 class="mt-4">Nuestra carta</h2>
-        <p class="mt-3 text-ink-faded max-w-lg mx-auto font-body text-sm sm:text-base">
-          Vinos con nombre y apellido, vermuts con carácter y producto gallego de verdad.
+      <div class="text-center mb-16 fade-in">
+        <span class="section-label-alt">Selección de la Casa</span>
+        <h2 class="mt-4">Nuestras Cartas</h2>
+        <p class="mt-3 text-ink-faded max-w-lg mx-auto font-body text-base">
+          Producto gallego de calidad y una bodega que invita a descubrir.
         </p>
         <Divider />
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 stagger-fade">
-
-        <a href="/carta/vinos" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
-          <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Vinos</h3>
+      <div class="flex flex-wrap justify-center gap-6 stagger-fade">
+        <a
+          href="/carta/vinos"
+          class="card-lift group p-5 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5 flex-[1_1_150px] max-w-[220px] flex flex-col items-center text-center"
+        >
+          <h3
+            class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2"
+          >
+            Vinos
+          </h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">+70 referencias</p>
-          <span class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+          <span
+            class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase"
+          >
             Ver &rarr;
           </span>
         </a>
 
-        <a href="/carta/vermuts" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
-          <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Vermuts</h3>
+        <a
+          href="/carta/vermuts"
+          class="card-lift group p-5 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5 flex-[1_1_150px] max-w-[220px] flex flex-col items-center text-center"
+        >
+          <h3
+            class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2"
+          >
+            Vermuts
+          </h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">8 referencias</p>
-          <span class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+          <span
+            class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase"
+          >
             Ver &rarr;
           </span>
         </a>
 
-        <a href="/carta/tapas" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
-          <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Tapas</h3>
+        <a
+          href="/carta/tapas"
+          class="card-lift group p-5 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5 flex-[1_1_150px] max-w-[220px] flex flex-col items-center text-center"
+        >
+          <h3
+            class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2"
+          >
+            Tapas
+          </h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">Producto gallego</p>
-          <span class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+          <span
+            class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase"
+          >
             Ver &rarr;
           </span>
         </a>
 
-        <a href="/carta/tapas#conservas" class="fade-in card-lift group p-4 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5">
-          <h3 class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2">Conservas</h3>
+        <a
+          href="/carta/tapas#conservas"
+          class="card-lift group p-5 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5 flex-[1_1_150px] max-w-[220px] flex flex-col items-center text-center"
+        >
+          <h3
+            class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2"
+          >
+            Conservas
+          </h3>
           <div class="divider-editorial my-2 sm:my-3">
             <span class="divider-editorial-label">&middot;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">18 referencias</p>
-          <span class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase">
+          <span
+            class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase"
+          >
+            Ver &rarr;
+          </span>
+        </a>
+
+        <a
+          href="/carta/desayunos"
+          class="card-lift group p-5 sm:p-6 border-2 border-double border-ink/10 hover:border-wine/30 transition-all duration-300 active:bg-wine/5 flex-[1_1_150px] max-w-[220px] flex flex-col items-center text-center"
+        >
+          <h3
+            class="font-display text-base sm:text-lg text-ink group-hover:text-wine transition-colors mb-1 sm:mb-2"
+          >
+            Desayunos
+          </h3>
+          <div class="divider-editorial my-2 sm:my-3">
+            <span class="divider-editorial-label">&middot;</span>
+          </div>
+          <p class="text-xs sm:text-sm text-ink-faded">Hasta las 12:30</p>
+          <span
+            class="inline-block mt-3 text-[0.65rem] font-display font-bold text-wine tracking-[0.12em] uppercase"
+          >
             Ver &rarr;
           </span>
         </a>
@@ -226,17 +336,22 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
     </div>
   </section>
 
-
   <!-- ============ PRUEBA SOCIAL ============ -->
-  <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-8 fade-in">
-        <span class="section-label mb-4">Testimonios</span>
+  <section class="section-dark py-16 sm:py-24 px-4 relative overflow-hidden">
+    <!-- Decoración de fondo sutil -->
+    <div
+      class="absolute top-0 right-0 w-64 h-64 bg-wine/5 rounded-full blur-3xl -mr-32 -mt-32"
+    >
+    </div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-16 fade-in">
+        <span class="section-label-alt">Voces de la Plaza</span>
         <h2 class="mt-4">Lo que dicen nuestros clientes</h2>
         <Divider />
       </div>
 
-      <div class="space-y-4 fade-in">
+      <div class="grid grid-cols-1 gap-6 fade-in">
         <ReviewCard
           author="ro ro"
           text="En pleno centro de Gondomar, siempre tiene ambiente. Las tapas son buenísimas y la atención de modo familiar y cercano. Tiene una buena selección de vinos, incluso franceses y argentinos. Todo perfecto."
@@ -259,93 +374,244 @@ import ReviewCard from '../components/ui/ReviewCard.astro';
     </div>
   </section>
 
-
   <!-- ============ PINCHO DEL DÍA ============ -->
-  <section class="section-wine py-10 sm:py-16 px-4">
-    <div class="max-w-4xl mx-auto text-center fade-in">
-      <span class="section-label border-paper/20 text-paper/50 mb-4">Tradición Diaria</span>
-      <h2 class="text-paper text-2xl sm:text-3xl mt-4 mb-4">El pincho de la casa</h2>
-      <p class="text-paper-dark/80 max-w-2xl mx-auto leading-relaxed font-body text-sm sm:text-base">
-        Los domingos, empanada gallega &mdash; la que ganó el premio.
-        El resto de la semana, sorpresa: ensaladilla, embutidos,
-        quesos, lentejas... Siempre casero, siempre generoso.
-      </p>
-      <div class="divider-editorial max-w-xs mx-auto my-5">
-        <span class="divider-editorial-label text-paper/30">&middot;</span>
+  <section class="section-wine py-16 sm:py-28 px-4 relative overflow-hidden">
+    <!-- Grano sutil para esta sección oscura -->
+    <div
+      class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\"
+      0
+      0
+      200
+      200\"
+      xmlns="\"
+      http:
+      www.w3.org
+      2000
+      svg\"%3E%3Cfilter"
+      id="\"
+      n\"%3E%3CfeTurbulence"
+      type="\"
+      fractalNoise\""
+      baseFrequency="\"
+      0.65\""
+      numOctaves="\"
+      3\""
+      stitchTiles="\"
+      stitch\"
+      %3E%3C
+      filter%3E%3Crect"
+      width="\"
+      100%25\""
+      height="\"
+      100%25\""
+      filter="\"
+      url(%23n)\""
+      opacity="\"
+      1\"
+      %3E%3C
+      svg%3E');""
+    >
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10 fade-in">
+      <span class="section-label border-paper/20 text-paper/50 mb-6"
+        >Tradición Diaria</span
+      >
+      <h2 class="text-paper text-3xl sm:text-5xl mt-6 mb-8 tracking-tight">
+        El pincho de la casa
+      </h2>
+
+      <div
+        class="bg-paper/5 border border-paper/10 p-8 sm:p-12 backdrop-blur-sm shadow-2xl"
+      >
+        <p
+          class="text-paper text-lg sm:text-2xl max-w-2xl mx-auto leading-relaxed font-body italic"
+        >
+          &ldquo;Los domingos, empanada gallega &mdash; la que ganó el premio.
+          El resto de la semana, sorpresa: ensaladilla, embutidos, quesos,
+          lentejas... Siempre casero, siempre generoso.&rdquo;
+        </p>
+        <div class="divider-editorial max-w-xs mx-auto my-8">
+          <span class="divider-editorial-label text-paper/40">&middot;</span>
+        </div>
+        <p
+          class="handwritten text-paper/90 text-2xl sm:text-3xl"
+          style="transform: rotate(-1deg);"
+        >
+          Va incluido con cada consumición.
+        </p>
       </div>
-      <p class="font-hand text-paper/90 text-lg sm:text-xl italic" style="transform: rotate(-1deg);">
-        Con cada consumición. Porque aquí se viene a disfrutar.
-      </p>
     </div>
   </section>
 
-
   <!-- ============ HORARIO ============ -->
-  <section class="py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-8 fade-in">
-        <span class="section-label mb-4">Horario</span>
-        <h2 class="mt-4">Cuándo visitarnos</h2>
-        <Divider />
-      </div>
+  <section class="py-16 sm:py-24 px-4 bg-paper">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div class="fade-in">
+          <span class="section-label-alt">Visítanos</span>
+          <h2 class="mb-6">Cuándo abrirnos la puerta</h2>
+          <p class="text-ink-faded text-lg mb-8">
+            Estamos en la plaza de San Bieito, el corazón de Gondomar. Pásate a
+            cualquier hora, siempre hay un hueco en la barra.
+          </p>
+          <div class="flex flex-col gap-4">
+            <a
+              href="/contacto"
+              class="btn-primary bg-ink text-paper border-ink hover:bg-transparent hover:text-ink self-start"
+              >Cómo llegar &rarr;</a
+            >
+          </div>
+        </div>
 
-      <div class="fade-in max-w-md mx-auto">
-        <div class="border-2 border-double border-ink/10 p-5 sm:p-8">
-          <table class="w-full text-sm font-body" role="table" aria-label="Horario del bar">
-            <tbody>
-              <tr class="border-b border-ink/8">
-                <td class="py-2.5 font-display font-semibold text-ink text-sm">Lunes</td>
-                <td class="py-2.5 text-right text-ink-faded">18:00 – 23:30</td>
-              </tr>
-              <tr class="border-b border-ink/8">
-                <td class="py-2.5 font-display font-semibold text-ink text-sm">Martes – Viernes</td>
-                <td class="py-2.5 text-right text-ink-faded">
-                  9:30 – 14:30<br/>
-                  18:00 – 23:30
-                </td>
-              </tr>
-              <tr class="border-b border-ink/8">
-                <td class="py-2.5 font-display font-semibold text-ink text-sm">Sábado</td>
-                <td class="py-2.5 text-right text-ink-faded">
-                  9:00 – 15:30<br/>
-                  18:00 – 23:30
-                </td>
-              </tr>
-              <tr>
-                <td class="py-2.5 font-display font-semibold text-ink text-sm">Domingo</td>
-                <td class="py-2.5 text-right text-ink-faded">10:00 – 15:30</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="mt-4 pt-4 border-t border-ink/8 text-center">
-            <p class="text-[0.7rem] text-ink-faded font-body italic">
-              * Horario orientativo, puede variar según temporada.
-            </p>
+        <div class="fade-in">
+          <div
+            class="bg-paper-white border-2 border-double border-ink/10 p-6 sm:p-10 shadow-lg rotate-1"
+          >
+            <h3
+              class="text-center font-display text-lg uppercase tracking-widest mb-8 text-wine"
+            >
+              Nuestro Horario
+            </h3>
+            <table
+              class="w-full text-sm font-body"
+              aria-label="Horario del bar"
+            >
+              <tbody>
+                {
+                  horarios.map((h: any, i: number) => (
+                    <tr
+                      class={
+                        i < horarios.length - 1 ? "border-b border-ink/8" : ""
+                      }
+                    >
+                      <td class="py-3 font-display font-bold text-ink text-sm uppercase">
+                        {h.dia}
+                      </td>
+                      <td
+                        class="py-3 text-right text-ink-faded font-medium"
+                        set:html={h.turnos
+                          .map((t: string[]) => `${t[0]} – ${t[1]}`)
+                          .join("<br/>")}
+                      />
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+            <div class="mt-6 pt-6 border-t border-ink/8 text-center">
+              <p
+                class="text-[0.7rem] text-ink-faded font-body italic uppercase tracking-tighter"
+              >
+                Sujeto a cambios según temporada y festivos locales
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- ============ CTA FINAL ============ -->
-  <section class="section-dark py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-3xl mx-auto text-center fade-in">
-      <h2 class="mb-3">Pásate cuando quieras</h2>
-      <p class="text-ink-faded mb-6 max-w-lg mx-auto font-body text-sm sm:text-base">
-        Estamos en la plaza de San Bieito, en el centro de Gondomar.
-        Sin reservas, sin complicaciones. Como siempre.
+  <section
+    class="section-ink py-20 sm:py-32 px-4 text-center overflow-hidden relative"
+  >
+    <div class="max-w-3xl mx-auto relative z-10 fade-in">
+      <h2 class="text-4xl sm:text-6xl mb-6 tracking-tighter">
+        Te esperamos en la plaza
+      </h2>
+      <p
+        class="text-paper-dark/70 mb-12 max-w-lg mx-auto font-body text-lg sm:text-xl italic"
+      >
+        ¡Reserva si no te quieres quedar sin tu trocito de historia!
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/contacto" class="btn-primary w-full sm:w-auto">
-          Cómo llegar
-        </a>
-        <a href="tel:+34986360098" class="btn-secondary w-full sm:w-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a
+          href="tel:+34986360098"
+          class="text-paper font-display text-2xl sm:text-3xl hover:text-wine-light transition-colors"
+        >
           986 360 098
+        </a>
+        <div class="hidden sm:block h-8 w-[1px] bg-paper/20"></div>
+        <a href="/contacto" class="btn-primary bg-paper text-ink border-paper">
+          Ver ubicación
         </a>
       </div>
     </div>
   </section>
 
+  <!-- ============ GSAP ANIMATIONS PARA INDEX ============ -->
+  <script is:inline>
+    function initIndexAnimations() {
+      if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined")
+        return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Hero Parallax sutil sin desenfoque excesivo
+      const heroImg = document.getElementById("hero-img");
+      if (heroImg) {
+        gsap.to(heroImg, {
+          yPercent: 15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroImg.parentElement,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      // 2. Text Reveal en Crónica Local
+      const cronicaSection = document.getElementById("cronica-section");
+      if (cronicaSection) {
+        const paragraphs = cronicaSection.querySelectorAll(".cronica-p");
+        gsap.fromTo(
+          paragraphs,
+          { opacity: 0.15, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cronicaSection,
+              start: "top 85%",
+              end: "bottom 70%",
+              scrub: 1,
+            },
+          }
+        );
+      }
+
+      // 3. Efecto Baraja en Cartas
+      const cards = gsap.utils.toArray(".card-lift");
+      if (cards.length > 0) {
+        cards.forEach((card) => card.classList.remove("fade-in"));
+
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 80, rotation: 3, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.2)",
+            stagger: 0.1,
+            scrollTrigger: {
+              trigger: cards[0].parentElement,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initIndexAnimations);
+    document.addEventListener("astro:after-swap", initIndexAnimations);
+  </script>
 </BaseLayout>

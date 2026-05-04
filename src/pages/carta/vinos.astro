@@ -1,9 +1,13 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Divider from '../../components/ui/Divider.astro';
-import WineEntry from '../../components/ui/WineEntry.astro';
-import carta from '../../data/carta.json';
+export const prerender = false;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Divider from "../../components/ui/Divider.astro";
+import WineEntry from "../../components/ui/WineEntry.astro";
+import CartaNav from "../../components/ui/CartaNav.astro";
+import CartaFooterNav from "../../components/ui/CartaFooterNav.astro";
+import { getCarta } from "../../lib/kv";
 
+const carta = await getCarta();
 const { tintos, blancos, rosados, espumosos, sinAlcohol } = carta.vinos;
 
 const totalTintos = tintos.reduce((sum, g) => sum + g.items.length, 0);
@@ -17,21 +21,30 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
   title="Carta de Vinos en Gondomar — Más de 70 referencias"
   description="Carta de vinos de Bar Estanco, vinoteca en Gondomar. Más de 70 referencias: Albariño, Godello, Ribera del Duero, Rioja, Mencía, vinos internacionales, espumosos y sin alcohol."
 >
-
   <!-- Header -->
   <section class="section-ink py-10 sm:py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="section-label border-paper/20 text-paper/50 mb-4">Capítulo I</span>
+      <span class="section-label border-paper/20 text-paper/50 mb-4"
+        >Capítulo I</span
+      >
       <h1 class="text-paper mt-4 mb-3">Carta de Vinos</h1>
-      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
-        Más de 70 referencias elegidas con criterio. Pregunta en barra, te ayudamos a elegir.
+      <p
+        class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base"
+      >
+        Más de 70 referencias elegidas con criterio. Pregunta en barra, te
+        ayudamos a elegir.
       </p>
     </div>
   </section>
 
+  <!-- Nav entre cartas -->
+  <CartaNav current="vinos" />
+
   <!-- Sticky nav para saltar entre secciones -->
   <nav class="carta-nav-sticky">
-    <div class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto">
+    <div
+      class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto"
+    >
       <a href="#tintos" class="carta-nav-link">Tintos</a>
       <span class="text-ink/15 text-xs">&middot;</span>
       <a href="#blancos" class="carta-nav-link">Blancos</a>
@@ -44,186 +57,278 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
     </div>
   </nav>
 
-
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Selección por Copa (Highlighted Section) -->
+    <section class="mt-8 sm:mt-12 mb-4 fade-in">
+      <div
+        class="bg-paper-white border-2 border-wine/10 p-6 sm:p-10 shadow-lg relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 right-0 w-32 h-32 bg-wine/5 rounded-full -mr-16 -mt-16"
+        >
+        </div>
+
+        <div class="relative z-10">
+          <span
+            class="text-wine font-display text-[0.65rem] uppercase tracking-[0.3em] font-bold mb-2 block"
+            >Sugerencia del Tabernero</span
+          >
+          <h2 class="text-2xl sm:text-3xl mb-4 tracking-tight">
+            Selección por Copa
+          </h2>
+          <p
+            class="text-ink-faded text-base font-body mb-8 leading-relaxed max-w-2xl"
+          >
+            No hace falta abrir la botella entera para disfrutar de una joya. <br
+              class="hidden sm:block"
+            />
+            Muchos de nuestros vinos están disponibles por copa para que puedas viajar
+            por diferentes bodegas en una sola visita.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2">
+            <div
+              class="flex items-center justify-between py-2 border-b border-wine/5"
+            >
+              <span class="font-display text-sm font-semibold text-ink"
+                >NSERTAR SUGERENCIA</span
+              >
+              <span class="copa-badge">3,50 &euro;</span>
+            </div>
+            <div
+              class="flex items-center justify-between py-2 border-b border-wine/5"
+            >
+              <span class="font-display text-sm font-semibold text-ink"
+                >Protos Roble</span
+              >
+              <span class="copa-badge">2,90 &euro;</span>
+            </div>
+            <div
+              class="flex items-center justify-between py-2 border-b border-wine/5"
+            >
+              <span class="font-display text-sm font-semibold text-ink"
+                >INSERTAR SUGERENCIA</span
+              >
+              <span class="copa-badge">4,50 &euro;</span>
+            </div>
+            <div
+              class="flex items-center justify-between py-2 border-b border-wine/5"
+            >
+              <span class="font-display text-sm font-semibold text-ink"
+                >MNSERTAR SUGERENCIA</span
+              >
+              <span class="copa-badge">4,20 &euro;</span>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center gap-2">
+            <svg
+              class="w-4 h-4 text-wine/40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <p
+              class="text-[0.7rem] text-ink-faded italic font-body uppercase tracking-tighter"
+            >
+              Busca el distintivo de copa en toda la carta para descubrir más
+              opciones
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- TINTOS -->
     <section id="tintos" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Tintos</span>
         <h2 class="mt-4">Vinos Tintos</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalTintos} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">
+          {totalTintos} referencias
+        </p>
         <Divider />
       </div>
 
-      {tintos.map((grupo, i) => (
-        <div class:list={['fade-in', i < tintos.length - 1 ? 'mb-8' : 'mb-4']}>
-          <h3 class="do-header">{grupo.do}</h3>
-          <div class="space-y-0">
-            {grupo.items.map((v) => (
-              <WineEntry
-                nombre={v.nombre}
-                bodega={v.bodega}
-                tipo={v.tipo}
-                precio={v.precio}
-                precioCopa={v.precioCopa}
-                destacado={v.destacado}
-                descripcion={v.descripcion}
-              />
-            ))}
+      {
+        tintos.map((grupo, i) => (
+          <div
+            class:list={["fade-in", i < tintos.length - 1 ? "mb-8" : "mb-4"]}
+          >
+            <h3 class="do-header">{grupo.do}</h3>
+            <div class="space-y-0">
+              {grupo.items.map((v) => (
+                <WineEntry
+                  nombre={v.nombre}
+                  bodega={v.bodega}
+                  tipo={v.tipo}
+                  precio={v.precio}
+                  precioCopa={v.precioCopa}
+                  destacado={v.destacado}
+                  descripcion={v.descripcion}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </section>
 
-
-    <Divider label="&middot; &middot; &middot;" />
-
+    <Divider label="· · ·" />
 
     <!-- BLANCOS -->
     <section id="blancos" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Blancos</span>
         <h2 class="mt-4">Vinos Blancos</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalBlancos} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">
+          {totalBlancos} referencias
+        </p>
         <Divider />
       </div>
 
-      {blancos.map((grupo, i) => (
-        <div class:list={['fade-in', i < blancos.length - 1 ? 'mb-8' : 'mb-4']}>
-          <h3 class="do-header">{grupo.do}</h3>
-          <div class="space-y-0">
-            {grupo.items.map((v) => (
-              <WineEntry
-                nombre={v.nombre}
-                bodega={v.bodega}
-                tipo={v.tipo}
-                precio={v.precio}
-                precioCopa={v.precioCopa}
-                destacado={v.destacado}
-                descripcion={v.descripcion}
-              />
-            ))}
+      {
+        blancos.map((grupo, i) => (
+          <div
+            class:list={["fade-in", i < blancos.length - 1 ? "mb-8" : "mb-4"]}
+          >
+            <h3 class="do-header">{grupo.do}</h3>
+            <div class="space-y-0">
+              {grupo.items.map((v) => (
+                <WineEntry
+                  nombre={v.nombre}
+                  bodega={v.bodega}
+                  tipo={v.tipo}
+                  precio={v.precio}
+                  precioCopa={v.precioCopa}
+                  destacado={v.destacado}
+                  descripcion={v.descripcion}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </section>
 
-
-    <Divider label="&middot; &middot; &middot;" />
-
+    <Divider label="· · ·" />
 
     <!-- ROSADOS -->
     <section id="rosados" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Rosados</span>
         <h2 class="mt-4">Vinos Rosados</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalRosados} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">
+          {totalRosados} referencias
+        </p>
         <Divider />
       </div>
 
-      {rosados.map((grupo) => (
-        <div class="fade-in">
-          <div class="space-y-0">
-            {grupo.items.map((v) => (
-              <WineEntry
-                nombre={v.nombre}
-                bodega={v.bodega}
-                tipo={v.tipo}
-                precio={v.precio}
-                precioCopa={v.precioCopa}
-                destacado={v.destacado}
-                descripcion={v.descripcion}
-              />
-            ))}
+      {
+        rosados.map((grupo) => (
+          <div class="fade-in">
+            <div class="space-y-0">
+              {grupo.items.map((v) => (
+                <WineEntry
+                  nombre={v.nombre}
+                  bodega={v.bodega}
+                  tipo={v.tipo}
+                  precio={v.precio}
+                  precioCopa={v.precioCopa}
+                  destacado={v.destacado}
+                  descripcion={v.descripcion}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </section>
 
-
-    <Divider label="&middot; &middot; &middot;" />
-
+    <Divider label="· · ·" />
 
     <!-- ESPUMOSOS -->
     <section id="espumosos" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Espumosos</span>
         <h2 class="mt-4">Espumosos y Cavas</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalEspumosos} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">
+          {totalEspumosos} referencias
+        </p>
         <Divider />
       </div>
 
-      {espumosos.map((grupo, i) => (
-        <div class:list={['fade-in', i < espumosos.length - 1 ? 'mb-8' : 'mb-4']}>
-          <h3 class="do-header">{grupo.do}</h3>
-          <div class="space-y-0">
-            {grupo.items.map((v) => (
-              <WineEntry
-                nombre={v.nombre}
-                bodega={v.bodega}
-                tipo={v.tipo}
-                precio={v.precio}
-                precioCopa={v.precioCopa}
-                destacado={v.destacado}
-                descripcion={v.descripcion}
-              />
-            ))}
+      {
+        espumosos.map((grupo, i) => (
+          <div
+            class:list={["fade-in", i < espumosos.length - 1 ? "mb-8" : "mb-4"]}
+          >
+            <h3 class="do-header">{grupo.do}</h3>
+            <div class="space-y-0">
+              {grupo.items.map((v) => (
+                <WineEntry
+                  nombre={v.nombre}
+                  bodega={v.bodega}
+                  tipo={v.tipo}
+                  precio={v.precio}
+                  precioCopa={v.precioCopa}
+                  destacado={v.destacado}
+                  descripcion={v.descripcion}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </section>
 
-
-    <Divider label="&middot; &middot; &middot;" />
-
+    <Divider label="· · ·" />
 
     <!-- SIN ALCOHOL -->
     <section id="sin-alcohol" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Sin Alcohol</span>
         <h2 class="mt-4">Vinos Sin Alcohol</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalSinAlcohol} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body">
+          {totalSinAlcohol} referencias
+        </p>
         <Divider />
       </div>
 
-      {sinAlcohol.map((grupo) => (
-        <div class="fade-in">
-          <div class="space-y-0">
-            {grupo.items.map((v) => (
-              <WineEntry
-                nombre={v.nombre}
-                bodega={v.bodega}
-                tipo={v.tipo}
-                precio={v.precio}
-                precioCopa={v.precioCopa}
-                destacado={v.destacado}
-                descripcion={v.descripcion}
-              />
-            ))}
+      {
+        sinAlcohol.map((grupo) => (
+          <div class="fade-in">
+            <div class="space-y-0">
+              {grupo.items.map((v) => (
+                <WineEntry
+                  nombre={v.nombre}
+                  bodega={v.bodega}
+                  tipo={v.tipo}
+                  precio={v.precio}
+                  precioCopa={v.precioCopa}
+                  destacado={v.destacado}
+                  descripcion={v.descripcion}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </section>
 
+    <!-- Nota manuscrita -->
+    <div class="text-center fade-in mt-6 mb-2">
+      <p class="handwritten text-xl sm:text-2xl">
+        &ldquo;Si no lo ves en la carta, pregunta. Siempre hay algo
+        nuevo.&rdquo;
+      </p>
+    </div>
   </div>
 
-
-  <!-- CTA inferior -->
-  <section class="section-wine py-10 sm:py-16 px-4 mt-6">
-    <div class="max-w-3xl mx-auto text-center fade-in">
-      <p class="font-hand text-paper/90 text-lg sm:text-xl mb-6" style="transform: rotate(-1deg);">
-        &ldquo;Si no lo ves en la carta, pregunta. Siempre hay algo nuevo.&rdquo;
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/carta" class="btn-secondary border-paper/30 text-paper/80 hover:bg-paper/10 hover:border-paper/50">
-          &larr; Volver a la carta
-        </a>
-        <a href="tel:+34986360098" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper">
-          Llámanos &middot; 986 360 098
-        </a>
-      </div>
-    </div>
-  </section>
-
+  <CartaFooterNav current="vinos" />
 </BaseLayout>

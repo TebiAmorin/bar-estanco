@@ -1,162 +1,121 @@
 ---
+export const prerender = false;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Divider from '../components/ui/Divider.astro';
+import { getHorarios } from '../lib/kv';
+
+const horarios = await getHorarios();
 ---
 
 <BaseLayout
-  title="Contacto — Bar y Vinoteca en Gondomar"
-  description="Cómo llegar a Bar Estanco, vinoteca y tapería en Gondomar. Pr. San Bieito 1, 36380 Gondomar, Pontevedra. Teléfono 986 360 098. Centro de Gondomar."
+  title="Contacto — Café Bar y Tapería en Gondomar"
+  description="Cómo llegar a Bar Estanco, café bar, vinoteca y tapería en Gondomar. Rúa San Bieito, 1, 36380 Gondomar, Pontevedra. Teléfono 986 360 098. Centro de Gondomar."
 >
 
-  <!-- Header -->
-  <section class="section-ink py-10 sm:py-20 px-4">
+  <!-- Header Simple -->
+  <section class="section-ink py-12 sm:py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <span class="section-label border-paper/20 text-paper/50 mb-4">Visítanos</span>
-      <h1 class="text-paper mt-4 mb-3">Contacto</h1>
-      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-sm sm:text-base">
-        En pleno centro de Gondomar, plaza de San Bieito.
-        Sin reservas, sin complicaciones.
+      <span class="section-label border-paper/20 text-paper/50 mb-4 uppercase tracking-[0.2em]">Contacto</span>
+      <h1 class="text-paper text-4xl sm:text-6xl font-bold mt-4 mb-4">Visítanos en la plaza</h1>
+      <p class="text-paper-dark/70 max-w-lg mx-auto font-body text-base">
+        Estamos en el centro de Gondomar. Reservas solo por teléfono.
       </p>
     </div>
   </section>
 
 
-  <section class="py-8 sm:py-(--spacing-section) px-4">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+  <section class="py-12 sm:py-20 px-4 bg-paper">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
 
-        <!-- Info de contacto -->
-        <div class="fade-in">
-          <span class="section-label mb-4">Datos</span>
-          <h2 class="mt-4 mb-6">Cómo encontrarnos</h2>
-
-          <div class="space-y-4">
-            <!-- Dirección -->
-            <div class="flex items-start gap-3 p-4 border-l-3 border-wine bg-paper-white/40">
-              <svg class="w-5 h-5 mt-0.5 shrink-0 text-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+        <!-- Info (Columna Izquierda) -->
+        <div class="fade-in space-y-12">
+          
+          <div>
+            <h2 class="font-display text-2xl mb-6 border-b border-ink/10 pb-2">Datos de contacto</h2>
+            
+            <div class="space-y-8">
+              <!-- Dirección -->
               <div>
-                <h3 class="font-display text-sm sm:text-base font-semibold mb-1">Dirección</h3>
-                <p class="text-ink-faded text-sm font-body leading-relaxed">
-                  Pr. San Bieito, 1<br />
+                <span class="text-wine font-display text-xs uppercase tracking-widest block mb-2">Ubicación</span>
+                <p class="text-ink text-xl font-body">
+                  Rúa San Bieito, 1<br />
                   36380 Gondomar, Pontevedra
                 </p>
               </div>
-            </div>
 
-            <!-- Teléfono -->
-            <a href="tel:+34986360098" class="flex items-start gap-3 p-4 border-l-3 border-wine bg-paper-white/40 min-h-[60px] active:bg-wine/5 transition-colors">
-              <svg class="w-5 h-5 mt-0.5 shrink-0 text-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+              <!-- Teléfono -->
               <div>
-                <h3 class="font-display text-sm sm:text-base font-semibold mb-1">Teléfono</h3>
-                <span class="text-wine font-body text-sm">
+                <span class="text-wine font-display text-xs uppercase tracking-widest block mb-2">Teléfono</span>
+                <a href="tel:+34986360098" class="text-ink text-3xl font-display font-bold hover:text-wine transition-colors">
                   986 360 098
-                </span>
-              </div>
-            </a>
-
-            <!-- Google -->
-            <div class="flex items-start gap-3 p-4 border-l-3 border-wine/50 bg-paper-white/40">
-              <svg class="w-5 h-5 mt-0.5 shrink-0 text-wine" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-              </svg>
-              <div>
-                <h3 class="font-display text-sm sm:text-base font-semibold mb-1">Google Maps</h3>
-                <p class="text-ink-faded text-sm font-body mb-2">4.6 estrellas &middot; 97 opiniones</p>
-                <a
-                  href="https://maps.google.com/?q=Bar+Estanco+Gondomar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-[0.7rem] font-display font-bold text-wine tracking-[0.12em] uppercase hover:text-wine-dark transition-colors min-h-[44px]"
-                >
-                  Abrir en Google Maps
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
                 </a>
               </div>
             </div>
           </div>
 
           <!-- Horario -->
-          <div class="mt-6 p-4 border-l-3 border-wine bg-paper-white/40">
-            <h3 class="font-display text-sm sm:text-base font-semibold mb-3">Horario</h3>
-            <table class="w-full text-sm font-body" role="table" aria-label="Horario del bar">
+          <div class="bg-paper-dark/30 p-6 sm:p-8 border-l-4 border-wine">
+            <h2 class="font-display text-xl mb-6">Horario</h2>
+            <table class="w-full text-sm font-body" aria-label="Horario del bar">
               <tbody>
-                <tr class="border-b border-ink/6">
-                  <td class="py-1.5 font-semibold text-ink text-xs">Lunes</td>
-                  <td class="py-1.5 text-right text-ink-faded text-xs">18:00 – 23:30</td>
-                </tr>
-                <tr class="border-b border-ink/6">
-                  <td class="py-1.5 font-semibold text-ink text-xs">Mar – Vie</td>
-                  <td class="py-1.5 text-right text-ink-faded text-xs">
-                    9:30 – 14:30 / 18:00 – 23:30
-                  </td>
-                </tr>
-                <tr class="border-b border-ink/6">
-                  <td class="py-1.5 font-semibold text-ink text-xs">Sábado</td>
-                  <td class="py-1.5 text-right text-ink-faded text-xs">
-                    9:00 – 15:30 / 18:00 – 23:30
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-1.5 font-semibold text-ink text-xs">Domingo</td>
-                  <td class="py-1.5 text-right text-ink-faded text-xs">10:00 – 15:30</td>
-                </tr>
+                {horarios.map((h: any, i: number) => (
+                  <tr class={i < horarios.length - 1 ? 'border-b border-ink/5' : ''}>
+                    <td class="py-2 font-semibold text-ink uppercase text-[0.7rem]">{h.dia}</td>
+                    <td class="py-2 text-right text-ink-faded">{h.turnos.map((t: string[]) => `${t[0]} – ${t[1]}`).join(' / ')}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
-            <p class="text-[0.6rem] text-ink-faded mt-2 italic">* Puede variar según temporada.</p>
           </div>
 
-          <div class="mt-6 text-center">
-            <p class="handwritten text-lg">
-              &ldquo;No hace falta reservar. Pásate cuando quieras.&rdquo;
-            </p>
-          </div>
         </div>
 
-        <!-- Mapa -->
+        <!-- Mapa (Columna Derecha) -->
         <div class="fade-in">
-          <span class="section-label mb-4">Ubicación</span>
-          <h2 class="mt-4 mb-6">En el mapa</h2>
-
-          <div class="border-2 border-double border-ink/10 p-1 bg-paper-white">
+          <h2 class="font-display text-2xl mb-6 border-b border-ink/10 pb-2">En el mapa</h2>
+          <div class="border-2 border-double border-ink/10 p-1 bg-paper-white shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.1!2d-8.7586!3d42.1131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBar+Estanco!5e0!3m2!1ses!2ses!4v1"
               width="100%"
-              height="350"
+              height="450"
               style="border:0;"
               allowfullscreen=""
-              loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Ubicación de Bar Estanco en Google Maps"
               class="w-full"
             ></iframe>
           </div>
-
-          <p class="photo-caption mt-3">
-            Pr. San Bieito, 1 &middot; 36380 Gondomar, Pontevedra
-          </p>
+          <div class="mt-4 flex justify-end">
+            <a 
+              href="https://maps.google.com/?q=Bar+Estanco+Gondomar"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary text-xs"
+            >
+              Ver en Google Maps &rarr;
+            </a>
+          </div>
         </div>
 
+      </div>
+
+      <!-- FRASE MÍTICA (Mantenida y centrada) -->
+      <div class="mt-20 pt-12 border-t border-ink/10 text-center">
+        <p class="handwritten text-2xl sm:text-3xl text-wine italic">
+          &ldquo;En la barra más antigua de Gondomar. Pásate cuando quieras.&rdquo;
+        </p>
       </div>
     </div>
   </section>
 
 
-  <!-- CTA -->
-  <section class="section-wine py-10 sm:py-16 px-4">
-    <div class="max-w-3xl mx-auto text-center fade-in">
-      <h2 class="text-paper mb-3">Te esperamos</h2>
-      <p class="text-paper-dark/80 max-w-lg mx-auto font-body mb-6 text-sm sm:text-base">
-        Tres generaciones sirviendo buen vino en el centro de Gondomar.
-      </p>
-      <a href="tel:+34986360098" class="btn-primary border-paper/40 bg-paper text-ink hover:bg-transparent hover:text-paper">
-        Llámanos &middot; 986 360 098
+  <!-- CTA FINAL -->
+  <section class="section-wine py-12 sm:py-16 px-4 text-center">
+    <div class="max-w-3xl mx-auto fade-in">
+      <h2 class="text-paper text-2xl sm:text-3xl mb-6">¿Vienes a vernos?</h2>
+      <a href="tel:+34986360098" class="btn-primary bg-paper text-ink border-paper px-10">
+        Llamar ahora: 986 360 098
       </a>
     </div>
   </section>
