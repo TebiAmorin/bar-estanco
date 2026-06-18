@@ -79,13 +79,13 @@ const horarios = await getHorarios();
       >
         <a
           href="/carta"
-          class="btn-primary border-2 border-paper bg-paper text-ink hover:bg-transparent hover:!text-paper px-12 py-4 text-base shadow-2xl transition-all duration-300 active:scale-[0.97]"
+          class="inline-flex items-center justify-center px-12 py-4 min-h-[44px] bg-paper text-ink font-body font-bold text-base tracking-[0.1em] uppercase border-2 border-paper shadow-2xl transition-all duration-300 hover:bg-transparent hover:text-paper active:scale-[0.97]"
         >
           Ver nuestra carta
         </a>
         <a
           href="/contacto"
-          class="btn-primary border-2 border-wine bg-transparent !text-paper hover:bg-transparent hover:border-wine-light hover:!text-paper-white px-12 py-4 text-base shadow-2xl transition-all duration-300 active:scale-[0.97]"
+          class="inline-flex items-center justify-center px-12 py-4 min-h-[44px] bg-transparent text-paper font-body font-bold text-base tracking-[0.1em] uppercase border-2 border-paper/50 transition-all duration-300 hover:bg-paper/10 hover:border-paper/80 active:scale-[0.97]"
         >
           Ubicación
         </a>
@@ -150,19 +150,24 @@ const horarios = await getHorarios();
         </div>
 
         <div class="fade-in relative mt-12 md:mt-0">
-          <!-- Imagen panorámica de la fachada actual del bar -->
-          <div class="relative overflow-hidden shadow-2xl" style="transform: rotate(-1deg);">
-            <Image
-              src="/images/estanco-actual.webp"
-              alt="Fachada actual del Bar Estanco en la plaza de San Bieito, Gondomar"
-              width={1200}
-              height={675}
-              class="w-full h-auto photo-vintage object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <!-- Velo sutil para integrar con el fondo editorial -->
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent pointer-events-none"></div>
+          <!-- Marco editorial + foto de fachada -->
+          <div style="transform: rotate(-1deg);">
+            <!-- Marco doble borde tipo foto antigua -->
+            <div class="border-4 border-double border-ink/20 p-2 bg-paper-white shadow-2xl">
+              <div class="aspect-[3/2] overflow-hidden relative">
+                <Image
+                  src="/images/estanco-actual.webp"
+                  alt="Fachada actual del Bar Estanco en la plaza de San Bieito, Gondomar"
+                  width={900}
+                  height={600}
+                  class="w-full h-full object-cover photo-vintage"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <!-- Velo sutil para integrar con el fondo editorial -->
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/15 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
           </div>
           <!-- Medallón "Desde 1938" anclado a la esquina -->
           <div
