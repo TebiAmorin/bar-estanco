@@ -259,15 +259,19 @@ p {
   max-width: 65ch;
 }
 
-/* --- Links — touch-friendly --- */
-a {
-  color: var(--color-wine);
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
+/* --- Links — touch-friendly ---
+   En @layer base para que @layer utilities (Tailwind) pueda sobreescribirlo.
+   Sin layer, el CSS unlayered gana siempre sobre cualquier utility. */
+@layer base {
+  a {
+    color: var(--color-wine);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
 
-a:hover {
-  color: var(--color-wine-dark);
+  a:hover {
+    color: var(--color-wine-dark);
+  }
 }
 
 /* --- Separador editorial (línea doble fina) --- */
