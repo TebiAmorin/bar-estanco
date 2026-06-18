@@ -846,7 +846,8 @@
           "precio": "7.50",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Gluten"]
         },
         {
           "nombre": "Tortilla",
@@ -892,7 +893,8 @@
           "precio": "7.50",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Gluten"]
         },
         {
           "nombre": "Lacón con grelos",
@@ -910,7 +912,8 @@
           "precio": "9",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Moluscos"]
         },
         {
           "nombre": "Croquetas",
@@ -919,7 +922,8 @@
           "precio": "8.50",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Gluten", "Lácteos"]
         }
       ]
     },
@@ -934,7 +938,8 @@
           "precioCopa": null,
           "destacado": false,
           "descripcion": null,
-          "precioMedia": "8"
+          "precioMedia": "8",
+          "alergenos": ["Lácteos"]
         },
         {
           "nombre": "Tabla de embutidos",
@@ -962,7 +967,8 @@
           "precio": "20",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Gluten"]
         }
       ]
     }
@@ -978,7 +984,8 @@
           "precio": "12",
           "precioCopa": null,
           "destacado": null,
-          "descripcion": "Paté de nécora con todo el sabor del marisco gallego."
+          "descripcion": "Paté de nécora con todo el sabor del marisco gallego.",
+          "alergenos": ["Crustáceos", "Lácteos"]
         },
         {
           "nombre": "Paté de Pulpo a la Gallega",
@@ -987,7 +994,8 @@
           "precio": "10",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Moluscos", "Lácteos"]
         },
         {
           "nombre": "Paté de Bonito con Piquillos",
@@ -996,7 +1004,8 @@
           "precio": "10",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Lácteos"]
         },
         {
           "nombre": "Paté de Caballa Picante",
@@ -1005,7 +1014,8 @@
           "precio": "10",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Lácteos"]
         },
         {
           "nombre": "Paté de Atún Claro con Mostaza y Miel",
@@ -1014,7 +1024,8 @@
           "precio": "10",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Lácteos"]
         },
         {
           "nombre": "Paté de Centollo y Buey de Mar",
@@ -1023,7 +1034,8 @@
           "precio": "12",
           "precioCopa": null,
           "destacado": null,
-          "descripcion": "Centollo y buey de mar. El paté más premium de la selección."
+          "descripcion": "Centollo y buey de mar. El paté más premium de la selección.",
+          "alergenos": ["Crustáceos", "Lácteos"]
         },
         {
           "nombre": "Paté de Mejillones",
@@ -1032,7 +1044,8 @@
           "precio": "10",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Moluscos", "Lácteos"]
         }
       ]
     },
@@ -1055,7 +1068,8 @@
           "precio": "12",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Lácteos"]
         },
         {
           "nombre": "Sardinas con Pimiento de Padrón",
@@ -1096,7 +1110,8 @@
           "precio": "10",
           "precioCopa": null,
           "destacado": false,
-          "descripcion": null
+          "descripcion": null,
+          "alergenos": ["Moluscos"]
         }
       ]
     },

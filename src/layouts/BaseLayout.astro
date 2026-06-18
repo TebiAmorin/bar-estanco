@@ -3,6 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import Header from '../components/sections/Header.astro';
 import Footer from '../components/sections/Footer.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -21,7 +22,7 @@ const {
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://barestanco.es${ogImage}`;
 
 const siteName = 'Bar Estanco';
-const isHome = title.includes('Vinoteca y Tapería');
+const isHome = Astro.url.pathname === '/';
 const fullTitle = isHome
   ? 'Bar Estanco · Vinoteca y Tapería en Gondomar desde 1938'
   : `${title} · ${siteName}`;
@@ -111,6 +112,18 @@ const schemaData = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
 
+  <!-- Pre-check splash screen to avoid flash -->
+  <script is:inline>
+    if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('splash-seen')) {
+      document.documentElement.classList.add('splash-seen');
+    }
+    document.addEventListener('astro:after-swap', () => {
+      if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('splash-seen')) {
+        document.documentElement.classList.add('splash-seen');
+      }
+    });
+  </script>
+
   <!-- SEO Primary -->
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
@@ -124,6 +137,7 @@ const schemaData = {
   <meta property="og:image" content={ogImageAbsolute} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bar Estanco — Vinoteca y tapería en Gondomar desde 1938" />
   <meta property="og:site_name" content={siteName} />
   <meta property="og:locale" content="es_ES" />
 
@@ -146,7 +160,7 @@ const schemaData = {
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- Fuentes: preconnect + carga no-bloqueante -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -176,6 +190,9 @@ const schemaData = {
   </main>
 
   <Footer />
+
+  <!-- Vercel Analytics (sin cookies, sin GDPR) -->
+  <Analytics />
 
   <!-- Fade-in observer (compatible con View Transitions) -->
   <script>
@@ -208,7 +225,7 @@ const schemaData = {
       
       // Resetear estado al entrar en una nueva página
       const html = document.documentElement;
-      const initialNavs = document.querySelectorAll('header, .carta-subnav');
+      const initialNavs = document.querySelectorAll('#site-header, .carta-subnav, .carta-nav-sticky');
       if (initialNavs.length > 0) {
         gsap.set(initialNavs, { y: 0, force3D: true });
       }
@@ -222,7 +239,7 @@ const schemaData = {
 
       window.addEventListener('scroll', () => {
         // Seleccionamos el header y el nav de categorías que son los que ahora son fijos
-        const navs = document.querySelectorAll('header, .carta-nav-sticky');
+        const navs = document.querySelectorAll('#site-header, .carta-nav-sticky');
         if (navs.length === 0) return;
 
         const currentScrollY = window.scrollY;

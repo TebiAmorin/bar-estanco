@@ -5,155 +5,198 @@ import { Image } from "astro:assets";
 
 <BaseLayout
   title="Nuestra Historia — Cuatro Generaciones desde 1938"
-  description="La historia de Bar Estanco en Gondomar. Cuatro generaciones de la misma familia sirviendo vino desde principios del siglo XX en la Plaza de la Alameda. El bar más antiguo de Gondomar."
+  description="Descubre la historia del Bar Estanco en Gondomar. Cuatro generaciones de la misma familia sirviendo vino desde 1938 en la Plaza de San Bieito."
 >
   <!-- Contenedor con efecto Papel Antiguo / Solera -->
-  <div class="bg-paper min-h-screen relative overflow-hidden">
+  <div class="bg-paper min-h-screen relative flex flex-col">
     <!-- Ruido sutil generado por CSS -->
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply" 
-         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');">
+    <div
+      class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
+    >
     </div>
-    
-    <!-- ============ CABECERA ============ -->
-    <header class="pt-32 pb-16 sm:pt-48 sm:pb-28 px-4 relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex items-center gap-4 mb-8">
-           <div class="h-px w-8 bg-wine"></div>
-           <span class="text-wine font-display text-[0.7rem] sm:text-xs uppercase tracking-[0.5em] font-bold">Crónica Familiar</span>
-        </div>
+
+    <!-- ============ CONTENIDO EDITORIAL (MAGAZINE STYLE) ============ -->
+    <article class="relative z-10 pt-32 sm:pt-40 pb-32 px-4 w-full max-w-7xl mx-auto flex flex-col gap-32 sm:gap-48 overflow-hidden">
+      
+      <!-- 1. Cabecera Espectacular -->
+      <div class="w-full flex flex-col items-center text-center fade-in max-w-4xl mx-auto">
+        <span class="text-wine font-display text-xs sm:text-sm uppercase tracking-[0.5em] font-bold mb-8 block">Crónica Familiar</span>
         
-        <h1 class="text-ink text-5xl sm:text-7xl lg:text-9xl tracking-tighter leading-[1.2] mb-12">
+        <h1 class="text-ink text-6xl sm:text-8xl lg:text-[10rem] tracking-tighter leading-[0.85] mb-12">
           Nuestra <br class="sm:hidden" />
-          <span class="italic font-light block sm:inline sm:ml-8 text-wine/90">historia</span>
+          <span class="italic font-light text-wine/90">historia</span>
         </h1>
         
-        <div class="max-w-sm">
-           <div class="h-[2px] w-12 bg-wine/40 mb-6"></div>
-           <p class="text-ink/60 font-body text-sm sm:text-base leading-relaxed italic">
-             Cuatro generaciones sirviendo vino en la barra más antigua de Gondomar.
-           </p>
-        </div>
-      </div>
-    </header>
-
-    <!-- ============ CUERPO DEL RELATO ============ -->
-    <article class="pb-24 px-4 relative z-10">
-      <div class="max-w-3xl mx-auto">
+        <div class="h-px w-24 bg-wine/30 mb-10"></div>
         
-        <!-- Bloque 1 -->
-        <div class="fade-in mb-16">
-          <p class="drop-cap text-ink leading-[1.8] text-lg sm:text-2xl mb-10 font-body">
-            Hay bares que abren y cierran. Y hay bares que resisten, que se
+        <p class="text-ink/80 font-body text-xl sm:text-3xl leading-relaxed italic max-w-2xl">
+          Cuatro generaciones sirviendo vino en la barra más antigua de Gondomar.
+        </p>
+      </div>
+
+      <!-- 2. Capítulo 1: 1900 -->
+      <section class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
+        <div class="absolute -top-20 -left-10 text-[15rem] lg:text-[25rem] font-display font-black text-ink/5 select-none pointer-events-none hidden md:block z-0 tracking-tighter leading-none">1900</div>
+        
+        <div class="relative z-10 lg:col-span-7 order-2 lg:order-1 fade-in lg:pr-10">
+          <p class="text-ink leading-relaxed text-xl sm:text-2xl lg:text-3xl mb-8 font-body">
+            <span class="text-7xl sm:text-8xl lg:text-[8rem] font-display text-wine mr-4 float-left leading-[0.8] mt-2"
+              >H</span
+            >ay bares que abren y cierran. Y hay bares que resisten, que se
             heredan, que se convierten en parte del paisaje de un pueblo. Bar
-            Estanco es de esos. Abrió sus puertas a principios de 1900 y su
-            ubicación estaría donde hoy está situada la Plaza de la Alameda.
+            Estanco es de esos.
           </p>
-          
-          <p class="text-ink-faded leading-[1.8] text-lg sm:text-xl mb-12">
-            Sus primeros propietarios eran nuestros bisabuelos, quienes
-            desarrollaron las actividades de bar, estanco y tienda. Años después,
-            en los años 30 y en plena Guerra Civil, se derribó el edificio donde
-            se encontraba para así poder construir la Plaza de la Alameda.
-            Seguidamente se construyó el edificio donde hoy en día estamos.
+          <p class="text-ink-faded leading-relaxed text-xl sm:text-2xl lg:text-3xl mb-8 font-body">
+            Abrió sus puertas a principios de 1900 y su ubicación original
+            estaría donde hoy está situada la Plaza de la Alameda.
           </p>
-
-          <!-- Imagen 1: El Estanco antiguo -->
-          <figure class="my-20 fade-in">
-            <div class="photo-frame shadow-2xl rotate-[-1deg] bg-white p-3 sm:p-5">
-              <Image
-                width={1000} height={750}
-                src="/images/historicas/Estanco-1900.jpg"
-                alt="Bar Estanco original c. 1900"
-                class="photo-vintage w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <figcaption class="mt-4 text-center font-display text-[0.6rem] uppercase tracking-[0.3em] text-ink/40">
-                Ubicación original en la Plaza de la Alameda · Circa 1900
-              </figcaption>
-            </div>
-          </figure>
-        </div>
-
-        <!-- Bloque 2 -->
-        <div class="fade-in mb-16">
-          <p class="text-ink leading-[1.8] text-lg sm:text-xl mb-10">
-            Y aquí seguimos desde 1938. Cuatro generaciones con un mismo legado:
-            dar lo mejor de nosotros mismos y ofrecer a todo aquel que nos visite
-            un pedacito de nuestra historia mientras degusta un maravilloso vino
-            en la barra más antigua de Gondomar.
-          </p>
-
-          <!-- Imagen 2: Los bisabuelos -->
-          <figure class="my-20 fade-in">
-            <div class="photo-frame shadow-2xl rotate-[1.5deg] bg-white p-3 sm:p-5">
-              <Image
-                width={1000} height={750}
-                src="/images/historicas/Bisabuelos.jpeg"
-                alt="Bisabuelos fundadores"
-                class="photo-vintage w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <figcaption class="mt-4 text-center font-display text-[0.6rem] uppercase tracking-[0.3em] text-ink/40">
-                Los bisabuelos fundadores · Primera Generación
-              </figcaption>
-            </div>
-          </figure>
-
-          <p class="text-ink-faded leading-[1.8] text-lg sm:text-xl mb-16">
-            Esta es nuestra historia. La de una familia, un pueblo y un bar que
-            sigue abierto sin renunciar al pasado pero mirando al futuro.
-            Ofrecemos momentos que nadie debería perderse. La calidad, nuestra
-            razón de ser.
+          <p class="text-ink-faded leading-relaxed text-xl sm:text-2xl lg:text-3xl font-body">
+            Nuestros bisabuelos desarrollaron allí las actividades de bar,
+            estanco y tienda, siendo el punto de encuentro de los vecinos desde
+            el primer día.
           </p>
         </div>
 
-        <!-- Frase manuscrita final -->
-        <div class="fade-in text-center py-20 border-t border-ink/5">
-          <p class="handwritten text-3xl sm:text-5xl leading-tight text-ink mb-10">
-            &ldquo;Cuatro generaciones detrás de la barra.
-            <br class="hidden sm:block" />
-            La misma vocación de siempre.&rdquo;
+        <figure class="relative z-10 lg:col-span-5 order-1 lg:order-2 fade-in">
+          <div class="photo-frame shadow-2xl rotate-[2deg] hover:rotate-0 transition-transform duration-700 bg-white p-3 sm:p-5 w-full max-w-lg mx-auto">
+            <Image
+              width={1000} height={750}
+              src="/images/historicas/Estanco-1900.jpg"
+              alt="Bar Estanco original c. 1900"
+              class="photo-vintage w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+            />
+            <figcaption class="mt-5 text-center font-display text-[0.65rem] uppercase tracking-[0.2em] text-ink/50 border-t border-ink/5 pt-4">
+              Ubicación en Plaza de la Alameda · Circa 1900
+            </figcaption>
+          </div>
+        </figure>
+      </section>
+
+      <!-- 3. Capítulo 2: 1938 -->
+      <section class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
+        <div class="absolute -top-20 -right-10 text-[15rem] lg:text-[25rem] font-display font-black text-wine/5 select-none pointer-events-none hidden md:block z-0 tracking-tighter leading-none">1938</div>
+        
+        <figure class="relative z-10 lg:col-span-5 fade-in">
+          <div class="photo-frame shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-700 bg-white p-3 sm:p-5 w-full max-w-lg mx-auto">
+            <Image
+              width={1000} height={750}
+              src="/images/historicas/Bisabuelos.jpeg"
+              alt="Bisabuelos fundadores"
+              class="photo-vintage w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+            />
+            <figcaption class="mt-5 text-center font-display text-[0.65rem] uppercase tracking-[0.2em] text-ink/50 border-t border-ink/5 pt-4">
+              Los bisabuelos fundadores · Primera Generación
+            </figcaption>
+          </div>
+        </figure>
+
+        <div class="relative z-10 lg:col-span-7 fade-in lg:pl-10">
+          <p class="text-ink leading-relaxed text-xl sm:text-2xl lg:text-3xl mb-8 font-body">
+            En los años 30, en plena Guerra Civil, se derribó el edificio
+            original para poder construir la actual Plaza de la Alameda.
           </p>
-          <div class="stamp-1938 border-wine/20 text-wine/30 mx-auto scale-75">
-            <div>
-              <span class="stamp-1938-text">Gondomar</span>
-              <span class="stamp-1938-year">1938</span>
-            </div>
+          <p class="text-ink-faded leading-relaxed text-xl sm:text-2xl lg:text-3xl mb-8 font-body">
+            Fue entonces cuando se levantó el edificio donde hoy en día nos
+            encontramos. Y aquí seguimos desde 1938. Cuatro generaciones con un
+            mismo propósito: dar lo mejor de nosotros mismos.
+          </p>
+          <p class="text-ink-faded leading-relaxed text-xl sm:text-2xl lg:text-3xl font-body">
+            Queremos que cada persona que nos visite se lleve un pedacito de
+            nuestra historia mientras degusta un maravilloso vino en la barra
+            más antigua de Gondomar.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. Frase final -->
+      <footer class="text-center py-20 border-y border-wine/10 w-full max-w-5xl mx-auto fade-in mt-10">
+        <p class="handwritten text-4xl sm:text-6xl lg:text-7xl leading-[1.2] text-ink mb-16">
+          &ldquo;La historia de una familia, un pueblo y un bar que sigue abierto mirando al futuro.&rdquo;
+        </p>
+        <div class="stamp-1938 border-wine text-wine mx-auto scale-90 sm:scale-100">
+          <div>
+            <span class="stamp-1938-text">SINCE</span>
+            <span class="stamp-1938-year">1900</span>
           </div>
         </div>
-      </div>
+      </footer>
     </article>
 
     <!-- ============ ARCHIVO FOTOGRÁFICO ============ -->
     <section class="section-dark py-24 px-4 relative z-10">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-16">
-          
-          <div class="photo-frame bg-white p-3 shadow-xl rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
-            <Image width={800} height={600} src="/images/historicas/familia_final.jpg" alt="Familia" class="photo-vintage aspect-[4/3] object-cover" />
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-16"
+        >
+          <div
+            class="photo-frame bg-white p-3 shadow-xl rotate-[-1deg] hover:rotate-0 transition-transform duration-500"
+          >
+            <Image
+              width={800}
+              height={600}
+              src="/images/historicas/familia_final.jpg"
+              alt="Familia"
+              class="photo-vintage aspect-[4/3] object-cover"
+            />
             <p class="photo-caption">Retrato familiar</p>
           </div>
-
-          <div class="photo-frame bg-white p-3 shadow-xl rotate-[1.5deg] hover:rotate-0 transition-transform duration-500">
-            <Image width={800} height={600} src="/images/historicas/carrito_final.jpg" alt="Paseo" class="photo-vintage aspect-[4/3] object-cover" />
+          <div
+            class="photo-frame bg-white p-3 shadow-xl rotate-[1.5deg] hover:rotate-0 transition-transform duration-500"
+          >
+            <Image
+              width={800}
+              height={600}
+              src="/images/historicas/carrito_final.jpg"
+              alt="Paseo"
+              class="photo-vintage aspect-[4/3] object-cover"
+            />
             <p class="photo-caption">De paseo por Gondomar</p>
           </div>
-
-          <div class="photo-frame bg-white p-3 shadow-xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-            <Image width={800} height={600} src="/images/historicas/leche_niñas_final.jpg" alt="Infancia" class="photo-vintage aspect-[4/3] object-cover" />
+          <div
+            class="photo-frame bg-white p-3 shadow-xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500"
+          >
+            <Image
+              width={800}
+              height={600}
+              src="/images/historicas/leche_niñas_final.jpg"
+              alt="Infancia"
+              class="photo-vintage aspect-[4/3] object-cover"
+            />
             <p class="photo-caption">Recuerdos de infancia</p>
           </div>
-
-          <div class="photo-frame bg-white p-3 shadow-xl rotate-[1deg] hover:rotate-0 transition-transform duration-500">
-            <Image width={800} height={600} src="/images/historicas/paja_final.jpg" alt="Campo" class="photo-vintage aspect-[4/3] object-cover" />
+          <div
+            class="photo-frame bg-white p-3 shadow-xl rotate-[1deg] hover:rotate-0 transition-transform duration-500"
+          >
+            <Image
+              width={800}
+              height={600}
+              src="/images/historicas/paja_final.jpg"
+              alt="Campo"
+              class="photo-vintage aspect-[4/3] object-cover"
+            />
             <p class="photo-caption">Labores en el campo</p>
           </div>
-
-          <div class="photo-frame bg-white p-3 shadow-xl rotate-[-1.5deg] hover:rotate-0 transition-transform duration-500">
-            <Image width={800} height={600} src="/images/historicas/ventana_final.jpg" alt="Ventana" class="photo-vintage aspect-[4/3] object-cover" />
+          <div
+            class="photo-frame bg-white p-3 shadow-xl rotate-[-1.5deg] hover:rotate-0 transition-transform duration-500"
+          >
+            <Image
+              width={800}
+              height={600}
+              src="/images/historicas/ventana_final.jpg"
+              alt="Ventana"
+              class="photo-vintage aspect-[4/3] object-cover"
+            />
             <p class="photo-caption">En la ventana del bar</p>
           </div>
-
-          <div class="flex flex-col justify-center items-center text-center p-10 border border-paper/10">
-            <p class="font-display text-[0.65rem] uppercase tracking-[0.3em] text-paper/40 mb-4">Desde 1938</p>
+          <div
+            class="flex flex-col justify-center items-center text-center p-10 border border-paper/10"
+          >
+            <p
+              class="font-display text-[0.65rem] uppercase tracking-[0.3em] text-paper/40 mb-4"
+            >
+              Desde 1938
+            </p>
             <p class="text-paper/60 font-body text-sm italic">
               "Patrimonio vivo de la Villa"
             </p>
@@ -170,13 +213,19 @@ import { Image } from "astro:assets";
           La mejor forma de conocer nuestra historia es vivirla. Pásate por la
           Plaza Alameda y te la contamos con una copa en la mano.
         </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/contacto" class="btn-primary border-ink bg-ink text-paper hover:bg-transparent hover:text-ink px-12 py-4">
-            Cómo llegar
-          </a>
-          <a href="/carta" class="btn-secondary border-ink/20 text-ink/70 hover:bg-ink/5 px-12 py-4">
-            Ver la carta
-          </a>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="/contacto"
+            class="btn-primary border-ink bg-ink text-paper hover:bg-transparent hover:text-ink px-12 py-4"
+            >Cómo llegar</a
+          >
+          <a
+            href="/carta"
+            class="btn-secondary border-ink/20 text-ink/70 hover:bg-ink/5 px-12 py-4"
+            >Ver la carta</a
+          >
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ export const prerender = false;
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Divider from '../../components/ui/Divider.astro';
 import WineEntry from '../../components/ui/WineEntry.astro';
+import AllergenIcon from '../../components/ui/AllergenIcon.astro';
 import CartaNav from '../../components/ui/CartaNav.astro';
 import CartaFooterNav from '../../components/ui/CartaFooterNav.astro';
 import { getCarta } from '../../lib/kv';
@@ -34,13 +35,15 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
   <CartaNav current="tapas" />
 
   <!-- Sticky nav -->
-  <nav class="carta-nav-sticky">
-    <div class="max-w-4xl mx-auto px-4 flex items-center gap-2 py-2">
-      <a href="#tapas" class="carta-nav-link">Raciones</a>
-      <span class="text-ink/15 text-xs">&middot;</span>
-      <a href="#conservas" class="carta-nav-link">Patés y conservas</a>
-    </div>
-  </nav>
+  <div class="h-[45px]">
+    <nav class="carta-nav-sticky">
+      <div class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto">
+        <a href="#tapas" class="carta-nav-link">Raciones</a>
+        <span class="text-ink/15 text-xs">&middot;</span>
+        <a href="#conservas" class="carta-nav-link">Patés y conservas</a>
+      </div>
+    </nav>
+  </div>
 
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +55,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Raciones</span>
         <h2 class="mt-4">Raciones y Tablas</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalTapas} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">{totalTapas} referencias</p>
         <Divider />
       </div>
 
@@ -64,7 +67,14 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
               v.precioMedia ? (
                 <div class="wine-entry">
                   <div class="flex-1 min-w-0">
-                    <span class="wine-entry-name">{v.nombre}</span>
+                    <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+                      <span class="wine-entry-name">{v.nombre}</span>
+                      {v.alergenos && v.alergenos.length > 0 && (
+                        <div class="flex items-center gap-1 ml-1 relative -top-[1px]">
+                          {v.alergenos.map((a: string) => <AllergenIcon name={a} />)}
+                        </div>
+                      )}
+                    </div>
                     {v.tipo && <span class="wine-entry-detail">{v.tipo}</span>}
                   </div>
                   <div class="text-right">
@@ -81,6 +91,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
                   precioCopa={v.precioCopa}
                   destacado={v.destacado}
                   descripcion={v.descripcion}
+                  alergenos={v.alergenos}
                 />
               )
             ))}
@@ -90,7 +101,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
     </section>
 
 
-    <Divider label="&middot; &middot; &middot;" />
+    <Divider />
 
 
     <!-- ============================== -->
@@ -100,7 +111,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Patés y Conservas</span>
         <h2 class="mt-4">Patés y Conservas</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">{totalConservas} referencias</p>
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">{totalConservas} referencias</p>
         <Divider />
       </div>
 
@@ -124,10 +135,25 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
     </section>
 
     <!-- Nota manuscrita -->
-    <div class="text-center fade-in mt-6 mb-2">
+    <div class="text-center fade-in mt-6 mb-12">
       <p class="handwritten text-xl sm:text-2xl">
         &ldquo;El pincho del día va incluido con cada consumición.&rdquo;
       </p>
+    </div>
+
+    <!-- Leyenda de alérgenos -->
+    <div class="max-w-2xl mx-auto border-t border-ink/10 pt-8 pb-16 fade-in text-center">
+      <p class="font-display text-[0.65rem] uppercase tracking-[0.2em] text-ink/40 mb-4">Información sobre alérgenos</p>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-3">
+        {[
+          'Gluten', 'Lácteos', 'Crustáceos', 'Moluscos'
+        ].map(a => (
+          <div class="flex items-center gap-2">
+            <AllergenIcon name={a} />
+            <span class="text-[0.65rem] uppercase tracking-wider text-ink/60 font-body">{a}</span>
+          </div>
+        ))}
+      </div>
     </div>
 
   </div>

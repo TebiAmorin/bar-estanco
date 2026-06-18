@@ -41,21 +41,21 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
   <CartaNav current="vinos" />
 
   <!-- Sticky nav para saltar entre secciones -->
-  <nav class="carta-nav-sticky">
-    <div
-      class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto"
-    >
-      <a href="#tintos" class="carta-nav-link">Tintos</a>
-      <span class="text-ink/15 text-xs">&middot;</span>
-      <a href="#blancos" class="carta-nav-link">Blancos</a>
-      <span class="text-ink/15 text-xs">&middot;</span>
-      <a href="#rosados" class="carta-nav-link">Rosados</a>
-      <span class="text-ink/15 text-xs">&middot;</span>
-      <a href="#espumosos" class="carta-nav-link">Espumosos</a>
-      <span class="text-ink/15 text-xs">&middot;</span>
-      <a href="#sin-alcohol" class="carta-nav-link">Sin alcohol</a>
-    </div>
-  </nav>
+  <div class="h-[45px]">
+    <nav class="carta-nav-sticky">
+      <div class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto">
+        <a href="#tintos" class="carta-nav-link">Tintos</a>
+        <span class="text-ink/15 text-xs">&middot;</span>
+        <a href="#blancos" class="carta-nav-link">Blancos</a>
+        <span class="text-ink/15 text-xs">&middot;</span>
+        <a href="#rosados" class="carta-nav-link">Rosados</a>
+        <span class="text-ink/15 text-xs">&middot;</span>
+        <a href="#espumosos" class="carta-nav-link">Espumosos</a>
+        <span class="text-ink/15 text-xs">&middot;</span>
+        <a href="#sin-alcohol" class="carta-nav-link">Sin alcohol</a>
+      </div>
+    </nav>
+  </div>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Selección por Copa (Highlighted Section) -->
@@ -149,7 +149,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Tintos</span>
         <h2 class="mt-4">Vinos Tintos</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">
           {totalTintos} referencias
         </p>
         <Divider />
@@ -179,14 +179,14 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
       }
     </section>
 
-    <Divider label="· · ·" />
+    <Divider />
 
     <!-- BLANCOS -->
     <section id="blancos" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Blancos</span>
         <h2 class="mt-4">Vinos Blancos</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">
           {totalBlancos} referencias
         </p>
         <Divider />
@@ -216,14 +216,14 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
       }
     </section>
 
-    <Divider label="· · ·" />
+    <Divider />
 
     <!-- ROSADOS -->
     <section id="rosados" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Rosados</span>
         <h2 class="mt-4">Vinos Rosados</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">
           {totalRosados} referencias
         </p>
         <Divider />
@@ -250,14 +250,14 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
       }
     </section>
 
-    <Divider label="· · ·" />
+    <Divider />
 
     <!-- ESPUMOSOS -->
     <section id="espumosos" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Espumosos</span>
         <h2 class="mt-4">Espumosos y Cavas</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">
           {totalEspumosos} referencias
         </p>
         <Divider />
@@ -287,14 +287,14 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
       }
     </section>
 
-    <Divider label="· · ·" />
+    <Divider />
 
     <!-- SIN ALCOHOL -->
     <section id="sin-alcohol" class="pt-8 sm:pt-(--spacing-section) pb-6">
       <div class="text-center mb-8 fade-in">
         <span class="section-label mb-4">Sin Alcohol</span>
         <h2 class="mt-4">Vinos Sin Alcohol</h2>
-        <p class="text-ink-faded text-sm mt-2 font-body">
+        <p class="text-ink-faded text-sm mt-2 font-body text-center mx-auto">
           {totalSinAlcohol} referencias
         </p>
         <Divider />

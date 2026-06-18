@@ -1,4 +1,6 @@
 ---
+import AllergenIcon from './AllergenIcon.astro';
+
 interface Props {
   nombre: string;
   bodega?: string;
@@ -7,16 +9,24 @@ interface Props {
   precioCopa?: string;
   descripcion?: string;
   destacado?: boolean;
+  alergenos?: string[];
 }
 
-const { nombre, bodega, tipo, precio, precioCopa, descripcion, destacado = false } = Astro.props;
+const { nombre, bodega, tipo, precio, precioCopa, descripcion, destacado = false, alergenos } = Astro.props;
 ---
 
 <div class="wine-entry">
   <div class="flex-1 min-w-0">
-    <span class:list={['wine-entry-name', destacado && '!text-wine']}>
-      {nombre}
-    </span>
+    <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+      <span class:list={['wine-entry-name', destacado && '!text-wine']}>
+        {nombre}
+      </span>
+      {alergenos && alergenos.length > 0 && (
+        <div class="flex items-center gap-1 ml-1 relative -top-[1px]">
+          {alergenos.map(a => <AllergenIcon name={a} />)}
+        </div>
+      )}
+    </div>
     {(bodega || tipo) && (
       <span class="wine-entry-detail">
         {bodega}{bodega && tipo ? ' · ' : ''}{tipo}

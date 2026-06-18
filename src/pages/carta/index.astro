@@ -5,7 +5,7 @@ import Divider from "../../components/ui/Divider.astro";
 
 <BaseLayout
   title="Carta de Vinos, Raciones y Vermuts en Gondomar"
-  description="Carta completa de Bar Estanco en Gondomar. Más de 70 vinos, vermuts artesanales, tapas gallegas, patés, conservas gourmet y desayunos. Vinoteca y tapería desde 1938."
+  description="Carta de Bar Estanco en Gondomar. Más de 70 vinos, vermuts artesanales, tapas gallegas y conservas gourmet. Disfruta de la tradición desde 1938."
 >
   <!-- Header Editorial -->
   <section class="section-ink py-12 sm:py-20 px-4">
@@ -24,41 +24,10 @@ import Divider from "../../components/ui/Divider.astro";
   </section>
 
   <section class="py-12 sm:py-24 px-4 bg-paper relative overflow-hidden">
-    <!-- Grano de papel sutil para dar cuerpo -->
+    <!-- Grano de papel sutil — sin mix-blend-mode para evitar recomposición en scroll -->
     <div
-      class="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-multiply"
-      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\"
-      0
-      0
-      200
-      200\"
-      xmlns="\"
-      http:
-      www.w3.org
-      2000
-      svg\"%3E%3Cfilter"
-      id="\"
-      n\"%3E%3CfeTurbulence"
-      type="\"
-      fractalNoise\""
-      baseFrequency="\"
-      0.65\""
-      numOctaves="\"
-      3\""
-      stitchTiles="\"
-      stitch\"
-      %3E%3C
-      filter%3E%3Crect"
-      width="\"
-      100%25\""
-      height="\"
-      100%25\""
-      filter="\"
-      url(%23n)\""
-      opacity="\"
-      1\"
-      %3E%3C
-      svg%3E');""
+      class="absolute inset-0 opacity-[0.025] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');"
     >
     </div>
 

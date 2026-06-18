@@ -9,35 +9,40 @@ interface Props {
 const { author, text, rating, badge } = Astro.props;
 ---
 
-<blockquote class="bg-paper-white/60 p-6 border-l-3 border-wine">
-  <!-- Stars -->
-  <div class="flex items-center gap-0.5 mb-3">
-    {Array.from({ length: 5 }).map((_, i) => (
-      <svg
-        class:list={['w-4 h-4', i < rating ? 'text-wine' : 'text-paper-dark']}
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>
-    ))}
-  </div>
-
-  <!-- Quote -->
-  <p class="text-ink font-body text-sm sm:text-base leading-relaxed italic mb-4">
-    &ldquo;{text}&rdquo;
-  </p>
-
-  <!-- Author -->
-  <footer class="flex items-center gap-2">
-    <div class="w-8 h-8 rounded-full bg-wine/10 flex items-center justify-center">
-      <span class="text-wine text-xs font-semibold">
-        {author.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+<blockquote class="bg-[#ebe3cf] p-1.5 border border-ink shadow-md relative mx-auto w-full max-w-2xl transform hover:scale-[1.01] transition-transform duration-300">
+  <!-- Inner border line (Classic 1900s newspaper ad border) -->
+  <div class="border border-ink p-6 sm:p-8 h-full flex flex-col justify-between bg-[#e6ddc5]">
+    
+    <!-- Vintage Header -->
+    <div class="text-center mb-6">
+      <div class="flex items-center justify-center gap-2 opacity-60 mb-2">
+        <span class="block w-8 h-[1px] bg-ink"></span>
+        <span class="text-ink text-xs leading-none">✦</span>
+        <span class="block w-8 h-[1px] bg-ink"></span>
+      </div>
+      <span class="block text-ink font-display text-[0.6rem] sm:text-xs uppercase tracking-[0.4em] font-black">
+        Testimonio Público
       </span>
+      <div class="w-full h-[1px] bg-ink/30 mt-4"></div>
     </div>
-    <div>
-      <cite class="text-ink text-sm font-semibold not-italic">{author}</cite>
-      {badge && <span class="block text-ink-faded text-xs">{badge}</span>}
-    </div>
-  </footer>
+
+    <!-- Body -->
+    <p class="text-ink font-body text-base sm:text-lg leading-[1.9] text-justify mb-8">
+      {text}
+    </p>
+
+    <!-- Footer: Author & Stars -->
+    <footer class="text-center mt-auto border-t border-ink/30 pt-6">
+      <cite class="text-ink font-display font-bold text-lg sm:text-xl uppercase tracking-widest not-italic block mb-2">
+        — {author} —
+      </cite>
+      <div class="flex justify-center gap-1 text-ink mb-2 text-base opacity-80" aria-label={`${rating} estrellas`}>
+        {Array.from({ length: 5 }).map((_, i) => (
+          <span aria-hidden="true">{i < rating ? '★' : '☆'}</span>
+        ))}
+      </div>
+      {badge && <span class="block text-ink/60 font-body italic text-[0.7rem] uppercase tracking-wider">{badge}</span>}
+    </footer>
+
+  </div>
 </blockquote>

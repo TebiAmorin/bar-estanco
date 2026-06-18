@@ -34,6 +34,8 @@
   --transition-slow: 500ms ease-out;
 }
 
+
+
 /* --- Accesibilidad: Skip to content --- */
 .skip-to-content {
   position: absolute;
@@ -101,6 +103,11 @@ header {
 }
 
 /* --- Splash screen del sello 1938 --- */
+html.splash-seen .splash-overlay {
+  display: none !important;
+  animation: none !important;
+}
+
 .splash-overlay {
   position: fixed;
   inset: 0;
@@ -110,12 +117,12 @@ header {
   justify-content: center;
   background-color: var(--color-ink);
   pointer-events: all;
-  animation: splash-hide 400ms ease-in 1.8s forwards;
+  animation: splash-hide 600ms cubic-bezier(0.4, 0, 0.2, 1) 2s forwards;
 }
 
 .splash-stamp {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
   border: 4px double var(--color-paper);
   display: flex;
@@ -126,8 +133,8 @@ header {
   text-align: center;
   line-height: 1.1;
   opacity: 0;
-  transform: scale(2.5) rotate(-15deg);
-  animation: stamp-press 500ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+  transform: scale(3) rotate(-15deg);
+  animation: stamp-press 700ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms forwards;
 }
 
 .splash-stamp-text {
@@ -147,18 +154,18 @@ header {
 @keyframes stamp-press {
   0% {
     opacity: 0;
-    transform: scale(2.5) rotate(-15deg);
+    transform: scale(3) rotate(-15deg);
   }
-  60% {
+  50% {
     opacity: 1;
     transform: scale(0.95) rotate(0deg);
   }
-  80% {
+  75% {
     transform: scale(1.02) rotate(0deg);
   }
   100% {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: none;
   }
 }
 
@@ -218,8 +225,10 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.02;
-    mix-blend-mode: multiply;
+    opacity: 0.025;
+    /* mix-blend-mode eliminado: a esta opacidad es imperceptible pero causaba
+       recomposición en cada frame de scroll. translateZ(0) aisla la capa en GPU. */
+    transform: translateZ(0);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   }
 }
@@ -692,15 +701,15 @@ a:hover {
 /* --- DO sub-header con borde izquierdo vino --- */
 .do-header {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--color-ink-faded);
-  padding: 0.5rem 0.75rem;
+  color: var(--color-ink);
+  padding: 0.5rem 0.85rem;
   border-left: 3px solid var(--color-wine);
-  margin-bottom: 0.5rem;
-  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   background-color: rgba(94, 25, 30, 0.03);
 }
 
@@ -710,9 +719,9 @@ a:hover {
 
 @media (min-width: 640px) {
   .do-header {
-    font-size: 0.9rem;
-    padding-left: 0.75rem;
-    background-color: transparent;
+    font-size: 1.05rem;
+    padding: 0.6rem 1rem;
+    background-color: rgba(94, 25, 30, 0.02);
   }
 }
 

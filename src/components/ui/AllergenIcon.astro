@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+
+const normalize = (str: string) => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+const normalizedName = normalize(name);
+
+const isValid = ['gluten', 'lacteos', 'crustaceos', 'moluscos'].includes(normalizedName);
+if (!isValid) return null;
+---
+<span 
+  class="inline-flex items-center justify-center w-5 h-5 rounded-full border-[1.5px] border-ink/20 bg-paper/50 text-ink/70" 
+  title={`Alérgeno: ${name}`}
+  aria-label={`Contiene ${name}`}
+>
+  {normalizedName === 'gluten' && (
+    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2v20M8 6h8M8 10h8M8 14h8M8 18h8"/>
+    </svg>
+  )}
+  {normalizedName === 'lacteos' && (
+    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 2h4v5h3v15H7V7h3V2z"/>
+    </svg>
+  )}
+  {normalizedName === 'crustaceos' && (
+    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 4a2 2 0 10-4 0M8 8h8M6 12h12M8 16h8M12 20a4 4 0 01-4-4v-1a4 4 0 018 0v1a4 4 0 01-4 4z"/>
+    </svg>
+  )}
+  {normalizedName === 'moluscos' && (
+    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10A8 8 0 004 12c0 6 8 10 8 10zM12 12a3 3 0 100-6 3 3 0 000 6z"/>
+    </svg>
+  )}
+</span>

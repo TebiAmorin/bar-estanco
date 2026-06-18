@@ -12,7 +12,7 @@ const horarios = await getHorarios();
 
 <BaseLayout
   title="Vinoteca y Tapería en Gondomar desde 1938"
-  description="Bar Estanco, vinoteca y tapería en Gondomar desde 1938. Más de 70 vinos, vermuts artesanales, tapas gallegas y conservas gourmet. El bar más antiguo de Gondomar, tres generaciones."
+  description="Vinoteca y tapería en Gondomar desde 1938. Más de 70 vinos, vermuts, tapas gallegas y conservas premium. Cuatro generaciones de historia en el Bar Estanco."
 >
   <!-- ============ SPLASH SCREEN (solo primera visita) ============ -->
   <div class="splash-overlay" id="splash" aria-hidden="true">
@@ -24,11 +24,12 @@ const horarios = await getHorarios();
     </div>
   </div>
 
-  <script>
+  <script is:inline>
     (function () {
       const splash = document.getElementById("splash");
       if (!splash) return;
       if (sessionStorage.getItem("splash-seen")) {
+        splash.style.display = "none";
         splash.remove();
       } else {
         sessionStorage.setItem("splash-seen", "1");
@@ -101,7 +102,7 @@ const horarios = await getHorarios();
   </section>
 
   <!-- ============ FRASE MÍTICA ============ -->
-  <section class="py-12 bg-paper relative z-20">
+  <section class="py-12 bg-paper relative z-20 texture-paper">
     <div class="max-w-3xl mx-auto text-center px-4">
       <p
         class="handwritten text-2xl sm:text-4xl text-wine opacity-90 leading-tight"
@@ -126,7 +127,7 @@ const horarios = await getHorarios();
               class="drop-cap text-ink leading-[1.8] text-base sm:text-xl mb-6 cronica-p"
             >
               En la plaza de San Bieito, en el centro de Gondomar, hay un bar
-              que lleva abierto desde la guerra. Tres generaciones de la misma
+              que lleva abierto desde la guerra. Cuatro generaciones de la misma
               familia han servido vino detrás de la misma barra. No es un bar de
               moda. Es un bar de verdad, de los que ya casi no quedan.
             </p>
@@ -149,21 +150,27 @@ const horarios = await getHorarios();
         </div>
 
         <div class="fade-in relative mt-12 md:mt-0">
-          <div class="photo-frame rotate-2 shadow-xl">
+          <!-- Imagen panorámica de la fachada actual del bar -->
+          <div class="relative overflow-hidden shadow-2xl" style="transform: rotate(-1deg);">
             <Image
-              src="/images/atmosphere/ritual.png"
-              alt="El ritual del vino en el Estanco"
-              width={600}
-              height={800}
-              class="w-full h-auto photo-vintage"
+              src="/images/estanco-actual.webp"
+              alt="Fachada actual del Bar Estanco en la plaza de San Bieito, Gondomar"
+              width={1200}
+              height={675}
+              class="w-full h-auto photo-vintage object-cover"
+              loading="lazy"
+              decoding="async"
             />
+            <!-- Velo sutil para integrar con el fondo editorial -->
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent pointer-events-none"></div>
           </div>
+          <!-- Medallón "Desde 1938" anclado a la esquina -->
           <div
-            class="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-wine/20 rounded-full flex items-center justify-center bg-paper p-4 rotate-12 hidden sm:flex"
+            class="absolute -bottom-5 -right-4 w-28 h-28 border-2 border-wine/30 rounded-full flex items-center justify-center bg-paper p-3 rotate-6 hidden sm:flex shadow-lg"
           >
             <span
               class="text-[0.6rem] font-display font-bold text-wine text-center leading-tight uppercase tracking-tighter"
-              >Producto<br />Gallego<br />Original</span
+              >Desde<br />1938</span
             >
           </div>
         </div>
@@ -171,57 +178,38 @@ const horarios = await getHorarios();
     </div>
   </section>
 
-  <!-- ============ TRES PILARES ============ -->
+  <!-- ============ MANIFIESTO DEL BODEGUERO ============ -->
   <section class="section-dark py-16 sm:py-24 px-4">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <span class="section-label mb-4">La Esencia</span>
-        <h2 class="mt-4">Tres razones para volver</h2>
-        <Divider />
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 stagger-fade">
-        <div class="fade-in text-left border-l border-ink/5 pl-6">
+    <div class="max-w-4xl mx-auto">
+      <div
+        class="border-y border-ink/20 py-16 px-4 sm:px-12 text-center fade-in relative"
+      >
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ink px-6">
           <span
-            class="text-wine font-display font-bold text-4xl opacity-20 block mb-2"
-            >01</span
+            class="font-display text-xs tracking-[0.2em] uppercase text-paper/80"
+            >Nota de la familia</span
           >
-          <h3 class="font-display text-xl mb-4">La Bodega</h3>
-          <p class="text-base text-ink-faded leading-relaxed">
-            Más de 70 referencias seleccionadas. No buscamos marcas, buscamos
-            historias dentro de cada botella.
-          </p>
         </div>
 
-        <div class="fade-in text-left border-l border-ink/5 pl-6">
-          <span
-            class="text-wine font-display font-bold text-4xl opacity-20 block mb-2"
-            >02</span
-          >
-          <h3 class="font-display text-xl mb-4">La Memoria</h3>
-          <p class="text-base text-ink-faded leading-relaxed">
-            Desde 1938. El bar más antiguo de Gondomar es custodio de miles de
-            conversaciones y encuentros.
-          </p>
-        </div>
+        <p
+          class="font-display text-2xl sm:text-3xl md:text-4xl text-ink leading-[1.6] mb-10 font-light max-w-3xl mx-auto"
+        >
+          &ldquo;Un bar de verdad donde se sirve buen vino y te sientes como en casa.&rdquo;
+        </p>
 
-        <div class="fade-in text-left border-l border-ink/5 pl-6">
-          <span
-            class="text-wine font-display font-bold text-4xl opacity-20 block mb-2"
-            >03</span
+        <div class="flex items-center justify-center gap-6 opacity-80">
+          <div class="w-16 h-[1px] bg-wine/30"></div>
+          <span class="font-hand text-2xl sm:text-3xl text-ink rotate-[-2deg]"
+            >Cuatro generaciones</span
           >
-          <h3 class="font-display text-xl mb-4">El Trato</h3>
-          <p class="text-base text-ink-faded leading-relaxed">
-            Cercanía real. Aquí no eres un cliente, eres un vecino. Servicio
-            pausado y consejo honesto.
-          </p>
+          <div class="w-16 h-[1px] bg-wine/30"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CARTA DESTACADA ============ -->
-  <section class="py-16 sm:py-24 px-4 bg-paper-white">
+  <section class="py-16 sm:py-24 px-4 bg-paper-white texture-paper">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-in">
         <span class="section-label-alt">Selección de la Casa</span>
@@ -243,7 +231,7 @@ const horarios = await getHorarios();
             Vinos
           </h3>
           <div class="divider-editorial my-2 sm:my-3">
-            <span class="divider-editorial-label">&middot;</span>
+            <span class="divider-editorial-label">&#9671;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">+70 referencias</p>
           <span
@@ -263,7 +251,7 @@ const horarios = await getHorarios();
             Vermuts
           </h3>
           <div class="divider-editorial my-2 sm:my-3">
-            <span class="divider-editorial-label">&middot;</span>
+            <span class="divider-editorial-label">&#9671;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">8 referencias</p>
           <span
@@ -283,7 +271,7 @@ const horarios = await getHorarios();
             Tapas
           </h3>
           <div class="divider-editorial my-2 sm:my-3">
-            <span class="divider-editorial-label">&middot;</span>
+            <span class="divider-editorial-label">&#9671;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">Producto gallego</p>
           <span
@@ -303,7 +291,7 @@ const horarios = await getHorarios();
             Conservas
           </h3>
           <div class="divider-editorial my-2 sm:my-3">
-            <span class="divider-editorial-label">&middot;</span>
+            <span class="divider-editorial-label">&#9671;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">18 referencias</p>
           <span
@@ -323,7 +311,7 @@ const horarios = await getHorarios();
             Desayunos
           </h3>
           <div class="divider-editorial my-2 sm:my-3">
-            <span class="divider-editorial-label">&middot;</span>
+            <span class="divider-editorial-label">&#9671;</span>
           </div>
           <p class="text-xs sm:text-sm text-ink-faded">Hasta las 12:30</p>
           <span
@@ -433,7 +421,7 @@ const horarios = await getHorarios();
           lentejas... Siempre casero, siempre generoso.&rdquo;
         </p>
         <div class="divider-editorial max-w-xs mx-auto my-8">
-          <span class="divider-editorial-label text-paper/40">&middot;</span>
+          <span class="divider-editorial-label text-paper/40">&#9671;</span>
         </div>
         <p
           class="handwritten text-paper/90 text-2xl sm:text-3xl"
@@ -465,34 +453,52 @@ const horarios = await getHorarios();
           </div>
         </div>
 
-        <div class="fade-in">
+        <div class="fade-in relative">
+          <!-- Ledger Book Style -->
           <div
-            class="bg-paper-white border-2 border-double border-ink/10 p-6 sm:p-10 shadow-lg rotate-1"
+            class="bg-paper-white border border-ink/20 shadow-xl rotate-1 relative px-6 py-12 sm:p-12"
           >
-            <h3
-              class="text-center font-display text-lg uppercase tracking-widest mb-8 text-wine"
+            <!-- Cuaderno: Agujeros en la parte superior -->
+            <div
+              class="absolute top-3 left-1/4 w-5 h-5 rounded-full bg-ink/20 shadow-inner shadow-ink/40 border-t border-ink/30"
             >
-              Nuestro Horario
+            </div>
+            <div
+              class="absolute top-3 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-ink/20 shadow-inner shadow-ink/40 border-t border-ink/30"
+            >
+            </div>
+            <div
+              class="absolute top-3 right-1/4 w-5 h-5 rounded-full bg-ink/20 shadow-inner shadow-ink/40 border-t border-ink/30"
+            >
+            </div>
+
+            <!-- Borde de corte perforado falso en top -->
+            <div
+              class="absolute top-0 left-0 right-0 h-2 border-b-[3px] border-dotted border-ink/10"
+            >
+            </div>
+
+            <h3
+              class="font-hand text-3xl sm:text-4xl text-ink mb-8 rotate-[-2deg] opacity-90 text-center mt-2"
+            >
+              Horario del Bar
             </h3>
+
             <table
-              class="w-full text-sm font-body"
+              class="w-full text-base sm:text-lg font-hand text-ink/90 border-separate border-spacing-y-2"
               aria-label="Horario del bar"
             >
               <tbody>
                 {
-                  horarios.map((h: any, i: number) => (
-                    <tr
-                      class={
-                        i < horarios.length - 1 ? "border-b border-ink/8" : ""
-                      }
-                    >
-                      <td class="py-3 font-display font-bold text-ink text-sm uppercase">
-                        {h.dia}
+                  horarios.map((h: any) => (
+                    <tr>
+                      <td class="py-2 border-b border-blue-900/10 w-1/3">
+                        <span class="capitalize">{h.dia.toLowerCase()}</span>
                       </td>
                       <td
-                        class="py-3 text-right text-ink-faded font-medium"
+                        class="py-2 border-b border-blue-900/10 text-right leading-tight"
                         set:html={h.turnos
-                          .map((t: string[]) => `${t[0]} – ${t[1]}`)
+                          .map((t: string[]) => `${t[0]} a ${t[1]}`)
                           .join("<br/>")}
                       />
                     </tr>
@@ -500,11 +506,10 @@ const horarios = await getHorarios();
                 }
               </tbody>
             </table>
-            <div class="mt-6 pt-6 border-t border-ink/8 text-center">
-              <p
-                class="text-[0.7rem] text-ink-faded font-body italic uppercase tracking-tighter"
-              >
-                Sujeto a cambios según temporada y festivos locales
+
+            <div class="mt-8 text-center rotate-[1deg]">
+              <p class="text-xs text-ink/60 font-body italic">
+                (Sujeto a cambios en festivos locales)
               </p>
             </div>
           </div>
