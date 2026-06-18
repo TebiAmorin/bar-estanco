@@ -79,13 +79,13 @@ const horarios = await getHorarios();
       >
         <a
           href="/carta"
-          class="btn-primary border-paper bg-paper text-ink hover:bg-transparent hover:text-paper px-12 py-4 text-base shadow-2xl"
+          class="btn-primary border-2 border-paper bg-paper text-ink hover:bg-transparent hover:!text-paper px-12 py-4 text-base shadow-2xl transition-all duration-300 active:scale-[0.97]"
         >
           Ver nuestra carta
         </a>
         <a
           href="/contacto"
-          class="inline-flex items-center justify-center px-8 py-4 min-h-[44px] text-paper/85 font-body font-bold text-sm tracking-[0.12em] uppercase border-2 border-paper/40 bg-transparent transition-all duration-300 hover:bg-paper/10 hover:border-paper/70 hover:text-paper active:scale-[0.97]"
+          class="btn-primary border-2 border-wine bg-transparent !text-paper hover:bg-transparent hover:border-wine-light hover:!text-paper-white px-12 py-4 text-base shadow-2xl transition-all duration-300 active:scale-[0.97]"
         >
           Ubicación
         </a>
@@ -466,7 +466,7 @@ const horarios = await getHorarios();
         <div class="fade-in relative">
           <!-- Ledger Book Style -->
           <div
-            class="bg-paper-white border border-ink/20 shadow-xl rotate-1 relative px-6 py-12 sm:p-12"
+            class="bg-transparent border border-ink/15 shadow-sm rotate-1 relative px-6 py-12 sm:p-12"
           >
             <!-- Cuaderno: Agujeros en la parte superior -->
             <div
@@ -549,7 +549,7 @@ const horarios = await getHorarios();
           986 360 098
         </a>
         <div class="hidden sm:block h-8 w-[1px] bg-paper/20"></div>
-        <a href="/contacto" class="btn-primary bg-paper text-ink border-paper">
+        <a href="/contacto" class="btn-primary bg-paper text-ink border-paper hover:bg-transparent hover:!text-paper">
           Ver ubicación
         </a>
       </div>
