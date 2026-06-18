@@ -807,19 +807,29 @@ main {
 
 /* --- Nav FIXED y SMART para categorías internas (Tintos, Blancos...) --- */
 .carta-nav-sticky {
-  position: fixed;
-  top: 56px; /* Justo debajo del header */
-  left: 0;
-  width: 100%;
-  z-index: 90;
+  /* Móvil: fluye con el contenido, no fijo */
+  position: static;
+  z-index: 40;
   background-color: var(--color-paper);
   border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  overflow-x: auto;
   scrollbar-width: none;
-  will-change: transform;
 }
 
 .carta-nav-sticky::-webkit-scrollbar {
   display: none;
+}
+
+@media (min-width: 1024px) {
+  /* Desktop: fijo debajo del header */
+  .carta-nav-sticky {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    z-index: 90;
+    will-change: transform;
+  }
 }
 
 .carta-nav-link {
@@ -840,12 +850,6 @@ main {
 .carta-nav-link:hover,
 .carta-nav-link:active {
   color: var(--color-wine);
-}
-
-@media (min-width: 1024px) {
-  .carta-nav-sticky {
-    top: 64px; /* debajo del header desktop lg:h-16 */
-  }
 }
 
 /* --- Nav inferior compacto para carta --- */
