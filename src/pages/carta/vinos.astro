@@ -40,8 +40,8 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
   <!-- Nav entre cartas -->
   <CartaNav current="vinos" />
 
-  <!-- Sticky nav para saltar entre secciones -->
-  <div>
+  <!-- Wrapper que da altura al containing block del sticky nav -->
+  <div class="relative">
     <nav class="carta-nav-sticky">
       <div class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto">
         <a href="#tintos" class="carta-nav-link">Tintos</a>
@@ -55,7 +55,6 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
         <a href="#sin-alcohol" class="carta-nav-link">Sin alcohol</a>
       </div>
     </nav>
-  </div>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Selección por Copa (Highlighted Section) -->
@@ -329,6 +328,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
       </p>
     </div>
   </div>
+  </div>{/* cierre del wrapper sticky containing block */}
 
   <CartaFooterNav current="vinos" />
 </BaseLayout>

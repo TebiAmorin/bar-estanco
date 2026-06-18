@@ -34,8 +34,8 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
   <!-- Nav entre cartas -->
   <CartaNav current="tapas" />
 
-  <!-- Sticky nav -->
-  <div>
+  <!-- Wrapper que da altura al containing block del sticky nav -->
+  <div class="relative">
     <nav class="carta-nav-sticky">
       <div class="max-w-4xl mx-auto px-4 flex items-center gap-1 py-2 overflow-x-auto">
         <a href="#tapas" class="carta-nav-link">Raciones</a>
@@ -43,8 +43,6 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
         <a href="#conservas" class="carta-nav-link">Patés y conservas</a>
       </div>
     </nav>
-  </div>
-
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -157,6 +155,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
     </div>
 
   </div>
+  </div>{/* cierre del wrapper sticky containing block */}
 
   <CartaFooterNav current="tapas" />
 

@@ -201,6 +201,10 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
+  /* overflow-x en <html> (no en body): html YA es el scroll container del
+     documento. Ponerlo en body/main crea un scroll container secundario que
+     rompe position:sticky en los hijos. */
+  overflow-x: hidden;
 }
 
 body {
@@ -209,7 +213,6 @@ body {
   background-color: var(--color-paper);
   line-height: 1.7;
   font-size: 1rem;
-  overflow-x: hidden;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.15'/%3E%3C/svg%3E");
 }
 
@@ -807,19 +810,23 @@ main {
 
 /* --- Nav FIXED y SMART para categorías internas (Tintos, Blancos...) --- */
 .carta-nav-sticky {
-  /* sticky: en su sitio natural al cargar, se pega al scrollear */
+  /* sticky: en su sitio natural al cargar, se pega al scrollear.
+     SIN overflow en el nav — el overflow-x:auto va en el div interior.
+     overflow en el propio elemento sticky rompe la posición en Chrome. */
   position: sticky;
   top: 56px; /* debajo del header mobile h-14 */
   z-index: 90;
   background-color: var(--color-paper);
   border-bottom: 1px solid rgba(26, 26, 26, 0.08);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
 
-.carta-nav-sticky::-webkit-scrollbar {
+/* El scrollbar se oculta en el div interior (que tiene overflow-x:auto) */
+.carta-nav-sticky > div::-webkit-scrollbar {
   display: none;
+}
+.carta-nav-sticky > div {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (min-width: 1024px) {
@@ -1319,16 +1326,12 @@ main {
 }
 
 /* --- Global Fixes for Mobile Layout --- */
-html, body {
-  overflow-x: hidden;
+/* overflow-x:hidden solo en html (ver regla de html arriba) — ponerlo
+   en body o main crea scroll containers secundarios que rompen sticky */
+html {
   position: relative;
   width: 100%;
   max-width: 100vw;
-}
-
-/* Evitar que elementos absolutos se escapen */
-main {
-  overflow-x: hidden;
 }
 
 /* --- Estilos Editorial Historia --- */
