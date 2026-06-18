@@ -807,12 +807,14 @@ main {
 
 /* --- Nav FIXED y SMART para categorías internas (Tintos, Blancos...) --- */
 .carta-nav-sticky {
-  /* Móvil: fluye con el contenido, no fijo */
-  position: static;
-  z-index: 40;
+  /* sticky: en su sitio natural al cargar, se pega al scrollear */
+  position: sticky;
+  top: 56px; /* debajo del header mobile h-14 */
+  z-index: 90;
   background-color: var(--color-paper);
   border-bottom: 1px solid rgba(26, 26, 26, 0.08);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
@@ -821,14 +823,8 @@ main {
 }
 
 @media (min-width: 1024px) {
-  /* Desktop: fijo debajo del header */
   .carta-nav-sticky {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    z-index: 90;
-    will-change: transform;
+    top: 64px; /* debajo del header desktop lg:h-16 */
   }
 }
 
