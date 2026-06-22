@@ -1417,10 +1417,7 @@
     {
       "do": "Selección por Copa",
       "items": [
-        { "nombre": "Protos Roble", "precio": "2.90" },
-        { "nombre": "", "precio": "" },
-        { "nombre": "", "precio": "" },
-        { "nombre": "", "precio": "" }
+        { "nombre": "Protos Roble", "precio": "2.90" }
       ]
     }
   ]

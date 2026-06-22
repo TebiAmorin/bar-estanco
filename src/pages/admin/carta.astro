@@ -243,7 +243,7 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
 
   /* ── CONTENT ── */
   function renderContent() {
-    const groups = getSection(carta, activeTab);
+    const groups = getSection(carta, activeTab) ?? [];
     const isMobile = window.innerWidth < 768;
     const content = document.getElementById('tab-content');
 
@@ -574,6 +574,8 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
       const res = await fetch('/api/carta');
       if (!res.ok) throw new Error('No autorizado');
       carta = await res.json();
+      // carta cargada de KV antiguo puede no tener copa todavía
+      if (!carta.copa) carta.copa = [{ do: 'Selección por Copa', items: [] }];
       SECTIONS.forEach(s => {
         try {
           getSection(carta, s.key).forEach((_g, i) => {

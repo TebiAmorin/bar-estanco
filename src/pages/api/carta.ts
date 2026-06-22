@@ -127,11 +127,17 @@ function validateCarta(data: unknown): { valid: boolean; sanitized?: object; err
   }
 
   // Otras categorías
-  const categories = ['vermuts', 'tapas', 'conservas', 'desayunos'] as const;
+  const categories = ['vermuts', 'tapas', 'conservas', 'desayunos', 'copa'] as const;
   const sanitizedCategories: Record<string, object[]> = {};
 
   for (const cat of categories) {
-    const result = validateGroupArray(d[cat]);
+    const val = d[cat];
+    // copa es opcional (puede que el KV antiguo no la tenga)
+    if (cat === 'copa' && (val === undefined || val === null)) {
+      sanitizedCategories[cat] = [];
+      continue;
+    }
+    const result = validateGroupArray(val);
     if (!result.valid || !result.sanitized) {
       return { valid: false, error: `Sección ${cat} inválida` };
     }
