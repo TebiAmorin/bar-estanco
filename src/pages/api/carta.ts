@@ -22,9 +22,15 @@ function sanitizeString(v: unknown, maxLen = MAX_STRING): string {
 }
 
 function isValidPrice(v: unknown): boolean {
-  if (v === null || v === undefined || v === '') return true; // opcional
-  if (!isString(v)) return false;
-  return /^\d{1,6}([.,]\d{1,2})?$/.test(v.trim());
+  if (v === null || v === undefined || v === '') return true;
+  const str = String(v).trim();
+  if (!str) return true;
+  return /^\d{1,6}([.,]\d{1,2})?$/.test(str);
+}
+
+function coercePrice(v: unknown): string {
+  if (v === null || v === undefined || v === '') return '';
+  return String(v).trim().slice(0, MAX_PRICE_LEN);
 }
 
 function validateItem(item: unknown): { valid: boolean; sanitized?: object } {
@@ -47,9 +53,10 @@ function validateItem(item: unknown): { valid: boolean; sanitized?: object } {
       nombre,
       bodega: i.bodega ? sanitizeString(i.bodega) : null,
       tipo: i.tipo ? sanitizeString(i.tipo) : null,
-      precio: isString(i.precio) ? i.precio.trim().slice(0, MAX_PRICE_LEN) : '',
-      precioCopa: isString(i.precioCopa) ? i.precioCopa.trim().slice(0, MAX_PRICE_LEN) : null,
+      precio: coercePrice(i.precio),
+      precioCopa: i.precioCopa != null && i.precioCopa !== '' ? coercePrice(i.precioCopa) : null,
       destacado: i.destacado === true,
+      sugerencia: i.sugerencia === true,
       descripcion: i.descripcion ? sanitizeString(i.descripcion, 500) : null,
     },
   };

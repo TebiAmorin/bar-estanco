@@ -119,6 +119,8 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
   .col-precio { width:75px; }
   .col-copa { width:75px; }
   .col-dest { width:38px; text-align:center; }
+  .col-sug  { width:50px; text-align:center; }
+  .col-sug input { accent-color:#b8860b; }
   .col-del { width:34px; }
 
   /* ── DESC ROW ── */
@@ -189,12 +191,12 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
     { key:'vinos.rosados',   label:'Rosados' },
     { key:'vinos.espumosos', label:'Espumosos' },
     { key:'vinos.sinAlcohol',label:'Sin Alcohol' },
-    { key:'copa',            label:'Por Copa' },
     { key:'vermuts',         label:'Vermuts' },
     { key:'tapas',           label:'Raciones' },
     { key:'conservas',       label:'Conservas' },
     { key:'desayunos',       label:'Desayunos' },
   ];
+  const VINO_KEYS = ['vinos.tintos','vinos.blancos','vinos.rosados','vinos.espumosos','vinos.sinAlcohol'];
 
   let carta = null;
   let activeTab = 'vinos.tintos';
@@ -219,8 +221,14 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
     window.setUnsaved(true);
   }
   function validatePrice(v) {
-    if (!v) return true;
-    return /^\d+([.,]\d{1,2})?$/.test(v.trim());
+    if (v === null || v === undefined || v === '' || v === 0) return true;
+    return /^\d+([.,]\d{1,2})?$/.test(String(v).trim());
+  }
+  function countSugerencias() {
+    return VINO_KEYS.reduce((total, key) => {
+      try { return total + getSection(carta, key).reduce((s, g) => s + g.items.filter(i => i.sugerencia).length, 0); }
+      catch { return total; }
+    }, 0);
   }
   function esc(s) {
     if (!s) return '';
@@ -299,12 +307,16 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
         </tbody>
       </table>`;
     }
+    const isVino = VINO_KEYS.includes(activeTab);
+    const sugCount = isVino ? countSugerencias() : 0;
     return `
     <table class="items-table">
       <thead><tr>
         <th>Nombre</th><th>Bodega</th><th>Tipo</th>
         <th class="col-precio">Precio</th><th class="col-copa">Copa</th>
-        <th class="col-dest">★</th><th class="col-del"></th>
+        <th class="col-dest">★</th>
+        ${isVino ? `<th class="col-sug" title="Selección por copa (máx. 4) — ${sugCount}/4 activos">◆</th>` : ''}
+        <th class="col-del"></th>
       </tr></thead>
       <tbody>
         ${group.items.map((item, ii) => `
@@ -312,13 +324,14 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
           <td><input type="text" value="${esc(item.nombre)}" data-field="nombre" class="${item.nombre?.trim() ? '' : 'input-error'}" placeholder="Nombre" /></td>
           <td><input type="text" value="${esc(item.bodega||'')}" data-field="bodega" placeholder="—" /></td>
           <td><input type="text" value="${esc(item.tipo||'')}" data-field="tipo" placeholder="—" /></td>
-          <td class="col-precio"><input type="text" value="${esc(item.precio||'')}" data-field="precio" class="${validatePrice(item.precio)?'':'input-error'}" inputmode="decimal" placeholder="0.00" /></td>
-          <td class="col-copa"><input type="text" value="${esc(item.precioCopa||'')}" data-field="precioCopa" class="${validatePrice(item.precioCopa)?'':'input-error'}" inputmode="decimal" placeholder="—" /></td>
+          <td class="col-precio"><input type="text" value="${esc(String(item.precio||''))}" data-field="precio" class="${validatePrice(item.precio)?'':'input-error'}" inputmode="decimal" placeholder="0.00" /></td>
+          <td class="col-copa"><input type="text" value="${esc(String(item.precioCopa||''))}" data-field="precioCopa" class="${validatePrice(item.precioCopa)?'':'input-error'}" inputmode="decimal" placeholder="—" /></td>
           <td class="col-dest"><input type="checkbox" ${item.destacado?'checked':''} data-field="destacado" /></td>
+          ${isVino ? `<td class="col-sug"><input type="checkbox" ${item.sugerencia?'checked':''} data-field="sugerencia" ${!item.sugerencia && sugCount >= 4 ? 'disabled title="Máximo 4 activos"' : ''} /></td>` : ''}
           <td class="col-del"><button class="btn btn-danger btn-sm" data-action="del-item" data-gi="${gi}" data-ii="${ii}" type="button">✕</button></td>
         </tr>
         <tr class="desc-row" data-gi="${gi}" data-ii="${ii}">
-          <td colspan="7">
+          <td colspan="${isVino ? 8 : 7}">
             <textarea class="desc-input" data-field="descripcion" data-gi="${gi}" data-ii="${ii}" rows="1" placeholder="Descripción (opcional)">${esc(item.descripcion||'')}</textarea>
             <div class="desc-hint${item.destacado&&item.descripcion?' active':''}">${item.destacado?(item.descripcion?'✓ Visible en la web':'Solo si añades texto'):'Solo visible si ★ destacado'}</div>
           </td>
@@ -349,6 +362,8 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
         </div>
       </div>`).join('');
     }
+    const isVino = VINO_KEYS.includes(activeTab);
+    const sugCount = isVino ? countSugerencias() : 0;
     return group.items.map((item, ii) => `
     <div class="product-card" data-gi="${gi}" data-ii="${ii}">
       <div class="product-row">
@@ -374,11 +389,11 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
       <div class="product-prices">
         <div>
           <label>Precio botella</label>
-          <input type="text" class="price-input ${validatePrice(item.precio)?'':'input-error'}" value="${esc(item.precio||'')}" data-field="precio" data-gi="${gi}" data-ii="${ii}" inputmode="decimal" placeholder="0.00" />
+          <input type="text" class="price-input ${validatePrice(item.precio)?'':'input-error'}" value="${esc(String(item.precio||''))}" data-field="precio" data-gi="${gi}" data-ii="${ii}" inputmode="decimal" placeholder="0.00" />
         </div>
         <div>
           <label>Precio copa</label>
-          <input type="text" class="price-input ${validatePrice(item.precioCopa)?'':'input-error'}" value="${esc(item.precioCopa||'')}" data-field="precioCopa" data-gi="${gi}" data-ii="${ii}" inputmode="decimal" placeholder="—" />
+          <input type="text" class="price-input ${validatePrice(item.precioCopa)?'':'input-error'}" value="${esc(String(item.precioCopa||''))}" data-field="precioCopa" data-gi="${gi}" data-ii="${ii}" inputmode="decimal" placeholder="—" />
         </div>
       </div>
       <div class="product-footer">
@@ -386,6 +401,10 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
           <input type="checkbox" ${item.destacado?'checked':''} data-field="destacado" data-gi="${gi}" data-ii="${ii}" />
           ★ Destacado
         </label>
+        ${isVino ? `<label class="destacado-label" style="color:#b8860b;${!item.sugerencia && sugCount >= 4 ? 'opacity:0.45;' : ''}">
+          <input type="checkbox" ${item.sugerencia?'checked':''} data-field="sugerencia" data-gi="${gi}" data-ii="${ii}" ${!item.sugerencia && sugCount >= 4 ? 'disabled' : ''} style="accent-color:#b8860b" />
+          ◆ Copa
+        </label>` : ''}
         <button class="desc-toggle-btn" data-toggle-desc="${gi}-${ii}" type="button">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
           Descripción
@@ -439,6 +458,17 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
 
         if (field === 'destacado') {
           item.destacado = e.target.checked;
+          renderContent();
+          return;
+        }
+        if (field === 'sugerencia') {
+          if (e.target.checked && countSugerencias() >= 4) {
+            e.target.checked = false;
+            window.showToast('Máximo 4 vinos en Selección por Copa', 'error');
+            return;
+          }
+          item.sugerencia = e.target.checked;
+          markChanged();
           renderContent();
           return;
         }
@@ -574,8 +604,6 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
       const res = await fetch('/api/carta');
       if (!res.ok) throw new Error('No autorizado');
       carta = await res.json();
-      // carta cargada de KV antiguo puede no tener copa todavía
-      if (!carta.copa) carta.copa = [{ do: 'Selección por Copa', items: [] }];
       SECTIONS.forEach(s => {
         try {
           getSection(carta, s.key).forEach((_g, i) => {
