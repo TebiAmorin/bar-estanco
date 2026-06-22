@@ -1331,7 +1331,7 @@ main {
 html {
   position: relative;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%; /* 100vw incluye el ancho del scrollbar y causa margen derecho con zoom */
 }
 
 /* --- Estilos Editorial Historia --- */

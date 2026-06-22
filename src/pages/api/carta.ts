@@ -57,6 +57,7 @@ function validateItem(item: unknown): { valid: boolean; sanitized?: object } {
       precioCopa: i.precioCopa != null && i.precioCopa !== '' ? coercePrice(i.precioCopa) : null,
       destacado: i.destacado === true,
       sugerencia: i.sugerencia === true,
+      oculto: i.oculto === true,
       descripcion: i.descripcion ? sanitizeString(i.descripcion, 500) : null,
     },
   };

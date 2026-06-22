@@ -11,7 +11,7 @@ const carta = await getCarta();
 const { tintos, blancos, rosados, espumosos, sinAlcohol } = carta.vinos;
 const copaItems = [
   ...tintos, ...blancos, ...rosados, ...espumosos, ...sinAlcohol
-].flatMap((g: any) => g.items).filter((i: any) => i.sugerencia && i.nombre?.trim()).slice(0, 4);
+].flatMap((g: any) => g.items).filter((i: any) => i.sugerencia && !i.oculto && i.nombre?.trim()).slice(0, 4);
 
 const totalTintos = tintos.reduce((sum, g) => sum + g.items.length, 0);
 const totalBlancos = blancos.reduce((sum, g) => sum + g.items.length, 0);
@@ -143,7 +143,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
           >
             <h3 class="do-header">{grupo.do}</h3>
             <div class="space-y-0">
-              {grupo.items.map((v) => (
+              {grupo.items.filter((v: any) => !v.oculto).map((v) => (
                 <WineEntry
                   nombre={v.nombre}
                   bodega={v.bodega}
@@ -180,7 +180,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
           >
             <h3 class="do-header">{grupo.do}</h3>
             <div class="space-y-0">
-              {grupo.items.map((v) => (
+              {grupo.items.filter((v: any) => !v.oculto).map((v) => (
                 <WineEntry
                   nombre={v.nombre}
                   bodega={v.bodega}
@@ -214,7 +214,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
         rosados.map((grupo) => (
           <div class="fade-in">
             <div class="space-y-0">
-              {grupo.items.map((v) => (
+              {grupo.items.filter((v: any) => !v.oculto).map((v) => (
                 <WineEntry
                   nombre={v.nombre}
                   bodega={v.bodega}
@@ -251,7 +251,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
           >
             <h3 class="do-header">{grupo.do}</h3>
             <div class="space-y-0">
-              {grupo.items.map((v) => (
+              {grupo.items.filter((v: any) => !v.oculto).map((v) => (
                 <WineEntry
                   nombre={v.nombre}
                   bodega={v.bodega}
@@ -285,7 +285,7 @@ const totalSinAlcohol = sinAlcohol.reduce((sum, g) => sum + g.items.length, 0);
         sinAlcohol.map((grupo) => (
           <div class="fade-in">
             <div class="space-y-0">
-              {grupo.items.map((v) => (
+              {grupo.items.filter((v: any) => !v.oculto).map((v) => (
                 <WineEntry
                   nombre={v.nombre}
                   bodega={v.bodega}

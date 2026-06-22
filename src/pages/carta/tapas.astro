@@ -61,7 +61,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
         <div class:list={['fade-in', i < tapas.length - 1 ? 'mb-8' : 'mb-4']}>
           <h3 class="do-header">{grupo.do}</h3>
           <div class="space-y-0">
-            {grupo.items.map((v) => (
+            {grupo.items.filter((v: any) => !v.oculto).map((v) => (
               v.precioMedia ? (
                 <div class="wine-entry">
                   <div class="flex-1 min-w-0">
@@ -117,7 +117,7 @@ const totalConservas = conservas.reduce((sum, g) => sum + g.items.length, 0);
         <div class:list={['fade-in', i < conservas.length - 1 ? 'mb-8' : 'mb-4']}>
           <h3 class="do-header">{grupo.do}</h3>
           <div class="space-y-0">
-            {grupo.items.map((v) => (
+            {grupo.items.filter((v: any) => !v.oculto).map((v) => (
               <WineEntry
                 nombre={v.nombre}
                 bodega={v.bodega}
