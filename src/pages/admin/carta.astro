@@ -189,6 +189,7 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
     { key:'vinos.rosados',   label:'Rosados' },
     { key:'vinos.espumosos', label:'Espumosos' },
     { key:'vinos.sinAlcohol',label:'Sin Alcohol' },
+    { key:'copa',            label:'Por Copa' },
     { key:'vermuts',         label:'Vermuts' },
     { key:'tapas',           label:'Raciones' },
     { key:'conservas',       label:'Conservas' },
@@ -280,6 +281,24 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
   }
 
   function renderDesktopItems(group, gi) {
+    if (activeTab === 'copa') {
+      return `
+      <table class="items-table">
+        <thead><tr>
+          <th>Nombre del vino</th>
+          <th class="col-precio">Precio copa</th>
+          <th class="col-del"></th>
+        </tr></thead>
+        <tbody>
+          ${group.items.map((item, ii) => `
+          <tr data-gi="${gi}" data-ii="${ii}">
+            <td><input type="text" value="${esc(item.nombre)}" data-field="nombre" class="${item.nombre?.trim() ? '' : 'input-error'}" placeholder="Nombre del vino" /></td>
+            <td class="col-precio"><input type="text" value="${esc(item.precio||'')}" data-field="precio" class="${validatePrice(item.precio)?'':'input-error'}" inputmode="decimal" placeholder="0.00" /></td>
+            <td class="col-del"><button class="btn btn-danger btn-sm" data-action="del-item" data-gi="${gi}" data-ii="${ii}" type="button">✕</button></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+    }
     return `
     <table class="items-table">
       <thead><tr>
@@ -309,6 +328,27 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
   }
 
   function renderMobileItems(group, gi) {
+    if (activeTab === 'copa') {
+      return group.items.map((item, ii) => `
+      <div class="product-card" data-gi="${gi}" data-ii="${ii}">
+        <div class="product-row">
+          <div class="product-name-wrap">
+            <input type="text" class="product-name-input ${item.nombre?.trim()?'':'input-error'}" value="${esc(item.nombre)}" data-field="nombre" data-gi="${gi}" data-ii="${ii}" placeholder="Nombre del vino" />
+          </div>
+          <button class="product-del-btn" data-action="del-item" data-gi="${gi}" data-ii="${ii}" type="button" aria-label="Eliminar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18M19 6l-1 14H6L5 6M10 11v6M14 11v6M9 6V4h6v2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="product-prices">
+          <div>
+            <label>Precio copa</label>
+            <input type="text" class="price-input ${validatePrice(item.precio)?'':'input-error'}" value="${esc(item.precio||'')}" data-field="precio" data-gi="${gi}" data-ii="${ii}" inputmode="decimal" placeholder="0.00" />
+          </div>
+        </div>
+      </div>`).join('');
+    }
     return group.items.map((item, ii) => `
     <div class="product-card" data-gi="${gi}" data-ii="${ii}">
       <div class="product-row">
@@ -448,9 +488,10 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
     content.querySelectorAll('[data-action="add-item"]').forEach(btn => {
       btn.addEventListener('click', () => {
         const gi = parseInt(btn.dataset.gi);
-        getSection(carta, activeTab)[gi].items.push({
-          nombre:'', bodega:'', tipo:null, precio:'', precioCopa:null, destacado:false, descripcion:null
-        });
+        const newItem = activeTab === 'copa'
+          ? { nombre:'', precio:'' }
+          : { nombre:'', bodega:'', tipo:null, precio:'', precioCopa:null, destacado:false, descripcion:null };
+        getSection(carta, activeTab)[gi].items.push(newItem);
         markChanged();
         renderTabs();
         renderContent();
