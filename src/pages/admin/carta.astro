@@ -141,13 +141,24 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
   .product-card {
     border-bottom:1px solid var(--border);
     padding:0.875rem 1rem;
-    position:relative;
   }
   .product-card:last-of-type { border-bottom:none; }
 
-  /* Fila nombre + botón eliminar */
+  /*
+   * AdminLayout tiene: input[type="text"] { font-size:0.875rem; width:100% }  → specificity 0,1,1
+   * Para sobreescribir sin !important necesitamos specificity ≥ 0,1,2:
+   * .product-card input[type="text"] = class(0,1,0) + tag(0,0,1) + attr(0,1,0) = 0,2,1  ✓
+   */
+  .product-card input[type="text"],
+  .product-card textarea { font-size:16px; }
+
+  /* Fila nombre + botón eliminar.
+   * .mc-nw es el WRAPPER flex:1 — resuelve el conflicto entre width:100% (AdminLayout)
+   * y flex:1 en el mismo elemento. El wrapper toma el espacio flex; el input toma
+   * 100% del wrapper. Patrón idéntico al viejo .product-name-wrap. */
   .mc-header { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.625rem; }
-  .mc-name { flex:1; font-size:16px; font-weight:600; padding:0.55rem 0.7rem !important; }
+  .mc-nw { flex:1; min-width:0; }
+  .mc-nw input { font-weight:600; }
   .mc-del { width:44px; height:44px; flex-shrink:0; background:none; border:none;
     cursor:pointer; color:var(--ink-3); border-radius:8px; transition:all 0.15s;
     display:flex; align-items:center; justify-content:center;
@@ -157,48 +168,51 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
 
   /* Grid de 2 columnas para campos */
   .mc-fields2 { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.5rem; }
-  .mc-lbl { display:block; font-size:0.6rem; font-weight:700; color:var(--ink-3);
-    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.25rem; }
-  .mc-inp { width:100%; font-size:16px; padding:0.5rem 0.65rem; min-height:44px;
-    border:1.5px solid var(--border); border-radius:8px; background:var(--surface);
-    box-sizing:border-box; -webkit-appearance:none; appearance:none;
-    color:var(--ink); }
+  .mc-fields2 > div { min-width:0; }
+  .mc-lbl { display:block !important; font-size:0.6rem !important; font-weight:700;
+    color:var(--ink-3); text-transform:uppercase; letter-spacing:0.06em;
+    margin-bottom:0.2rem !important; }
+  .mc-inp { min-height:44px; box-sizing:border-box; }
   .mc-inp:focus { border-color:var(--ink); outline:none; box-shadow:0 0 0 3px rgba(0,0,0,0.05); }
-  .mc-inp.input-error { border-color:var(--red); }
+  .mc-inp.input-error { border-color:var(--red) !important; }
 
   /* Campo precio con símbolo € */
-  .mc-price-wrap { position:relative; }
+  .mc-price-wrap { position:relative; min-width:0; }
   .mc-price-wrap > span { position:absolute; right:0.6rem; top:50%;
     transform:translateY(-50%); font-size:0.75rem; color:var(--ink-3); pointer-events:none; }
   .mc-price { padding-right:1.6rem !important; }
 
-  /* Pill buttons para toggles (destacado / copa / ocultar) */
+  /* Pill buttons para toggles (destacado / copa / ocultar).
+   * AdminLayout: label { display:block; margin-bottom:0.3rem }  (specificity 0,0,1)
+   * .toggle-pill (0,1,0) gana en display, pero margin-bottom no lo declara → necesita override */
   .mc-actions { display:flex; gap:0.35rem; flex-wrap:wrap; align-items:center; margin-top:0.5rem; }
-  .toggle-pill { position:relative; display:inline-flex; align-items:center; gap:0.3rem;
-    min-height:36px; padding:0 0.75rem; border-radius:20px;
+  .toggle-pill { position:relative; display:inline-flex !important; align-items:center; gap:0.35rem;
+    min-height:40px; padding:0 0.85rem; border-radius:20px;
     border:1.5px solid var(--border); background:transparent;
-    color:var(--ink-2); font-size:0.72rem; font-weight:600;
+    color:var(--ink-2); font-size:0.75rem; font-weight:600;
     cursor:pointer; user-select:none; -webkit-tap-highlight-color:transparent;
-    transition:all 0.12s; white-space:nowrap; }
-  .toggle-pill input[type="checkbox"] { position:absolute; opacity:0; width:0; height:0; margin:0; }
+    transition:all 0.12s; white-space:nowrap; margin-bottom:0 !important; }
+  /* Visually-hidden pattern (más seguro que width:0/height:0 en iOS Safari) */
+  .toggle-pill input[type="checkbox"] {
+    position:absolute; width:1px; height:1px;
+    clip:rect(0,0,0,0); overflow:hidden; opacity:0; margin:0; }
   .tp-gold { border-color:#c8960a; background:#fffbeb; color:#92400e; }
   .tp-wine { border-color:#b8860b; background:#fdf4e3; color:#7a5c00; }
   .tp-red { border-color:var(--red); background:var(--red-bg); color:var(--red); }
   .tp-disabled { opacity:0.35; pointer-events:none; }
 
   /* Botón de descripción */
-  .mc-desc-toggle { min-height:36px; padding:0 0.65rem; border-radius:20px;
+  .mc-desc-toggle { min-height:40px; padding:0 0.75rem; border-radius:20px;
     border:1.5px solid var(--border); background:transparent; color:var(--ink-3);
-    font-size:0.72rem; font-weight:500; cursor:pointer; margin-left:auto;
-    -webkit-tap-highlight-color:transparent; display:flex; align-items:center; gap:0.3rem; }
+    font-size:0.75rem; font-weight:500; cursor:pointer; margin-left:auto;
+    -webkit-tap-highlight-color:transparent; display:flex !important; align-items:center; gap:0.3rem;
+    font-family:inherit; }
   .mc-desc-toggle:active { background:var(--bg); }
 
   /* Área descripción */
   .mc-desc-area { display:none; margin-top:0.5rem; }
   .mc-desc-area.open { display:block; }
-  .mc-desc-area textarea { width:100%; font-size:16px; padding:0.5rem 0.65rem;
-    border:1.5px solid var(--border); border-radius:8px; background:var(--surface);
-    resize:vertical; box-sizing:border-box; min-height:64px; color:var(--ink); }
+  .mc-desc-area textarea { min-height:64px; }
 
   @media (min-width:768px) {
     .product-card { display:none; }
@@ -376,7 +390,9 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
       return group.items.map((item, ii) => `
       <div class="product-card" data-gi="${gi}" data-ii="${ii}">
         <div class="mc-header">
-          <input type="text" class="mc-name ${item.nombre?.trim()?'':'input-error'}" value="${esc(item.nombre)}" data-field="nombre" data-gi="${gi}" data-ii="${ii}" placeholder="Nombre del vino" autocomplete="off" />
+          <div class="mc-nw">
+            <input type="text" class="mc-name ${item.nombre?.trim()?'':'input-error'}" value="${esc(item.nombre)}" data-field="nombre" data-gi="${gi}" data-ii="${ii}" placeholder="Nombre del vino" autocomplete="off" />
+          </div>
           <button class="mc-del" data-action="del-item" data-gi="${gi}" data-ii="${ii}" type="button" aria-label="Eliminar">${delIcon}</button>
         </div>
         <div>
@@ -396,10 +412,12 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
     <div class="product-card${item.oculto?' is-oculto':''}" data-gi="${gi}" data-ii="${ii}">
 
       <div class="mc-header">
-        <input type="text" class="mc-name ${item.nombre?.trim()?'':'input-error'}"
-          value="${esc(item.nombre)}" data-field="nombre" data-gi="${gi}" data-ii="${ii}"
-          placeholder="Nombre del producto"
-          autocomplete="off" autocorrect="off" autocapitalize="words" enterkeyhint="next" />
+        <div class="mc-nw">
+          <input type="text" class="mc-name ${item.nombre?.trim()?'':'input-error'}"
+            value="${esc(item.nombre)}" data-field="nombre" data-gi="${gi}" data-ii="${ii}"
+            placeholder="Nombre del producto"
+            autocomplete="off" autocorrect="off" autocapitalize="words" enterkeyhint="next" />
+        </div>
         <button class="mc-del" data-action="del-item" data-gi="${gi}" data-ii="${ii}"
           type="button" aria-label="Eliminar">${delIcon}</button>
       </div>
